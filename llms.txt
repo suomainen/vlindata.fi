@@ -1,47 +1,22 @@
 # VLiNdATA Oy
 
-> VLiNdATA Oy (Virpi Lindvall) tekee kunnille ja yrityksille paikkatietoaineistoja, tietokanta-analyysejä ja kiinteistöveroselvityksiä yli 20 vuoden kokemuksella. Englanninkielinen käännös on tiedoston lopussa.
+> VLiNdATA Oy (Virpi Lindvall) auttaa kuntia kiinteistöveroselvityksissä, rakennusrekisterien laadun parantamisessa sekä paikkatietoaineistojen tuottamisessa, päivittämisessä ja analysoinnissa. Yli 20 vuoden kokemus paikkatiedosta. Englanninkielinen käännös on tiedoston lopussa.
 
 ## Palvelut
 
-- **Paikkatietoaineistot**: aineistojen laatiminen mittauksista, lähtöaineistoista ja analyyseistä; asema-, ranta- ja yleiskaavojen vektorointi.
-- **Tietokanta-analyysit**: rekisterien ja tietokantojen yhdistäminen ja liittäminen sijaintiin.
-- **Kiinteistöveroselvitykset**: kunnan ja verottajan rekistereistä puuttuvien tai puutteellisten rakennusten löytäminen; rekisterivertailu, paikkatietoanalyysi, kyselylomake ja tarvittaessa maastotyöt.
+- [Kiinteistöveroselvitykset](https://vlindata.fi/kiinteistoveroselvitykset/): rekistereistä puuttuvien rakennusten tunnistaminen, rakennusrekisterin ja kiinteistöverotietojen vertailu, omistajakyselyt, maastotarkistukset ja raportointi. Työ etenee vaiheittain kunnan resurssien mukaan.
+- [Paikkatietopalvelut](https://vlindata.fi/paikkatietopalvelut/): uudet paikkatietoaineistot, aineistojen päivittäminen, paikkatietoanalyysit ja rekisterivertailut, paikkatietojärjestelmät ja tietokannat sekä asiantuntija-apu toimintatapojen kehittämiseen.
 
-## Hinnat
+## Yritys
 
-- Tuntityöt (paikkatietoaineistojen luominen, analysointi): 98 €/h + alv
-- Maastotyöt rakennusrekisterin parantamiseksi, 2 henkilöä: yhteensä 70 €/h + alv
-- Projektityöt (mm. kiinteistöveroselvitykset): sopimuksen mukaan
-
-## Referenssit
-
-Ruskon kunta, Sauvon kunta, Oripään kunta, Liedon kaupunki, Naantalin kaupunki, Maskun kunta, Säkylän kunta, Auran kunta.
-
-## Linkit
-
-- [Etusivu](https://vlindata.fi/)
-- [In English](https://vlindata.fi/en/)
-- [Evästeet](https://vlindata.fi/evasteet.html)
+- [Yritys](https://vlindata.fi/yritys/): Virpi Lindvall, yrittäjä ja paikkatietoalan asiantuntija. Tausta kuntien paikkatiedosta, rakennusrekistereistä, rakennusvalvonnasta ja maankäytöstä. Y-tunnus 3410053-6.
+- [Referenssit](https://vlindata.fi/referenssit/): Auran kunta (rakennusrekisteritietojen selvittäminen). Muita referenssikuntia: Rusko, Sauvo, Oripää, Lieto, Naantali, Masku, Säkylä.
+- [Yhteystiedot](https://vlindata.fi/yhteystiedot/): puhelin +358 44 301 2471, sähköposti virpi@vlindata.fi.
 
 ## In English
 
-> VLiNdATA Oy (Virpi Lindvall) provides GIS datasets, database analyses and property tax audits for Finnish municipalities and companies, with over 20 years of experience.
+> VLiNdATA Oy (Virpi Lindvall) helps Finnish municipalities with property tax audits, building register quality, and producing, updating and analysing GIS datasets. Over 20 years of GIS experience.
 
-## Services
-
-- **GIS datasets**: creating datasets from surveys, source data and analyses; digitising local detailed plans, shore plans and master plans.
-- **Database analyses**: combining registers and databases and linking them to location.
-- **Property tax audits**: finding buildings missing from, or incomplete in, municipal and tax authority registers; register comparison, spatial analysis, questionnaire and fieldwork if needed.
-
-## Pricing
-
-- Hourly work (creating and analysing GIS datasets): EUR 98/h + VAT
-- Fieldwork to improve the building register, 2 people: EUR 70/h in total + VAT
-- Project work (e.g. property tax audits): as agreed
-
-## Links
-
-- [Front page in English](https://vlindata.fi/en/)
-- [Suomeksi](https://vlindata.fi/)
-- [Cookies](https://vlindata.fi/en/cookies.html)
+- [Property tax audits](https://vlindata.fi/en/property-tax-audits/): identifying buildings missing from registers, comparing building register and property tax data, owner enquiries, field checks and reporting.
+- [GIS services](https://vlindata.fi/en/gis-services/): new datasets, dataset updates, spatial analysis, GIS systems and databases, expert help.
+- [Company](https://vlindata.fi/en/company/), [References](https://vlindata.fi/en/references/), [Contact](https://vlindata.fi/en/contact/): phone +358 44 301 2471, email virpi@vlindata.fi.

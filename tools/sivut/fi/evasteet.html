@@ -1,0 +1,37 @@
+    <section class="panel panel--vihrea-vaalea page-hero" aria-labelledby="sivu-otsikko">
+      <div class="wrap">
+      {{murupolku}}
+        <h1 class="h1" id="sivu-otsikko">Miten sivuni seuraa sinua?</h1>
+        <p class="lead">Evästeet ovat pieniä tekstitiedostoja, joita sivustot voivat käyttää tehdäkseen käyttäjäkokemuksesta tehokkaamman.</p>
+      </div>
+    </section>
+
+    <section class="panel panel--valkoinen page-content" aria-labelledby="evasteet-otsikko">
+      <div class="wrap">
+        <div class="block">
+          <h2 class="h2" id="evasteet-otsikko">Sivuston evästeet</h2>
+          <div class="prose">
+            <p>Lain mukaan voin tallentaa evästeitä laitteellesi, mikäli se on ehdottoman tärkeää sivuston toiminnan kannalta. Tarvitsen suostumuksesi kaikenlaisten evästeiden käytölle.</p>
+            <p>Google Analyticsin evästeet tallennetaan vain, jos hyväksyt ne. Jos hylkäät, sivu ei lataa Googlen palvelua lainkaan.</p>
+            <p>Yhteydenottolomake ei tallenna tietoja: se avaa viestin omassa sähköpostiohjelmassasi.</p>
+            <div class="table-wrap">
+              <table class="cookie-table">
+                <caption class="sr-only">Sivuston käyttämät evästeet ja tallennettavat tiedot</caption>
+                <thead>
+                  <tr><th scope="col">Nimi</th><th scope="col">Tarkoitus</th><th scope="col">Säilyy</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>vlindata-consent</td><td>Muistaa evästevalintasi. Tallennetaan selaimen omaan muistiin, ei lähetetä minnekään.</td><td>Kunnes tyhjennät selaimen tiedot</td></tr>
+                  <tr><td>_ga</td><td>Google Analytics: erottaa kävijät toisistaan kävijämäärän laskemista varten.</td><td>2 vuotta</td></tr>
+                  <tr><td>_ga_73CPF19H48</td><td>Google Analytics: muistaa käynnin tilan.</td><td>2 vuotta</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="actions">
+              <button class="btn btn--toissijainen" type="button" data-consent-open>Muuta evästevalintaa</button>
+              <a class="btn btn--reuna" href="{{sivu:etusivu}}">Etusivulle</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

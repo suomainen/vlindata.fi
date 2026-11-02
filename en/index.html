@@ -5,15 +5,15 @@
   <meta name="color-scheme" content="light">
   <script src="../js/consent.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="VLiNdATA Oy provides GIS datasets, database analyses and property tax audits for municipalities and companies, with over 20 years of experience.">
-  <title>VLiNdATA Oy – GIS data and property tax audits</title>
+  <meta name="description" content="VLiNdATA Oy helps Finnish municipalities with property tax audits, building register quality and GIS datasets. Over 20 years of experience.">
+  <title>VLiNdATA Oy – GIS and property tax audits for municipalities</title>
   <link rel="canonical" href="https://vlindata.fi/en/">
   <link rel="alternate" hreflang="fi" href="https://vlindata.fi/">
   <link rel="alternate" hreflang="en" href="https://vlindata.fi/en/">
   <link rel="alternate" hreflang="x-default" href="https://vlindata.fi/">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Virpi Lindvall, VLiNdATA Oy">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#f7f4ec">
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -23,28 +23,33 @@
   <meta property="og:locale" content="en_GB">
   <meta property="og:locale:alternate" content="fi_FI">
   <meta property="og:url" content="https://vlindata.fi/en/">
-  <meta property="og:title" content="VLiNdATA Oy – GIS data and property tax audits">
-  <meta property="og:description" content="GIS datasets, database analyses and property tax audits for municipalities and companies. Virpi Lindvall, over 20 years of experience.">
+  <meta property="og:title" content="VLiNdATA Oy – GIS and property tax audits for municipalities">
+  <meta property="og:description" content="VLiNdATA Oy helps Finnish municipalities with property tax audits, building register quality and GIS datasets. Over 20 years of experience.">
   <meta property="og:image" content="https://vlindata.fi/img/og-kuva-en.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="VLiNdATA Oy: GIS datasets, databases and property tax audits. Pictured: Virpi Lindvall.">
+  <meta property="og:image:alt" content="VLiNdATA Oy: GIS and building data that benefit municipalities. Photo of Virpi Lindvall.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="VLiNdATA Oy – GIS data and property tax audits">
-  <meta name="twitter:description" content="GIS datasets, database analyses and property tax audits for municipalities and companies. Virpi Lindvall, over 20 years of experience.">
+  <meta name="twitter:title" content="VLiNdATA Oy – GIS and property tax audits for municipalities">
+  <meta name="twitter:description" content="VLiNdATA Oy helps Finnish municipalities with property tax audits, building register quality and GIS datasets. Over 20 years of experience.">
   <meta name="twitter:image" content="https://vlindata.fi/img/og-kuva-en.jpg">
-  <meta name="twitter:image:alt" content="VLiNdATA Oy: GIS datasets, databases and property tax audits. Pictured: Virpi Lindvall.">
+  <meta name="twitter:image:alt" content="VLiNdATA Oy: GIS and building data that benefit municipalities. Photo of Virpi Lindvall.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://vlindata.fi/en/#website",
-        "url": "https://vlindata.fi/en/",
+        "@id": "https://vlindata.fi/#website",
+        "url": "https://vlindata.fi/",
         "name": "VLiNdATA Oy",
-        "inLanguage": "en",
-        "publisher": { "@id": "https://vlindata.fi/#organization" }
+        "inLanguage": [
+          "fi",
+          "en"
+        ],
+        "publisher": {
+          "@id": "https://vlindata.fi/#organization"
+        }
       },
       {
         "@type": "Organization",
@@ -52,202 +57,341 @@
         "name": "VLiNdATA Oy",
         "url": "https://vlindata.fi/",
         "logo": "https://vlindata.fi/img/vlindata-logo.webp",
-        "image": "https://vlindata.fi/img/og-kuva-en.jpg",
-        "description": "GIS datasets, database analyses and property tax audits for municipalities and companies.",
+        "image": "https://vlindata.fi/img/og-kuva.jpg",
+        "description": "Property tax audits, building register quality and GIS services for municipalities.",
         "email": "virpi@vlindata.fi",
         "telephone": "+358443012471",
-        "identifier": { "@type": "PropertyValue", "propertyID": "Finnish Business ID", "value": "3410053-6" },
-        "founder": { "@id": "https://vlindata.fi/#virpi-lindvall" },
-        "knowsAbout": ["GIS", "GIS datasets", "Land use plan digitisation", "Database analysis", "Building register", "Property tax audit"]
+        "areaServed": {
+          "@type": "Country",
+          "name": "Finland"
+        },
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "Y-tunnus",
+          "value": "3410053-6"
+        },
+        "founder": {
+          "@id": "https://vlindata.fi/#virpi-lindvall"
+        },
+        "knowsAbout": [
+          "Paikkatieto",
+          "Kiinteistöveroselvitys",
+          "Rakennusrekisteri",
+          "Paikkatietoanalyysi",
+          "Tiedonhallinta"
+        ]
       },
       {
         "@type": "Person",
         "@id": "https://vlindata.fi/#virpi-lindvall",
         "name": "Virpi Lindvall",
-        "image": "https://vlindata.fi/img/virpi-kallio.jpg",
-        "worksFor": { "@id": "https://vlindata.fi/#organization" }
+        "jobTitle": "Founder, GIS specialist",
+        "image": "https://vlindata.fi/img/virpi-metsa-pysty-1000.jpg",
+        "worksFor": {
+          "@id": "https://vlindata.fi/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://vlindata.fi/en/#webpage",
+        "url": "https://vlindata.fi/en/",
+        "name": "VLiNdATA Oy – GIS and property tax audits for municipalities",
+        "description": "VLiNdATA Oy helps Finnish municipalities with property tax audits, building register quality and GIS datasets. Over 20 years of experience.",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://vlindata.fi/#website"
+        }
       }
     ]
   }
   </script>
-  <link rel="preload" href="../fonts/lexend-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/manrope-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../css/fonts.css">
   <link rel="stylesheet" href="../css/style.css">
   <script src="../js/menu.js" defer></script>
 </head>
 <body>
-  <a class="skip" href="#content">Skip to content</a>
-
+  <a class="skip" href="#sisalto">Skip to content</a>
   <header class="topbar">
     <div class="topbar__inner">
-      <a class="brand" href="./">
-        <img src="../img/vlindata-logo.webp" alt="" width="43" height="48">
-        <span>Virpi Lindvall<br>VLiNdATA Oy</span>
+      <a class="brand" href="../en/" aria-label="VLiNdATA Oy, home">
+        <img src="../img/vlindata-logo.webp" alt="" width="40" height="44">
+        <span>VLiNdATA Oy<small>GIS · Property tax</small></span>
       </a>
-      <div class="lang" role="group" aria-label="Kieli – Language">
-        <a href="../" lang="fi" hreflang="fi" aria-label="FI – suomeksi">FI</a>
-        <a href="./" lang="en" hreflang="en" aria-current="page" aria-label="EN – in English">EN</a>
-      </div>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="paavalikko">
         <span></span><span></span><span></span>
         <span class="sr-only">Menu</span>
       </button>
-      <nav class="nav" id="menu" aria-label="Main menu">
+      <nav class="nav" id="paavalikko" aria-label="Main menu">
         <ul class="nav__list">
-          <li><a class="nav__link" href="#home">Home</a></li>
-          <li><a class="nav__link" href="#references">References</a></li>
-          <li><a class="nav__link" href="#about">About me</a></li>
-          <li><a class="nav__link" href="#pricing">Pricing</a></li>
-          <li><a class="btn nav__btn" href="#contact">Contact</a></li>
+        <li><a class="nav__link" href="../en/" aria-current="page">Home</a></li>
+        <li><a class="nav__link" href="../en/property-tax-audits/">Property tax audits</a></li>
+        <li><a class="nav__link" href="../en/gis-services/">GIS services</a></li>
+        <li><a class="nav__link" href="../en/company/">Company</a></li>
+        <li><a class="nav__link" href="../en/references/">References</a></li>
+        <li><a class="nav__link" href="../en/contact/">Contact</a></li>
         </ul>
       </nav>
+      <div class="lang" role="group" aria-label="Kieli – Language">
+        <a href="../" hreflang="fi" lang="fi" aria-label="FI – suomeksi">FI</a>
+        <a href="../en/" hreflang="en" lang="en" aria-current="page" aria-label="EN – in English">EN</a>
+      </div>
     </div>
   </header>
-
-  <main id="content">
-    <section class="section hero bg-map" id="home" aria-labelledby="home-title">
-      <div class="container split">
-        <div class="hero__image">
-          <img src="../img/virpi-kallio.jpg" alt="Virpi Lindvall" width="585" height="585" fetchpriority="high">
+  <main id="sisalto">
+    <section class="panel panel--vihrea-vaalea panel--kartta hero" aria-labelledby="aloitus-otsikko">
+      <div class="wrap">
+        <div class="split">
+          <div class="hero__text">
+            <p class="hero__nosto">Over 20 years of GIS experience. A deep understanding of everyday municipal work.</p>
+            <h1 class="h1" id="aloitus-otsikko">GIS and building data that benefit your municipality.</h1>
+            <p class="lead">I help municipalities find gaps in property taxation, improve the quality of building registers, and produce and maintain GIS datasets.</p>
+            <p>I also offer practical expert help in developing GIS systems, registers and information management.</p>
+            <div class="actions">
+              <a class="btn btn--toissijainen" href="#kiinteistovero">Explore the services <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M5 12h14"/> <path d="m12 5 7 7-7 7"/> </svg></a>
+              <a class="btn btn--ensisijainen" href="#yhteys">Get in touch <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M5 12h14"/> <path d="m12 5 7 7-7 7"/> </svg></a>
+            </div>
+          </div>
+          <div class="hero__image">
+            <img src="../img/virpi-kallio-pysty-1000.jpg" srcset="../img/virpi-kallio-pysty-600.jpg 600w, ../img/virpi-kallio-pysty-1000.jpg 1000w" sizes="(min-width: 900px) 40vw, 100vw" alt="Virpi Lindvall sitting on a rock at the edge of a forest." width="1000" height="1250" fetchpriority="high">
+          </div>
         </div>
-        <div class="hero__text">
-          <h1 class="hero__title title display-1" id="home-title"><strong>VLiNdATA</strong></h1>
-          <p class="hero__lead display-7">GIS datasets<br>Databases<br>Property tax audits</p>
+        <nav class="chips" aria-label="Sections of the home page">
+          <a class="chip chip--hiekka" href="#kiinteistovero"><span class="chip__nro" aria-hidden="true">02</span>Property tax audits</a>
+          <a class="chip chip--vihrea" href="#paikkatieto"><span class="chip__nro" aria-hidden="true">03</span>GIS services</a>
+          <a class="chip chip--valkoinen" href="#miksi"><span class="chip__nro" aria-hidden="true">04</span>Why VLiNdATA?</a>
+          <a class="chip chip--terra" href="#referenssit"><span class="chip__nro" aria-hidden="true">05</span>References</a>
+          <a class="chip chip--metsa" href="#virpi"><span class="chip__nro" aria-hidden="true">06</span>About me</a>
+          <a class="chip chip--salvia" href="#yhteys"><span class="chip__nro" aria-hidden="true">07</span>Contact</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="panel panel--hiekka" id="kiinteistovero" aria-labelledby="kiinteistovero-otsikko">
+      <div class="wrap split">
+        <div class="section-head">
+          <p class="hero__nosto">Property tax audits</p>
+          <h2 class="h2" id="kiinteistovero-otsikko">Are all buildings in the registers?</h2>
+          <div class="flow">
+            <p class="lead">Incomplete building data can mean lost property tax revenue for the municipality.</p>
+            <p>I help identify buildings missing from the registers, compare building and tax data, and investigate incorrect or incomplete records.</p>
+            <p>The audit can be carried out in stages to suit the municipality's needs and resources.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn--toissijainen" href="../en/property-tax-audits/">More about property tax audits <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M5 12h14"/> <path d="m12 5 7 7-7 7"/> </svg></a>
+          </div>
+        </div>
+        <div class="card card--kartta">
+          <h3 class="h3">How the municipality benefits</h3>
+          <ul class="checks">
+            <li>An opportunity to increase property tax revenue.</li>
+            <li>More reliable building registers.</li>
+            <li>Less investigative work for the municipality's own staff.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="section services" id="services" aria-labelledby="services-title">
-      <div class="container split">
-        <div class="services__intro">
-          <h2 class="services__title title display-1" id="services-title"><strong>How can I help?</strong></h2>
-          <p class="services__lead display-7">I am a seasoned GIS professional with over 20 years of experience. I run projects systematically and do hourly work as agreed. Get in touch and tell me what you need – I will work out the best solution. :)</p>
-          <a class="btn" href="#references">References</a>
+    <section class="panel panel--vihrea-vaalea" id="paikkatieto" aria-labelledby="paikkatieto-otsikko">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="hero__nosto">GIS services</p>
+          <h2 class="h2" id="paikkatieto-otsikko">GIS data in order and in use.</h2>
+          <div class="flow">
+            <p class="lead">I produce GIS datasets from scratch and update, supplement and edit existing ones.</p>
+            <p>I carry out spatial analyses, register comparisons and data integration for a range of needs.</p>
+            <p>I also help municipalities think through how their GIS data, registers and systems are best organised.</p>
+          </div>
         </div>
-        <ul class="services__list">
-          <li class="service">
-            <span class="service__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="10" /> <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /> <path d="M2 12h20" /></svg></span>
-            <div>
-              <h3 class="service__title display-7">GIS datasets</h3>
-              <p class="service__text display-4">Creating GIS datasets from surveys, source data and analyses makes work easier, and I make sure the data stays easy to use and maintain later on – by yourself, if needed. I am happy to digitise local detailed plans, shore plans and master plans, which makes them easier for the municipality to use. Information that only exists "in employees' heads" should also be made available to everyone and kept up to date.</p>
-            </div>
+        <ul class="cards">
+          <li class="card">
+            <span class="card__icon"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/> <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/> <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/> </svg></span>
+            <h3 class="h3">New GIS datasets and dataset updates.</h3>
           </li>
-          <li class="service">
-            <span class="service__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false"><ellipse cx="12" cy="5" rx="9" ry="3" /> <path d="M3 5V19A9 3 0 0 0 21 19V5" /> <path d="M3 12A9 3 0 0 0 21 12" /></svg></span>
-            <div>
-              <h3 class="service__title display-7">Database analyses</h3>
-              <p class="service__text display-4">Databases hold a vast amount of information, and combining it gets more value out of the data collected. Linking the data to location also helps to see the bigger picture.</p>
-            </div>
+          <li class="card">
+            <span class="card__icon"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M3 7V5a2 2 0 0 1 2-2h2"/> <path d="M17 3h2a2 2 0 0 1 2 2v2"/> <path d="M21 17v2a2 2 0 0 1-2 2h-2"/> <path d="M7 21H5a2 2 0 0 1-2-2v-2"/> <circle cx="12" cy="12" r="3"/> <path d="m16 16-1.9-1.9"/> </svg></span>
+            <h3 class="h3">Spatial analyses and register integration.</h3>
           </li>
-          <li class="service">
-            <span class="service__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M10 12h4" /> <path d="M10 8h4" /> <path d="M14 21v-3a2 2 0 0 0-4 0v3" /> <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" /> <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" /></svg></span>
-            <div>
-              <h3 class="service__title display-7">Property tax audits</h3>
-              <p class="service__text display-4">Property tax is a significant source of income for municipalities. Buildings that are missing from the municipal and tax authority registers, or whose details are incomplete, can be found and brought within the scope of taxation. The project can be divided into parts: register comparison, spatial analysis and a questionnaire. If needed, I can also help organise the field measurements.</p>
-            </div>
+          <li class="card">
+            <span class="card__icon"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect width="8" height="8" x="3" y="3" rx="2"/> <path d="M7 11v4a2 2 0 0 0 2 2h4"/> <rect width="8" height="8" x="13" y="13" rx="2"/> </svg></span>
+            <h3 class="h3">Expert help with systems and information management.</h3>
           </li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn--toissijainen" href="../en/gis-services/">More about GIS services <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M5 12h14"/> <path d="m12 5 7 7-7 7"/> </svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel--valkoinen" id="miksi" aria-labelledby="miksi-otsikko">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="hero__nosto">Why VLiNdATA?</p>
+          <h2 class="h2" id="miksi-otsikko">I know everyday municipal work.</h2>
+          <div class="flow">
+            <p class="lead">Municipalities hold a lot of valuable data, but there is not always enough time or people to maintain and develop it.</p>
+            <p>I know how municipalities work, their systems and their practical challenges. That is why I can help find solutions that are not only technically sound but also workable in practice.</p>
+            <p>I don't offer needlessly complex solutions. My aim is to make the municipality's work easier and to get things moving.</p>
+          </div>
+        </div>
+        <ul class="stats">
+          <li class="stat"><span class="stat__iso">20+</span><span class="stat__teksti">years of GIS experience.</span></li>
+          <li class="stat"><span class="stat__ikoni"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 12h4"/> <path d="M10 8h4"/> <path d="M14 21v-3a2 2 0 0 0-4 0v3"/> <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/> <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/> </svg></span><span class="stat__teksti">Hands-on knowledge of municipal work.</span></li>
+          <li class="stat"><span class="stat__ikoni"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="m11 17 2 2a1 1 0 1 0 3-3"/> <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/> <path d="m21 3 1 11h-2"/> <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/> <path d="M3 4h8"/> </svg></span><span class="stat__teksti">Flexible cooperation and services sized to your needs.</span></li>
         </ul>
       </div>
     </section>
 
-    <section class="pricing bg-map" id="pricing" aria-labelledby="pricing-title">
-      <div class="container">
-        <h2 class="section-title title display-2" id="pricing-title"><strong>Pricing</strong></h2>
-        <div class="pricing__list">
-          <article class="price-card">
-            <h3 class="price-card__title display-5">Hourly work</h3>
-            <p class="price-card__text display-7">I do all kinds of hourly work related to GIS and registers. I understand the limited resources of small organisations and can help when needed.<br>Creating and analysing GIS datasets EUR 98/h + VAT at the applicable rate</p>
-          </article>
-          <article class="price-card">
-            <h3 class="price-card__title display-5">Project work</h3>
-            <p class="price-card__text display-7">Project work, such as property tax audits, as agreed.<br>Fieldwork to improve the building register, 2 people, EUR 70/h in total + VAT at the applicable rate<br>I am happy to give you a quote for the whole package you need.</p>
-          </article>
+    <section class="panel panel--terra-vaalea" id="referenssit" aria-labelledby="referenssit-otsikko">
+      <div class="wrap">
+        <p class="hero__nosto">References</p>
+        <h2 class="h2" id="referenssit-otsikko">Cooperation that works in practice.</h2>
+        <figure class="quote">
+          <span class="quote__mark"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/> <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/> </svg></span>
+          <blockquote>
+            <p>“In my opinion, the cooperation has gone well, as agreed, and has progressed flexibly.”</p>
+          </blockquote>
+          <figcaption><strong>Kari Tuohi</strong> Technical Director, Municipality of Aura <span class="muted">(translated from Finnish)</span></figcaption>
+        </figure>
+        <div class="flow quote__lisa">
+          <p>VLiNdATA has worked with the Municipality of Aura to investigate building register data and improve its quality.</p>
+          <p>The work proceeds with the municipality's resources in mind, and the follow-up of the audit results is also being developed.</p>
+        </div>
+        <h3 class="h3 logos__otsikko">Reference municipalities</h3>
+      <ul class="logos">
+        <li><a href="https://www.aura.fi/kunta-ja-paatoksenteko/ajankohtaista/tiedotteet/-rakennusrekisterin-paivitys-ja-kiinteistokysely-kesalla-2025/#news_anchor" target="_blank" rel="noopener"><img src="../img/logot/aura.webp" alt="Municipality of Aura" width="240" height="87" loading="lazy" decoding="async"><span class="sr-only"> (opens in a new tab, in Finnish)</span></a></li>
+        <li><a href="https://rusko.fi/" target="_blank" rel="noopener"><img src="../img/logot/rusko.webp" alt="Municipality of Rusko" width="240" height="44" loading="lazy" decoding="async"><span class="sr-only"> (opens in a new tab, in Finnish)</span></a></li>
+        <li><a href="https://www.sauvo.fi/asuminen-ja-ymparisto/rakennusvalvonta/kiinteistokartoitus/" target="_blank" rel="noopener"><img src="../img/logot/sauvo.webp" alt="Municipality of Sauvo" width="182" height="160" class="korkea" loading="lazy" decoding="async"><span class="sr-only"> (opens in a new tab, in Finnish)</span></a></li>
+        <li><a href="https://oripaa.fi/asukkaalle/tekninen-toimi/kiinteistoselvitys/" target="_blank" rel="noopener"><img src="../img/logot/oripaa.webp" alt="Municipality of Oripää" width="240" height="100" loading="lazy" decoding="async"><span class="sr-only"> (opens in a new tab, in Finnish)</span></a></li>
+        <li><a href="https://lieto.fi/palvelut-ja-asiointi/rakentaminen/rakennusrekisterin-paivitys/" target="_blank" rel="noopener"><img src="../img/logot/lieto.webp" alt="City of Lieto" width="240" height="240" class="korkea" loading="lazy" decoding="async"><span class="sr-only"> (opens in a new tab, in Finnish)</span></a></li>
+        <li><a href="https://www.naantali.fi/fi" target="_blank" rel="noopener"><img src="../img/logot/naantali.svg" alt="City of Naantali" width="2675" height="1066" loading="lazy" decoding="async"><span class="sr-only"> (opens in a new tab, in Finnish)</span></a></li>
+        <li><a href="https://www.masku.fi/" target="_blank" rel="noopener"><img src="../img/logot/masku.webp" alt="Municipality of Masku" width="308" height="121" loading="lazy" decoding="async"><span class="sr-only"> (opens in a new tab, in Finnish)</span></a></li>
+        <li><a href="https://www.sakyla.fi/" target="_blank" rel="noopener"><img src="../img/logot/sakyla.svg" alt="Municipality of Säkylä" width="398" height="244" class="korkea" loading="lazy" decoding="async"><span class="sr-only"> (opens in a new tab, in Finnish)</span></a></li>
+      </ul>
+        <div class="actions">
+          <a class="btn btn--reuna" href="../en/references/">More about references <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M5 12h14"/> <path d="m12 5 7 7-7 7"/> </svg></a>
         </div>
       </div>
     </section>
 
-    <section class="section about" id="about" aria-labelledby="about-title">
-      <div class="container split">
-        <div class="about__image">
-          <img src="../img/virpi-puu.jpg" alt="Virpi Lindvall" width="750" height="1177" loading="lazy" decoding="async">
+    <section class="panel panel--metsa panel--kartta founder" id="virpi" aria-labelledby="virpi-otsikko">
+      <div class="wrap split split--kuva-ensin">
+        <div class="founder__image">
+          <img src="../img/virpi-metsa-pysty-1000.jpg" srcset="../img/virpi-metsa-pysty-600.jpg 600w, ../img/virpi-metsa-pysty-1000.jpg 1000w" sizes="(min-width: 900px) 40vw, 100vw" alt="Virpi Lindvall leaning against a tree trunk in a forest, wearing a terracotta shirt." width="1000" height="1250" loading="lazy" decoding="async">
         </div>
-        <div class="about__text">
-          <h2 class="section-title title display-2" id="about-title"><strong>About me</strong></h2>
-          <p class="text display-7">I am a mother of three young people, the spouse of a part-time farmer, a GIS manager in my day job, a part-time entrepreneur and a landlord. Many irons in the fire, in other words.<br><br>Running everyday life takes strong organisational skills, and project management is one of my strengths. I make sure schedules are kept and data is well managed, and I support my clients as needed – sometimes holding their hand. :)<br><br>I master data collection, editing, conversions and analyses. I always aim to offer my clients the best possible solution for their needs. My goal is to help and make work easier.<br><br>The young people in our family do the company's fieldwork, and giving them work experience is important to me. When needed, I draw on my wide network of partners to achieve the best result.</p>
+        <div>
+          <p class="hero__nosto">About me</p>
+          <h2 class="h2" id="virpi-otsikko">Hi, I'm Virpi!</h2>
+          <div class="flow">
+            <p class="lead">I'm Virpi Lindvall, founder of VLiNdATA Oy and a GIS specialist.</p>
+            <p>I have over 20 years of experience working with GIS data and a strong background in municipal GIS, building registers, building control and land use.</p>
+            <p>I enjoy solving problems and making something that seemed complicated work more simply.</p>
+            <p>It matters to me to understand the client's real need, find a practical solution and make sure that what has been agreed moves forward.</p>
+          </div>
+          <p class="founder__nosto">The best part of my work is when I can make my client's everyday work easier.</p>
+          <div class="actions">
+            <a class="btn btn--reuna" href="../en/company/">More about the company <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M5 12h14"/> <path d="m12 5 7 7-7 7"/> </svg></a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section contacts bg-map" id="contact" aria-labelledby="contact-title">
-      <div class="container">
-        <h2 class="section-title title display-2" id="contact-title"><strong>Contact</strong></h2>
-        <ul class="contacts__list">
-          <li class="contact-card">
-            <span class="contact-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg></span>
-            <div>
-              <h3 class="contact-card__title display-5">Phone</h3>
-              <p class="contact-card__text display-7"><a class="link" href="tel:+358443012471">+358 44 301 2471</a></p>
-            </div>
-          </li>
-          <li class="contact-card">
-            <span class="contact-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /> <rect x="2" y="4" width="20" height="16" rx="2" /></svg></span>
-            <div>
-              <h3 class="contact-card__title display-5">Email</h3>
-              <p class="contact-card__text display-7"><a class="link" href="mailto:virpi@vlindata.fi">virpi@vlindata.fi</a></p>
-            </div>
-          </li>
-          <li class="contact-card">
-            <span class="contact-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="10" /> <path d="M12 6v6l4 2" /></svg></span>
-            <div>
-              <h3 class="contact-card__title display-5">Working hours</h3>
-              <p class="contact-card__text display-7">Evenings, weekends and holidays</p>
-            </div>
-          </li>
-          <li class="contact-card">
-            <span class="contact-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M3 5h.01" /> <path d="M3 12h.01" /> <path d="M3 19h.01" /> <path d="M8 5h13" /> <path d="M8 12h13" /> <path d="M8 19h13" /></svg></span>
-            <div>
-              <h3 class="contact-card__title display-5">Business ID</h3>
-              <p class="contact-card__text display-7">VLiNdATA Oy <a class="link" href="https://tietopalvelu.ytj.fi/yritys/3410053-6" target="_blank" rel="noopener">3410053-6<span class="sr-only"> (opens in a new tab, in Finnish)</span></a></p>
-            </div>
-          </li>
-        </ul>
+    <section class="panel panel--valkoinen" id="yhteys" aria-labelledby="yhteys-otsikko">
+      <div class="wrap split split--tasan">
+        <div>
+          <p class="hero__nosto">Contact</p>
+          <h2 class="h2" id="yhteys-otsikko">Could I be of help?</h2>
+          <div class="flow">
+            <p class="lead">Does your municipality need a property tax audit, a GIS dataset produced or updated, or help with registers and systems?</p>
+            <p>Feel free to get in touch, even if you don't yet know exactly what kind of service you need.</p>
+            <p>Let's work out together how best to solve it.</p>
+          </div>
+          <p class="contact-name">Virpi Lindvall<span>VLiNdATA Oy</span></p>
+          <ul class="contact-list">
+            <li><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/> </svg><span><span class="sr-only">Phone: </span><a href="tel:+358443012471">+358 44 301 2471</a></span></li>
+            <li><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/> <rect x="2" y="4" width="20" height="16" rx="2"/> </svg><span><span class="sr-only">Email: </span><a href="mailto:virpi@vlindata.fi">virpi@vlindata.fi</a></span></li>
+            <li><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <circle cx="12" cy="12" r="10"/> <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/> <path d="M2 12h20"/> </svg><span><span class="sr-only">Website: </span>www.vlindata.fi</span></li>
+          </ul>
+        </div>
+        <form class="form" action="mailto:virpi@vlindata.fi" method="post" enctype="text/plain" data-contact-form novalidate>
+      <h3 class="h3">Send a message</h3>
+      <p class="form__note">Fill in the fields and the message opens ready in your email app.</p>
+      <div class="field">
+        <label for="lomake-nimi">Name <span class="muted">(required)</span></label>
+        <input id="lomake-nimi" name="nimi" type="text" autocomplete="name" required aria-describedby="lomake-nimi-virhe">
+        <p class="field__error" id="lomake-nimi-virhe" hidden></p>
       </div>
-    </section>
-
-    <section class="references" id="references" aria-labelledby="references-title">
-      <div class="container">
-        <h2 class="section-title title display-2" id="references-title"><strong>References</strong></h2>
-        <ul class="references__list">
-          <li class="references__item"><a href="https://rusko.fi/" target="_blank" rel="noopener"><img src="../img/logot/rusko.webp" alt="Municipality of Rusko" width="240" height="44" loading="lazy" decoding="async"><span class="sr-only"> (opens in a new tab, in Finnish)</span></a></li>
-          <li class="references__item"><a href="https://www.sauvo.fi/asuminen-ja-ymparisto/rakennusvalvonta/kiinteistokartoitus/" target="_blank" rel="noopener"><img src="../img/logot/sauvo.webp" alt="Municipality of Sauvo" width="182" height="160" loading="lazy" decoding="async"><span class="sr-only"> (opens in a new tab, in Finnish)</span></a></li>
-          <li class="references__item"><a href="https://oripaa.fi/asukkaalle/tekninen-toimi/kiinteistoselvitys/" target="_blank" rel="noopener"><img src="../img/logot/oripaa.webp" alt="Municipality of Oripää" width="240" height="100" loading="lazy" decoding="async"><span class="sr-only"> (opens in a new tab, in Finnish)</span></a></li>
-          <li class="references__item"><a href="https://lieto.fi/palvelut-ja-asiointi/rakentaminen/rakennusrekisterin-paivitys/" target="_blank" rel="noopener"><img src="../img/logot/lieto.webp" alt="City of Lieto" width="240" height="240" loading="lazy" decoding="async"><span class="sr-only"> (opens in a new tab, in Finnish)</span></a></li>
-          <li class="references__item"><a href="https://www.naantali.fi/en" target="_blank" rel="noopener"><img src="../img/logot/naantali.svg" alt="City of Naantali" width="2675" height="1066" loading="lazy" decoding="async"><span class="sr-only"> (opens in a new tab)</span></a></li>
-          <li class="references__item"><a href="https://www.masku.fi/" target="_blank" rel="noopener"><img src="../img/logot/masku.webp" alt="Municipality of Masku" width="308" height="121" loading="lazy" decoding="async"><span class="sr-only"> (opens in a new tab, in Finnish)</span></a></li>
-          <li class="references__item"><a href="https://www.sakyla.fi/" target="_blank" rel="noopener"><img src="../img/logot/sakyla.svg" alt="Municipality of Säkylä" width="398" height="244" loading="lazy" decoding="async"><span class="sr-only"> (opens in a new tab, in Finnish)</span></a></li>
-          <li class="references__item"><a href="https://www.aura.fi/kunta-ja-paatoksenteko/ajankohtaista/tiedotteet/-rakennusrekisterin-paivitys-ja-kiinteistokysely-kesalla-2025/#news_anchor" target="_blank" rel="noopener"><img src="../img/logot/aura.webp" alt="Municipality of Aura" width="240" height="87" loading="lazy" decoding="async"><span class="sr-only"> (opens in a new tab, in Finnish)</span></a></li>
-        </ul>
+      <div class="field">
+        <label for="lomake-organisaatio">Municipality or organisation</label>
+        <input id="lomake-organisaatio" name="organisaatio" type="text" autocomplete="organization">
+      </div>
+      <div class="field">
+        <label for="lomake-sahkoposti">Email address <span class="muted">(required)</span></label>
+        <input id="lomake-sahkoposti" name="sahkoposti" type="email" autocomplete="email" required aria-describedby="lomake-sahkoposti-virhe">
+        <p class="field__error" id="lomake-sahkoposti-virhe" hidden></p>
+      </div>
+      <div class="field">
+        <label for="lomake-viesti">Message <span class="muted">(required)</span></label>
+        <textarea id="lomake-viesti" name="viesti" rows="6" required aria-describedby="lomake-viesti-virhe"></textarea>
+        <p class="field__error" id="lomake-viesti-virhe" hidden></p>
+      </div>
+      <button class="btn btn--ensisijainen" type="submit">Send message <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M5 12h14"/> <path d="m12 5 7 7-7 7"/> </svg></button>
+      <p class="form__note">The form does not store anything on this site. The message is sent from your own email when you press Send there.</p>
+      <p class="form__status" data-form-status role="status" aria-live="polite"></p>
+    </form>
       </div>
     </section>
   </main>
-
   <footer class="footer">
-    <div class="container">
-      <p class="footer__row display-7">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <img src="../img/vlindata-logo.webp" alt="" width="52" height="58" loading="lazy">
+            <strong>VLiNdATA Oy</strong>
+          </div>
+          <p class="footer__tag">GIS and building data that benefit municipalities.</p>
+        </div>
+        <div>
+          <h2>Services</h2>
+          <ul>
+            <li><a href="../en/property-tax-audits/">Property tax audits</a></li>
+            <li><a href="../en/gis-services/">GIS services</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Company</h2>
+          <ul>
+            <li><a href="../en/company/">Company</a></li>
+            <li><a href="../en/references/">References</a></li>
+            <li><a href="../en/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <ul>
+            <li><a href="tel:+358443012471">+358 44 301 2471</a></li>
+            <li><a href="mailto:virpi@vlindata.fi">virpi@vlindata.fi</a></li>
+            <li>Business ID 3410053-6</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
         <span>© 2026 VLiNdATA Oy</span>
-        <a href="cookies.html">Cookies</a>
+        <a href="../en/cookies/">Cookies</a>
         <button type="button" id="consent-open">Cookie settings</button>
-        <span class="footer__version">version <span id="site-version">1.0.0</span></span>
-      </p>
+        <span class="footer__version">version <span data-site-version>2.0.0</span></span>
+      </div>
     </div>
   </footer>
-
   <div class="consent" id="consent" role="region" aria-label="Cookie notice" hidden>
-    <p class="consent__text">I use cookies to analyse my content and visitor numbers.<br><a href="cookies.html">More about cookies</a></p>
+    <p class="consent__text">I use cookies to analyse visitor numbers. Google Analytics is loaded only if you accept. <a href="../en/cookies/">More about cookies</a></p>
     <div class="consent__actions">
-      <button class="consent__btn consent__btn--deny" type="button" data-consent="deny">Decline</button>
-      <button class="consent__btn consent__btn--accept" type="button" data-consent="accept">Accept</button>
+      <button class="btn btn--reuna" type="button" data-consent="deny">Decline</button>
+      <button class="btn btn--toissijainen" type="button" data-consent="accept">Accept</button>
     </div>
   </div>
+  <script src="../js/contact-form.js" defer></script>
 </body>
 </html>

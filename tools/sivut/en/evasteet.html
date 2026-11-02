@@ -1,0 +1,37 @@
+    <section class="panel panel--vihrea-vaalea page-hero" aria-labelledby="sivu-otsikko">
+      <div class="wrap">
+      {{murupolku}}
+        <h1 class="h1" id="sivu-otsikko">How does my site track you?</h1>
+        <p class="lead">Cookies are small text files that websites can use to make the user experience more efficient.</p>
+      </div>
+    </section>
+
+    <section class="panel panel--valkoinen page-content" aria-labelledby="evasteet-otsikko">
+      <div class="wrap">
+        <div class="block">
+          <h2 class="h2" id="evasteet-otsikko">Cookies on this site</h2>
+          <div class="prose">
+            <p>By law, I may store cookies on your device if they are strictly necessary for the site to work. For all other types of cookies I need your consent.</p>
+            <p>Google Analytics cookies are stored only if you accept them. If you decline, the page does not load the Google service at all.</p>
+            <p>The contact form stores nothing: it opens the message in your own email app.</p>
+            <div class="table-wrap">
+              <table class="cookie-table">
+                <caption class="sr-only">Cookies and stored data used by this site</caption>
+                <thead>
+                  <tr><th scope="col">Name</th><th scope="col">Purpose</th><th scope="col">Kept for</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>vlindata-consent</td><td>Remembers your cookie choice. Stored in your browser's own storage and never sent anywhere.</td><td>Until you clear your browser data</td></tr>
+                  <tr><td>_ga</td><td>Google Analytics: distinguishes visitors in order to count them.</td><td>2 years</td></tr>
+                  <tr><td>_ga_73CPF19H48</td><td>Google Analytics: keeps the session state.</td><td>2 years</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="actions">
+              <button class="btn btn--toissijainen" type="button" data-consent-open>Change cookie choice</button>
+              <a class="btn btn--reuna" href="{{sivu:etusivu}}">Home page</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

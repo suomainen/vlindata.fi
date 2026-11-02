@@ -1,35 +1,42 @@
 # Muutosloki
 
-Sivuston versio näkyy alatunnisteessa. Versio on määritelty tiedostossa `js/menu.js` (`SITE_VERSION`). Nosta versiota jokaisessa muutoksessa ja kirjaa muutos tähän.
+Sivuston versio näkyy alatunnisteessa. Versio on määritelty tiedostossa `js/menu.js` (`SITE_VERSION`) ja alatunnisteen oletusteksti tiedostossa `tools/rakenna.py`.
+
+Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
+
+## 2.0.0
+
+Uusi ulkoasu ja sisältö Virpin toteutusohjeen mukaan.
+
+### Rakenne ja sisältö
+- Omat sivut: Kiinteistöveroselvitykset, Paikkatietopalvelut, Yritys, Referenssit ja Yhteystiedot. Selkeät osoitteet (esim. `/kiinteistoveroselvitykset/`).
+- Etusivu seitsemänä värillisenä paneelina: aloitus, kiinteistöveroselvitykset, paikkatietopalvelut, miksi VLiNdATA, referenssit, yrittäjä ja yhteystiedot. Aloituksessa paneelivalitsin, josta pääsee suoraan osioon.
+- Tekstit sanatarkasti toteutusohjeesta, englanninkieliset käännökset kaikille sivuille.
+- Kari Tuohin (Auran kunta) lainaus etusivulla ja referenssisivulla.
+- Yhteydenottolomake (nimi, kunta tai organisaatio, sähköposti, viesti) avaa viestin kävijän sähköpostiohjelmassa. Tietoja ei tallenneta sivustolle.
+- Hinnat poistettu, koska niitä ei ole uusissa teksteissä.
+- Vanhat osoitteet `evasteet.html` ja `en/cookies.html` ohjautuvat uusiin.
+
+### Ulkoasu
+- Virpin valokuvasta poimittu väripaletti: salvianvihreä, vaalea vihreä, metsänvihreä, hiekka, luonnonvalkoinen ja terrakotta.
+- Otsikot Manrope, leipäteksti Inter (omalta palvelimelta).
+- Kaksi valokuvaa: kallio (aloitus, yhteystiedot) ja metsä (yrittäjä, yritys). Karttakuvio tehosteena.
+- Uudet jakokuvat.
+
+### Ylläpito
+- Sivut kootaan skriptillä `tools/rakenna.py` tekstitiedostoista `tools/sivut/fi` ja `tools/sivut/en`. Yhteinen yläpalkki, alatunniste ja hakukonetiedot ovat yhdessä paikassa.
+- sitemap.xml tehdään samalla skriptillä.
+
+### Saavutettavuus ja hakukoneet
+- Tarkistettu axe-työkalulla (WCAG 2.2 AA) kaikilla sivuilla tietokoneen ja puhelimen leveydellä: ei virheitä.
+- Murupolku ja BreadcrumbList alasivuilla, Service-tieto palvelusivuilla.
 
 ## 1.0.0
 
 Ensimmäinen versio ilman Mobirisea. Ulkoasu ja tekstit ovat samat kuin aiemmalla vlindata.fi-sivulla.
 
-### Perusta
 - Sivu rakennettu uudelleen puhtaaksi HTML-, CSS- ja JavaScript-koodiksi ilman Mobirisea ja Bootstrapia.
-- Lexend-fontti omalta palvelimelta (ei Google Fontsia), ikonit Lucide-kirjastosta.
-- Kuvat oikeisiin tiedostomuotoihin; valokuvat JPG, logot WebP tai SVG.
-- Rikkinäinen tiedosto `tausta.webp` ja Mobirise-merkki poistettu.
-- Alatunniste: "© 2026 VLiNdATA Oy", evästeet ja evästeasetukset, versionumero.
-- Ruskon referenssilinkki osoittaa kunnan etusivulle (vanha kiinteistökartoitussivu on poistunut).
-
-### Saavutettavuus
-- Otsikkotasot järjestykseen (h1 → h2 → h3), palvelujen kuvaukset kappaleiksi.
-- Kontrastit WCAG AA -tasolle: harmaa leipäteksti ja vihreät painikkeet hieman tummemmiksi.
-- "Siirry sisältöön" -linkki, näkyvä fokus, valikko toimii näppäimistöllä (Esc sulkee).
-- Logon alt-teksti korjattu, ulkoisissa linkeissä tieto uudesta välilehdestä.
-- Mobiilivalikko toimii myös ilman evästeiden hyväksyntää.
-
-### Evästeet ja Google Analytics
-- Uusi evästeilmoitus (Google Consent Mode v2). GA4 latautuu vasta hyväksynnän jälkeen.
-- Valinnan voi muuttaa alatunnisteesta tai evästesivulta; peruminen poistaa GA-evästeet.
-- Evästesivulle taulukko sivun evästeistä.
-
-### Hakukoneet ja jakaminen
-- Otsikko, kuvaus, canonical, Open Graph ja X-kortti, rakenteinen yritystieto (JSON-LD).
-- Jakokuvat suomeksi ja englanniksi, favicon ja kotivalikon kuvakkeet, manifesti.
-- robots.txt, sitemap.xml, llms.txt ja oma 404-sivu.
-
-### Kieliversiot
-- Englanninkielinen etusivu (`/en/`) ja evästesivu (`/en/cookies.html`), kielivalinta FI | EN.
+- Evästeilmoitus (Google Consent Mode v2): GA4 latautuu vasta hyväksynnän jälkeen.
+- Hakukonetiedot, jakokuvat, favicon, manifesti, robots.txt, sitemap.xml, llms.txt ja 404-sivu.
+- Englanninkielinen etusivu ja evästesivu.
+- Saavutettavuuskorjaukset (otsikkotasot, kontrastit, näppäimistökäyttö).

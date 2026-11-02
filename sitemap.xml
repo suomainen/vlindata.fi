@@ -2,30 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://vlindata.fi/</loc>
-    <lastmod>2026-11-02</lastmod>
     <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/"/>
   </url>
   <url>
     <loc>https://vlindata.fi/en/</loc>
-    <lastmod>2026-11-02</lastmod>
     <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/"/>
   </url>
   <url>
-    <loc>https://vlindata.fi/evasteet.html</loc>
-    <lastmod>2026-11-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/evasteet.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/cookies.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/evasteet.html"/>
+    <loc>https://vlindata.fi/kiinteistoveroselvitykset/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/kiinteistoveroselvitykset/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/property-tax-audits/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/kiinteistoveroselvitykset/"/>
   </url>
   <url>
-    <loc>https://vlindata.fi/en/cookies.html</loc>
-    <lastmod>2026-11-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/evasteet.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/cookies.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/evasteet.html"/>
+    <loc>https://vlindata.fi/en/property-tax-audits/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/kiinteistoveroselvitykset/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/property-tax-audits/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/kiinteistoveroselvitykset/"/>
+  </url>
+  <url>
+    <loc>https://vlindata.fi/paikkatietopalvelut/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/paikkatietopalvelut/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/gis-services/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/paikkatietopalvelut/"/>
+  </url>
+  <url>
+    <loc>https://vlindata.fi/en/gis-services/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/paikkatietopalvelut/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/gis-services/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/paikkatietopalvelut/"/>
+  </url>
+  <url>
+    <loc>https://vlindata.fi/yritys/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/yritys/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/company/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/yritys/"/>
+  </url>
+  <url>
+    <loc>https://vlindata.fi/en/company/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/yritys/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/company/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/yritys/"/>
+  </url>
+  <url>
+    <loc>https://vlindata.fi/referenssit/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/referenssit/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/references/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/referenssit/"/>
+  </url>
+  <url>
+    <loc>https://vlindata.fi/en/references/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/referenssit/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/references/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/referenssit/"/>
+  </url>
+  <url>
+    <loc>https://vlindata.fi/yhteystiedot/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/yhteystiedot/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/yhteystiedot/"/>
+  </url>
+  <url>
+    <loc>https://vlindata.fi/en/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/yhteystiedot/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/yhteystiedot/"/>
   </url>
 </urlset>
