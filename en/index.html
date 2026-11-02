@@ -140,7 +140,7 @@
     </div>
   </header>
   <main id="sisalto">
-    <section class="panel panel--vihrea-vaalea panel--kartta hero" aria-labelledby="aloitus-otsikko">
+    <section class="panel panel--vihrea-vaalea panel--kartta hero" id="aloitus" data-hz="Home" aria-labelledby="aloitus-otsikko">
       <div class="wrap">
         <div class="split">
           <div class="hero__text">
@@ -168,7 +168,7 @@
       </div>
     </section>
 
-    <section class="panel panel--hiekka" id="kiinteistovero" aria-labelledby="kiinteistovero-otsikko">
+    <section class="panel panel--hiekka" id="kiinteistovero" data-hz="Property tax audits" aria-labelledby="kiinteistovero-otsikko">
       <div class="wrap split">
         <div class="section-head">
           <p class="hero__nosto">Property tax audits</p>
@@ -193,7 +193,7 @@
       </div>
     </section>
 
-    <section class="panel panel--vihrea-vaalea" id="paikkatieto" aria-labelledby="paikkatieto-otsikko">
+    <section class="panel panel--vihrea-vaalea" id="paikkatieto" data-hz="GIS services" aria-labelledby="paikkatieto-otsikko">
       <div class="wrap">
         <div class="section-head">
           <p class="hero__nosto">GIS services</p>
@@ -224,7 +224,7 @@
       </div>
     </section>
 
-    <section class="panel panel--valkoinen" id="miksi" aria-labelledby="miksi-otsikko">
+    <section class="panel panel--valkoinen" id="miksi" data-hz="Why VLiNdATA?" aria-labelledby="miksi-otsikko">
       <div class="wrap">
         <div class="section-head">
           <p class="hero__nosto">Why VLiNdATA?</p>
@@ -243,7 +243,7 @@
       </div>
     </section>
 
-    <section class="panel panel--terra-vaalea" id="referenssit" aria-labelledby="referenssit-otsikko">
+    <section class="panel panel--terra-vaalea" id="referenssit" data-hz="References" aria-labelledby="referenssit-otsikko">
       <div class="wrap">
         <p class="hero__nosto">References</p>
         <h2 class="h2" id="referenssit-otsikko">Cooperation that works in practice.</h2>
@@ -275,7 +275,7 @@
       </div>
     </section>
 
-    <section class="panel panel--metsa panel--kartta founder" id="virpi" aria-labelledby="virpi-otsikko">
+    <section class="panel panel--metsa panel--kartta founder" id="virpi" data-hz="About me" aria-labelledby="virpi-otsikko">
       <div class="wrap split split--kuva-ensin">
         <div class="founder__image">
           <img src="../img/virpi-metsa-pysty-1000.jpg" srcset="../img/virpi-metsa-pysty-600.jpg 600w, ../img/virpi-metsa-pysty-1000.jpg 1000w" sizes="(min-width: 900px) 40vw, 100vw" alt="Virpi Lindvall leaning against a tree trunk in a forest, wearing a terracotta shirt." width="1000" height="1250" loading="lazy" decoding="async">
@@ -297,7 +297,7 @@
       </div>
     </section>
 
-    <section class="panel panel--valkoinen" id="yhteys" aria-labelledby="yhteys-otsikko">
+    <section class="panel panel--valkoinen" id="yhteys" data-hz="Contact" aria-labelledby="yhteys-otsikko">
       <div class="wrap split split--tasan">
         <div>
           <p class="hero__nosto">Contact</p>
@@ -381,7 +381,7 @@
         <span>© 2026 VLiNdATA Oy</span>
         <a href="../en/cookies/">Cookies</a>
         <button type="button" id="consent-open">Cookie settings</button>
-        <span class="footer__version">version <span data-site-version>2.0.0</span></span>
+        <span class="footer__version">version <span data-site-version>2.1.0</span></span>
       </div>
     </div>
   </footer>
@@ -393,5 +393,6 @@
     </div>
   </div>
   <script src="../js/contact-form.js" defer></script>
+  <script src="../js/vaakavieritys.js" defer></script>
 </body>
 </html>

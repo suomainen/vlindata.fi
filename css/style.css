@@ -790,3 +790,100 @@ p { text-wrap: pretty; }
 
 /* Hiekkapaneelissa keskimmäinen nosto erottuu taustasta */
 .panel--hiekka .stat:nth-child(2) { background: var(--valkoinen); }
+
+/* 17. Etusivun vaakavieritys (js/vaakavieritys.js) ------------------------
+   Käytössä vain, kun skripti lisää html-elementtiin luokan hz-on
+   (leveä ja riittävän korkea näyttö, ei vähennettyä liikettä). */
+.hz__kaista,
+.hz__ilmaisin { display: none; }
+
+html.hz-on { scroll-behavior: auto; } /* JS päättää pehmeästä vierityksestä itse */
+.hz-on .hz { position: relative; }
+.hz-on .hz__nayttamo {
+  position: sticky;
+  top: var(--hz-ylaosa, 72px);
+  display: flex;
+  gap: 8px;
+  height: calc(100vh - var(--hz-ylaosa, 72px));
+  padding: 0 8px 8px;
+  overflow: hidden;
+}
+.hz-on .hz .panel {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--kulma-iso);
+  cursor: default;
+}
+.hz-on .hz .panel:not(.is-auki) { cursor: pointer; }
+.hz-on .hz .panel > .wrap {
+  flex: none;
+  max-width: none;
+  margin: auto 0;
+  padding: clamp(32px, 5vh, 64px) clamp(32px, 4vw, 72px) calc(clamp(32px, 5vh, 64px) + 48px) calc(58px + clamp(16px, 2vw, 40px));
+  opacity: clamp(0, calc((var(--hz-paino, 1) - 0.35) * 2.2), 1);
+  will-change: transform;
+}
+.hz-on .hz .panel > .wrap.split { display: grid; }
+.hz-on .hz .chips { display: none; }
+.hz-on .hz .h1 { font-size: clamp(2.3rem, min(3.6vw, 6.4vh), 3.8rem); }
+.hz-on .hz .h2 { font-size: clamp(1.9rem, min(3.2vw, 5.6vh), 3rem); }
+.hz-on .hz .hero__text .h1 { max-width: 18ch; }
+.hz-on .hz .hero__nosto { margin-bottom: 18px; }
+.hz-on .hz .hero__image img,
+.hz-on .hz .founder__image img { max-height: calc(100vh - var(--hz-ylaosa, 72px) - 120px); width: auto; max-width: 100%; margin-inline: auto; }
+.hz-on .hz .hero__image,
+.hz-on .hz .founder__image { background: none; }
+.hz-on .hz .hero__image img,
+.hz-on .hz .founder__image img { border-radius: var(--kulma-iso); }
+.hz-on .hz .panel--valkoinen { border: 0; box-shadow: inset 0 0 0 1px var(--viiva); }
+
+/* Suljetun paneelin kaista: numero ja nimi pystyssä */
+.hz-on .hz__kaista {
+  position: absolute;
+  inset: 0 auto 0 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 58px;
+  padding: 22px 0;
+  color: inherit;
+  text-decoration: none;
+  opacity: clamp(0, calc(1 - var(--hz-paino, 0) * 3), 1);
+  pointer-events: none;
+}
+.hz-on .hz .panel:not(.is-auki) > .hz__kaista { pointer-events: auto; }
+.hz__nro { font: 600 0.8rem/1 var(--font-teksti); }
+.hz__nimi {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font: 700 1rem/1 var(--font-otsikko);
+  white-space: nowrap;
+}
+
+/* Etenemisen ilmaisin näyttämön alareunassa */
+.hz-on .hz__ilmaisin {
+  position: absolute;
+  left: 32px;
+  bottom: 24px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(var(--valkoinen-rgb), 0.92);
+  box-shadow: inset 0 0 0 1px var(--viiva);
+  color: var(--teksti);
+  font: 600 0.85rem/1 var(--font-teksti);
+  white-space: pre;
+  pointer-events: none;
+}
+.hz__palkki { position: relative; width: 120px; height: 4px; border-radius: 4px; background: var(--viiva); overflow: hidden; }
+.hz__palkki span { position: absolute; inset: 0; background: var(--terra); transform-origin: left; transform: scaleX(0); }

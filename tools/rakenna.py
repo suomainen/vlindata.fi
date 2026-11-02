@@ -445,7 +445,7 @@ def footer(kieli, root):
         <span>© {VUOSI} VLiNdATA Oy</span>
         <a href="{p('evasteet')}">{t['f_cookies']}</a>
         <button type="button" id="consent-open">{t['f_cookie_settings']}</button>
-        <span class="footer__version">{t['f_version']} <span data-site-version>2.0.0</span></span>
+        <span class="footer__version">{t['f_version']} <span data-site-version>2.1.0</span></span>
       </div>
     </div>
   </footer>
@@ -487,6 +487,8 @@ def rakenna_sivu(kieli, avain):
     lahde = TYOKALUT / "sivut" / kieli / f"{avain}.html"
     runko = tayta(lahde.read_text(encoding="utf-8").rstrip(), kieli, avain, root)
     skriptit = f'  <script src="{root}js/contact-form.js" defer></script>\n' if "data-contact-form" in runko else ""
+    if "data-hz=" in runko:
+        skriptit += f'  <script src="{root}js/vaakavieritys.js" defer></script>\n'
     html = f"""<!doctype html>
 <html lang="{kieli}">
 {head(kieli, avain, root)}

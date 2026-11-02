@@ -17,6 +17,7 @@ css/fonts.css, fonts/            Manrope ja Inter sekä lisenssit
 js/consent.js                    evästeilmoitus ja Google Analytics 4
 js/menu.js                       mobiilivalikko ja versionumero
 js/contact-form.js               yhteydenottolomake (avaa sähköpostin)
+js/vaakavieritys.js              etusivun vaakavieritys tietokoneella
 img/                             valokuvat, karttakuviot, logot, jakokuvat
 favicon.*, apple-touch-icon.png, img/icons/, site.webmanifest   kuvakkeet
 robots.txt, sitemap.xml, llms.txt                               hakukoneille
@@ -64,6 +65,10 @@ git push --follow-tags
 - Kirjaa muutos `CHANGELOG.md`:hen (uusin ensin, ei päivämääriä).
 - Merkitse versio: `git tag -a v2.0.1 -m "Kuvaus"` ja julkaise `git push --follow-tags`.
 - Pelkkä README- tai muutoslokimuutos ei nosta versiota.
+
+## Etusivun vaakavieritys
+
+`js/vaakavieritys.js` asettaa etusivun paneelit (`<section class="panel" data-hz="Nimi">`) vierekkäin, kun näyttö on vähintään 1180 × 620 px eikä kävijä ole pyytänyt vähemmän liikettä. Muuten sivu on tavallinen pystysivu. Asetukset (kaistojen leveys, avautumisen pituus) ovat tiedoston alussa ja tyylit `css/style.css`:n kohdassa 17. Uusi paneeli lisätään etusivun tekstitiedostoon `data-hz`-nimen kanssa, ja se tulee vaakavieritykseen automaattisesti.
 
 ## Analytiikka ja evästeet
 
