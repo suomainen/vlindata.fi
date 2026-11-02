@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://vlindata.fi/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/"/>
+  </url>
+  <url>
+    <loc>https://vlindata.fi/en/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/"/>
+  </url>
+  <url>
+    <loc>https://vlindata.fi/evasteet.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/evasteet.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/cookies.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/evasteet.html"/>
+  </url>
+  <url>
+    <loc>https://vlindata.fi/en/cookies.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/evasteet.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/cookies.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/evasteet.html"/>
+  </url>
+</urlset>

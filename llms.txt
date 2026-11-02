@@ -1,0 +1,47 @@
+# VLiNdATA Oy
+
+> VLiNdATA Oy (Virpi Lindvall) tekee kunnille ja yrityksille paikkatietoaineistoja, tietokanta-analyysejä ja kiinteistöveroselvityksiä yli 20 vuoden kokemuksella. Englanninkielinen käännös on tiedoston lopussa.
+
+## Palvelut
+
+- **Paikkatietoaineistot**: aineistojen laatiminen mittauksista, lähtöaineistoista ja analyyseistä; asema-, ranta- ja yleiskaavojen vektorointi.
+- **Tietokanta-analyysit**: rekisterien ja tietokantojen yhdistäminen ja liittäminen sijaintiin.
+- **Kiinteistöveroselvitykset**: kunnan ja verottajan rekistereistä puuttuvien tai puutteellisten rakennusten löytäminen; rekisterivertailu, paikkatietoanalyysi, kyselylomake ja tarvittaessa maastotyöt.
+
+## Hinnat
+
+- Tuntityöt (paikkatietoaineistojen luominen, analysointi): 98 €/h + alv
+- Maastotyöt rakennusrekisterin parantamiseksi, 2 henkilöä: yhteensä 70 €/h + alv
+- Projektityöt (mm. kiinteistöveroselvitykset): sopimuksen mukaan
+
+## Referenssit
+
+Ruskon kunta, Sauvon kunta, Oripään kunta, Liedon kaupunki, Naantalin kaupunki, Maskun kunta, Säkylän kunta, Auran kunta.
+
+## Linkit
+
+- [Etusivu](https://vlindata.fi/)
+- [In English](https://vlindata.fi/en/)
+- [Evästeet](https://vlindata.fi/evasteet.html)
+
+## In English
+
+> VLiNdATA Oy (Virpi Lindvall) provides GIS datasets, database analyses and property tax audits for Finnish municipalities and companies, with over 20 years of experience.
+
+## Services
+
+- **GIS datasets**: creating datasets from surveys, source data and analyses; digitising local detailed plans, shore plans and master plans.
+- **Database analyses**: combining registers and databases and linking them to location.
+- **Property tax audits**: finding buildings missing from, or incomplete in, municipal and tax authority registers; register comparison, spatial analysis, questionnaire and fieldwork if needed.
+
+## Pricing
+
+- Hourly work (creating and analysing GIS datasets): EUR 98/h + VAT
+- Fieldwork to improve the building register, 2 people: EUR 70/h in total + VAT
+- Project work (e.g. property tax audits): as agreed
+
+## Links
+
+- [Front page in English](https://vlindata.fi/en/)
+- [Suomeksi](https://vlindata.fi/)
+- [Cookies](https://vlindata.fi/en/cookies.html)
