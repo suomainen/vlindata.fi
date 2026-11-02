@@ -4,6 +4,11 @@ Sivuston versio näkyy alatunnisteessa. Versio on määritelty tiedostossa `js/m
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.1.1
+
+- Virpin kuvat vaihdettu keskenään: metsäkuva aloitukseen ja yhteystietoihin, kalliokuva yrittäjäosioon ja Yritys-sivulle.
+- Vaakavierityksessä ohitetut paneelit jäävät vasempaan reunaan samanlaisina kaistoina (numero ja nimi) kuin tulevat paneelit oikealla. Kaistaa napsauttamalla pääsee takaisin paneeliin.
+
 ## 2.1.0
 
 Etusivun vaakavieritys Virpin toteutusohjeen mukaan.

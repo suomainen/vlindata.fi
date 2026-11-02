@@ -445,7 +445,7 @@ def footer(kieli, root):
         <span>© {VUOSI} VLiNdATA Oy</span>
         <a href="{p('evasteet')}">{t['f_cookies']}</a>
         <button type="button" id="consent-open">{t['f_cookie_settings']}</button>
-        <span class="footer__version">{t['f_version']} <span data-site-version>2.1.0</span></span>
+        <span class="footer__version">{t['f_version']} <span data-site-version>2.1.1</span></span>
       </div>
     </div>
   </footer>

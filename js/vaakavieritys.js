@@ -14,7 +14,7 @@
   // Milloin vaakavieritys on käytössä (vastaa CSS:n .hz-tilaa)
   const KAYTOSSA = '(min-width: 1180px) and (min-height: 620px) and (prefers-reduced-motion: no-preference)';
   const KAISTA_SEURAAVA = 58;   // tulevan paneelin kaistan leveys (px)
-  const KAISTA_EDELLINEN = 14;  // ohitetun paneelin kaistan leveys (px)
+  const KAISTA_EDELLINEN = 58;  // ohitetun paneelin kaistan leveys (px), sama kuin tulevilla
   const VALI = 8;               // paneelien väli (px)
   const AVAUS = 0.9;            // paneelin avautumiseen kuluva vieritys näkymän korkeuksina
   const PYSAHDYS = 0.3;         // vähimmäisvieritys avatun paneelin kohdalla
@@ -132,6 +132,8 @@
     const nykyinen = Math.round(p);
     ilmaisin.querySelector('.hz__ilmaisin-teksti').textContent =
       `${String(nykyinen + 1).padStart(2, '0')} / ${String(N).padStart(2, '0')}  ${paneelit[nykyinen].dataset.hz}`;
+    // Ilmaisin kulkee avoimen paneelin vasemmassa alakulmassa
+    ilmaisin.style.left = `${VALI + p * (KAISTA_EDELLINEN + VALI) + KAISTA_SEURAAVA + 16}px`;
     ilmaisin.querySelector('.hz__palkki span').style.transform = `scaleX(${(p / (N - 1)).toFixed(4)})`;
   };
 
