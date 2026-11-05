@@ -1,8 +1,21 @@
 # Muutosloki
 
-Sivuston versio näkyy alatunnisteessa. Versio on määritelty tiedostossa `js/menu.js` (`SITE_VERSION`) ja alatunnisteen oletusteksti tiedostossa `tools/rakenna.py`.
+Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on määritelty tiedostossa `js/menu.js` (`SITE_VERSION`) ja tiedoston `tools/rakenna.py` vakiossa `VERSIO`.
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
+
+## 2.2.0
+
+Virpin muutospyynnöt (marraskuu 2026).
+
+- Alatunniste poistettu kaikilta sivuilta. Evästeet-linkki on yläpalkin valikossa; puhelimen valikossa myös Evästeasetukset, © ja versio. Tietokoneella versio näkyy Evästeet-sivulla. Valikko tiivistyy 1180–1440 px näytöillä, jotta se mahtuu yhdelle riville.
+- Y-tunnus etusivun Yhteystiedot-paneeliin ja Yhteystiedot-sivulle.
+- Etusivun yrittäjäpaneeli: "VLiNdATA Oy:n yrittäjä", tausta "kuntien paikkatiedosta, rekistereistä ja maankäytöstä".
+- Kiinteistöveroselvitykset: listaan "Vuosittainen kiinteistöverokertymän raportointi"; "Miten yhteistyö etenee?" neljänä korttina otsikoineen ja selityksineen; lause koko rakennuskannan selvityksestä poistettu.
+- Paikkatietopalvelut: viisi osiota yhdistetty kolmeksi korostetuksi laatikoksi (tuottaminen ja päivittäminen, analyysit ja käsittely, asiantuntija-apu ja toimintatapojen kehittäminen).
+- Yritys: tekstimuutokset ja kaksi uutta kappaletta (viranhaltijoiden lempeä potkiminen, yhteistyöverkostot).
+- Referenssit: uusi Auran kunnan tapauskuvaus, vaiheet aikajanana (2024, 2024–2026, 2025–2026) ja tavoiteosio; otsikko leipätekstin yläpuolelle; logojen johdanto uudistettu.
+- Versionumero rakennusskriptissä yhdessä vakiossa (`VERSIO`), sivupohjissa merkintä `{{versio}}`.
 
 ## 2.1.1
 

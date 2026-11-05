@@ -39,10 +39,10 @@ Avaa selaimessa http://localhost:8000/.
 
 - **Tekstit:** muokkaa tiedostoa `tools/sivut/fi/<sivu>.html` ja vastaavaa `tools/sivut/en/<sivu>.html`, aja sitten `python tools/rakenna.py`. Älä muokkaa koottuja `index.html`-tiedostoja käsin, koska skripti kirjoittaa ne yli.
 - **Sivujen otsikot, kuvaukset ja valikko:** `tools/rakenna.py`, kohta `SIVUT`.
-- **Alatunniste, evästeilmoitus, yläpalkki:** `tools/rakenna.py`, funktiot `header` ja `footer` sekä `TEKSTIT`.
+- **Yläpalkki ja valikko (myös Evästeet, Evästeasetukset ja versio), evästeilmoitus:** `tools/rakenna.py`, funktiot `header` ja `evasteilmoitus` sekä `TEKSTIT`. Sivustolla ei ole erillistä alatunnistetta.
 - **Referenssikuntien logot:** `tools/rakenna.py`, kohta `LOGOT`, ja kuvat kansioon `img/logot/`.
 - **Värit ja fontit:** `css/style.css`, kohta 1. Kontrastit on laskettu kommentteihin; tarkista ne, jos vaihdat värejä.
-- Sivupohjien merkinnät (`{{root}}`, `{{ikoni:nimi}}`, `{{sivu:avain}}`, `{{lomake}}`, `{{logot}}`, `{{murupolku}}`) on selitetty skriptin alussa.
+- Sivupohjien merkinnät (`{{root}}`, `{{ikoni:nimi}}`, `{{sivu:avain}}`, `{{lomake}}`, `{{logot}}`, `{{murupolku}}`, `{{versio}}`) on selitetty skriptin alussa.
 
 ## Julkaisu
 
@@ -61,7 +61,7 @@ git push --follow-tags
 
 ## Versiointi
 
-- Versio näkyy alatunnisteessa. Numero on tiedostossa `js/menu.js` (`SITE_VERSION`) ja oletusteksti `tools/rakenna.py`:ssä; nosta molemmat.
+- Versio näkyy puhelimen valikossa ja Evästeet-sivulla. Numero on tiedostossa `js/menu.js` (`SITE_VERSION`) ja `tools/rakenna.py`:n vakiossa `VERSIO`; nosta molemmat.
 - Kirjaa muutos `CHANGELOG.md`:hen (uusin ensin, ei päivämääriä).
 - Merkitse versio: `git tag -a v2.0.1 -m "Kuvaus"` ja julkaise `git push --follow-tags`.
 - Pelkkä README- tai muutoslokimuutos ei nosta versiota.
@@ -72,7 +72,7 @@ git push --follow-tags
 
 ## Analytiikka ja evästeet
 
-Google Analytics 4 (G-73CPF19H48) ladataan vasta, kun kävijä hyväksyy evästeet (Google Consent Mode v2). Valinta tallennetaan selaimeen (`vlindata-consent`), ja sen voi muuttaa alatunnisteen Evästeasetukset-napista. Peruminen poistaa GA-evästeet.
+Google Analytics 4 (G-73CPF19H48) ladataan vasta, kun kävijä hyväksyy evästeet (Google Consent Mode v2). Valinta tallennetaan selaimeen (`vlindata-consent`), ja sen voi muuttaa Evästeet-sivun napista tai puhelimen valikon Evästeasetukset-napista. Peruminen poistaa GA-evästeet.
 
 Yhteydenottolomake ei lähetä tietoja millekään palvelimelle: se avaa viestin kävijän omassa sähköpostiohjelmassa. Siksi lomakkeen kautta ei voi tulla roskapostia eikä tietoja tallennu sivustolle.
 

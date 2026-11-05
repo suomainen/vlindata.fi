@@ -152,6 +152,11 @@
         <li><a class="nav__link" href="../yritys/">Yritys</a></li>
         <li><a class="nav__link" href="../referenssit/" aria-current="page">Referenssit</a></li>
         <li><a class="nav__link" href="../yhteystiedot/">Yhteystiedot</a></li>
+          <li class="nav__evasteet"><a class="nav__link nav__link--pieni" href="../evasteet/">Evästeet</a></li>
+          <li class="nav__meta">
+            <button class="nav__meta-nappi" type="button" id="consent-open">Evästeasetukset</button>
+            <span>© 2026 VLiNdATA Oy · versio <span data-site-version>2.2.0</span></span>
+          </li>
         </ul>
       </nav>
       <div class="lang" role="group" aria-label="Kieli – Language">
@@ -175,12 +180,30 @@
 
     <section class="panel panel--valkoinen page-content" aria-labelledby="aura-otsikko">
       <div class="wrap">
-        <div class="block">
-          <h2 class="h2" id="aura-otsikko">Auran kunta – rakennusrekisteritietojen selvittäminen</h2>
-          <div class="prose">
-            <p class="lead">VLiNdATA on tehnyt yhteistyötä Auran kunnan kanssa rakennusrekisteritietojen puutteiden tunnistamiseksi ja selvittämiseksi.</p>
-            <p>Työn tavoitteena on parantaa rakennustietojen laatua, edistää tietojen korjaamista ja selvittää mahdollisuuksia kiinteistöverotulojen lisäämiseen.</p>
-          </div>
+        <header class="tapaus__otsikko">
+          <h2 class="h2" id="aura-otsikko">Auran kunta – rakennus&shy;rekisteri&shy;tietojen laadun parantaminen</h2>
+          <p class="lead">Pitkäjänteistä yhteistyötä rakennusrekisterien ajantasaistamiseksi ja kiinteistöverotuksen tietopohjan parantamiseksi.</p>
+          <p>VLiNdATA Oy on tehnyt yhteistyötä Auran kunnan kanssa vuodesta 2024 lähtien. Työn tavoitteena on tunnistaa rakennusrekisterien puutteita, selvittää rakennusten tietoja ja edistää niiden ajantasaistamista. Luotettavat rakennustiedot tukevat kunnan toimintaa ja auttavat varmistamaan, että kiinteistöverotus perustuu mahdollisimman kattaviin ja oikeisiin tietoihin.</p>
+        </header>
+        <div class="tapaus__osa tapaus__osa--aikajana">
+          <h3 class="h3 tapaus__vali">Selvitystyö etenee vaiheittain</h3>
+          <ol class="aikajana">
+            <li class="aikajana__kohta">
+              <p class="aikajana__vuosi">2024</p>
+              <h4 class="h3">Rekisterivertailu ja paikkatietoanalyysi</h4>
+              <p>Yhteistyö käynnistyi rakennusrekisterin ja kiinteistöverotietojen vertailulla sekä paikkatietoanalyysillä. Aineistoja yhdistämällä tunnistettiin rakennuksia ja kohteita, joiden tiedoissa oli puutteita tai ristiriitaisuuksia ja jotka edellyttivät tarkempaa selvittämistä.</p>
+            </li>
+            <li class="aikajana__kohta">
+              <p class="aikajana__vuosi">2024–2026</p>
+              <h4 class="h3">Maastotarkistukset</h4>
+              <p>Maastotöillä on selvitetty rakennusten olemassaoloa ja tarkistettu rekisteritietojen oikeellisuutta. Maastohavainnot täydentävät rekisterivertailun ja paikkatietoanalyysin tuloksia.</p>
+            </li>
+            <li class="aikajana__kohta">
+              <p class="aikajana__vuosi">2025–2026</p>
+              <h4 class="h3">Kiinteistönomistajien kyselyt</h4>
+              <p>Kiinteistönomistajille suunnatuilla kyselyillä on kerätty lisätietoja rakennuksista ja niiden ominaisuuksista. Kyselyt tukevat puutteellisten tietojen selvittämistä ja rakennusrekisterin ajantasaistamista.</p>
+            </li>
+          </ol>
         </div>
         <figure class="quote callout">
           <span class="quote__mark"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/> <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/> </svg></span>
@@ -189,9 +212,10 @@
           </blockquote>
           <figcaption><strong>Kari Tuohi</strong> Tekninen johtaja, Auran kunta</figcaption>
         </figure>
-        <div class="block">
-          <div></div>
-          <div class="prose"><p>Selvitystyö etenee yhteistyössä kunnan kanssa ja sen tulosten seurantaa kehitetään käytännön tarpeiden mukaan.</p></div>
+        <div class="tapaus__osa prose">
+          <h3 class="h3 tapaus__vali">Tavoitteena pysyvästi paremmat rakennustiedot</h3>
+            <p>Selvitystyö on toteutettu useamman vuoden aikana kunnan resurssit huomioiden. Vaiheittainen eteneminen mahdollistaa selvitysten kohdentamisen, tietojen tarkistamisen ja rekisterien päivittämisen hallitusti.</p>
+            <p>Työ luo edellytyksiä kiinteistöverotulojen kasvulle, parantaa rakennustietojen luotettavuutta ja tukee kunnan rakennusvalvonnan tiedonhallintaa.</p>
         </div>
       </div>
     </section>
@@ -199,7 +223,7 @@
     <section class="panel panel--terra-vaalea" aria-labelledby="kunnat-otsikko">
       <div class="wrap">
         <h2 class="h2" id="kunnat-otsikko">Referenssikuntia</h2>
-        <p class="lead logos__johdanto">Kunnat, joiden kanssa VLiNdATA on tehnyt yhteistyötä. Logo vie kunnan sivuille.</p>
+        <p class="lead logos__johdanto">Kunnat, joissa VLiNdATA on tehnyt kiinteistöveroselvityksen toimenpiteitä. Logo vie kunnan sivuille.</p>
       <ul class="logos">
         <li><a href="https://www.aura.fi/kunta-ja-paatoksenteko/ajankohtaista/tiedotteet/-rakennusrekisterin-paivitys-ja-kiinteistokysely-kesalla-2025/#news_anchor" target="_blank" rel="noopener"><img src="../img/logot/aura.webp" alt="Auran kunta" width="240" height="87" loading="lazy" decoding="async"><span class="sr-only"> (avautuu uuteen välilehteen)</span></a></li>
         <li><a href="https://rusko.fi/" target="_blank" rel="noopener"><img src="../img/logot/rusko.webp" alt="Ruskon kunta" width="240" height="44" loading="lazy" decoding="async"><span class="sr-only"> (avautuu uuteen välilehteen)</span></a></li>
@@ -222,48 +246,6 @@
       </div>
     </section>
   </main>
-  <footer class="footer">
-    <div class="wrap">
-      <div class="footer__grid">
-        <div>
-          <div class="footer__brand">
-            <img src="../img/vlindata-logo.webp" alt="" width="52" height="58" loading="lazy">
-            <strong>VLiNdATA Oy</strong>
-          </div>
-          <p class="footer__tag">Paikkatietoa ja rakennustietoja, joista kunta hyötyy.</p>
-        </div>
-        <div>
-          <h2>Palvelut</h2>
-          <ul>
-            <li><a href="../kiinteistoveroselvitykset/">Kiinteistöveroselvitykset</a></li>
-            <li><a href="../paikkatietopalvelut/">Paikkatietopalvelut</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2>Yritys</h2>
-          <ul>
-            <li><a href="../yritys/">Yritys</a></li>
-            <li><a href="../referenssit/">Referenssit</a></li>
-            <li><a href="../yhteystiedot/">Yhteystiedot</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2>Yhteystiedot</h2>
-          <ul>
-            <li><a href="tel:+358443012471">+358 44 301 2471</a></li>
-            <li><a href="mailto:virpi@vlindata.fi">virpi@vlindata.fi</a></li>
-            <li>Y-tunnus 3410053-6</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <span>© 2026 VLiNdATA Oy</span>
-        <a href="../evasteet/">Evästeet</a>
-        <button type="button" id="consent-open">Evästeasetukset</button>
-        <span class="footer__version">versio <span data-site-version>2.1.1</span></span>
-      </div>
-    </div>
-  </footer>
   <div class="consent" id="consent" role="region" aria-label="Evästeilmoitus" hidden>
     <p class="consent__text">Käytän evästeitä kävijämäärän analysoimiseen. Google Analytics ladataan vain, jos hyväksyt. <a href="../evasteet/">Lisätietoja evästeistä</a></p>
     <div class="consent__actions">

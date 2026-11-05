@@ -12,6 +12,8 @@ Sivupohjien merkinnät:
   {{sivu:avain}}  linkki saman kielen sivulle (esim. {{sivu:yhteystiedot}})
   {{lomake}}      yhteydenottolomake
   {{logot}}       referenssikuntien logot
+  {{murupolku}}   murupolku
+  {{versio}}      sivuston versionumero
 """
 import json
 import re
@@ -21,6 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
+VERSIO = "2.2.0"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # ---------------------------------------------------------------------------
 # Sivut: avain -> polku kummallakin kielellä. Navigaation järjestys on tämä.
@@ -131,8 +134,6 @@ TEKSTIT = {
         "crumbs_label": "Murupolku",
         "og_alt": "VLiNdATA Oy: paikkatietoa ja rakennustietoja, joista kunta hyötyy. Kuvassa Virpi Lindvall.",
         "og_locale": "fi_FI", "og_locale_alt": "en_GB",
-        "footer_tag": "Paikkatietoa ja rakennustietoja, joista kunta hyötyy.",
-        "f_services": "Palvelut", "f_company": "Yritys", "f_contact": "Yhteystiedot",
         "f_cookies": "Evästeet", "f_cookie_settings": "Evästeasetukset", "f_version": "versio",
         "consent_label": "Evästeilmoitus",
         "consent_text": "Käytän evästeitä kävijämäärän analysoimiseen. Google Analytics ladataan vain, jos hyväksyt.",
@@ -151,8 +152,6 @@ TEKSTIT = {
         "crumbs_label": "Breadcrumb",
         "og_alt": "VLiNdATA Oy: GIS and building data that benefit municipalities. Photo of Virpi Lindvall.",
         "og_locale": "en_GB", "og_locale_alt": "fi_FI",
-        "footer_tag": "GIS and building data that benefit municipalities.",
-        "f_services": "Services", "f_company": "Company", "f_contact": "Contact",
         "f_cookies": "Cookies", "f_cookie_settings": "Cookie settings", "f_version": "version",
         "consent_label": "Cookie notice",
         "consent_text": "I use cookies to analyse visitor numbers. Google Analytics is loaded only if you accept.",
@@ -393,6 +392,11 @@ def header(kieli, avain, root):
       <nav class="nav" id="paavalikko" aria-label="{t['nav_label']}">
         <ul class="nav__list">
 {chr(10).join(linkit)}
+          <li class="nav__evasteet"><a class="nav__link nav__link--pieni" href="{href(root, POLUT['evasteet'][kieli])}"{' aria-current="page"' if avain == 'evasteet' else ''}>{t['f_cookies']}</a></li>
+          <li class="nav__meta">
+            <button class="nav__meta-nappi" type="button" id="consent-open">{t['f_cookie_settings']}</button>
+            <span>© {VUOSI} VLiNdATA Oy · {t['f_version']} <span data-site-version>{VERSIO}</span></span>
+          </li>
         </ul>
       </nav>
       <div class="lang" role="group" aria-label="{t['lang_label']}">
@@ -403,53 +407,11 @@ def header(kieli, avain, root):
   </header>"""
 
 
-def footer(kieli, root):
+def evasteilmoitus(kieli, root):
+    """Evästeilmoitus (sivun alalaidassa kiinteänä, näkyy kunnes kävijä valitsee)."""
     t = TEKSTIT[kieli]
-    s = SIVUT[kieli]
     p = lambda k: href(root, POLUT[k][kieli])
-    return f"""  <footer class="footer">
-    <div class="wrap">
-      <div class="footer__grid">
-        <div>
-          <div class="footer__brand">
-            <img src="{root}img/vlindata-logo.webp" alt="" width="52" height="58" loading="lazy">
-            <strong>VLiNdATA Oy</strong>
-          </div>
-          <p class="footer__tag">{t['footer_tag']}</p>
-        </div>
-        <div>
-          <h2>{t['f_services']}</h2>
-          <ul>
-            <li><a href="{p('kiinteistovero')}">{s['kiinteistovero']['nav']}</a></li>
-            <li><a href="{p('paikkatieto')}">{s['paikkatieto']['nav']}</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2>{t['f_company']}</h2>
-          <ul>
-            <li><a href="{p('yritys')}">{s['yritys']['nav']}</a></li>
-            <li><a href="{p('referenssit')}">{s['referenssit']['nav']}</a></li>
-            <li><a href="{p('yhteystiedot')}">{s['yhteystiedot']['nav']}</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2>{t['f_contact']}</h2>
-          <ul>
-            <li><a href="tel:+358443012471">+358 44 301 2471</a></li>
-            <li><a href="mailto:virpi@vlindata.fi">virpi@vlindata.fi</a></li>
-            <li>{t['ytunnus']} 3410053-6</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <span>© {VUOSI} VLiNdATA Oy</span>
-        <a href="{p('evasteet')}">{t['f_cookies']}</a>
-        <button type="button" id="consent-open">{t['f_cookie_settings']}</button>
-        <span class="footer__version">{t['f_version']} <span data-site-version>2.1.1</span></span>
-      </div>
-    </div>
-  </footer>
-  <div class="consent" id="consent" role="region" aria-label="{t['consent_label']}" hidden>
+    return f"""  <div class="consent" id="consent" role="region" aria-label="{t['consent_label']}" hidden>
     <p class="consent__text">{t['consent_text']} <a href="{p('evasteet')}">{t['consent_more']}</a></p>
     <div class="consent__actions">
       <button class="btn btn--reuna" type="button" data-consent="deny">{t['consent_deny']}</button>
@@ -474,6 +436,7 @@ def tayta(sisalto, kieli, avain, root):
     sisalto = sisalto.replace("{{murupolku}}", murupolku(kieli, avain, root))
     sisalto = re.sub(r"\{\{ikoni:([a-z0-9-]+)\}\}", lambda m: ikoni(m.group(1)), sisalto)
     sisalto = re.sub(r"\{\{sivu:([a-z]+)\}\}", lambda m: href(root, POLUT[m.group(1)][kieli]), sisalto)
+    sisalto = sisalto.replace("{{versio}}", f'<span data-site-version>{VERSIO}</span>')
     sisalto = sisalto.replace("{{root}}", root)
     jaljella = re.findall(r"\{\{[^}]*\}\}", sisalto)
     if jaljella:
@@ -497,7 +460,7 @@ def rakenna_sivu(kieli, avain):
   <main id="sisalto">
 {runko}
   </main>
-{footer(kieli, root)}
+{evasteilmoitus(kieli, root)}
 {skriptit}</body>
 </html>
 """

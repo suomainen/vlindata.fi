@@ -152,6 +152,11 @@
         <li><a class="nav__link" href="../yritys/">Yritys</a></li>
         <li><a class="nav__link" href="../referenssit/">Referenssit</a></li>
         <li><a class="nav__link" href="../yhteystiedot/">Yhteystiedot</a></li>
+          <li class="nav__evasteet"><a class="nav__link nav__link--pieni" href="../evasteet/" aria-current="page">Evästeet</a></li>
+          <li class="nav__meta">
+            <button class="nav__meta-nappi" type="button" id="consent-open">Evästeasetukset</button>
+            <span>© 2026 VLiNdATA Oy · versio <span data-site-version>2.2.0</span></span>
+          </li>
         </ul>
       </nav>
       <div class="lang" role="group" aria-label="Kieli – Language">
@@ -199,53 +204,12 @@
               <button class="btn btn--toissijainen" type="button" data-consent-open>Muuta evästevalintaa</button>
               <a class="btn btn--reuna" href="../">Etusivulle</a>
             </div>
+            <p class="muted">Sivuston versio <span data-site-version>2.2.0</span> · © 2026 VLiNdATA Oy</p>
           </div>
         </div>
       </div>
     </section>
   </main>
-  <footer class="footer">
-    <div class="wrap">
-      <div class="footer__grid">
-        <div>
-          <div class="footer__brand">
-            <img src="../img/vlindata-logo.webp" alt="" width="52" height="58" loading="lazy">
-            <strong>VLiNdATA Oy</strong>
-          </div>
-          <p class="footer__tag">Paikkatietoa ja rakennustietoja, joista kunta hyötyy.</p>
-        </div>
-        <div>
-          <h2>Palvelut</h2>
-          <ul>
-            <li><a href="../kiinteistoveroselvitykset/">Kiinteistöveroselvitykset</a></li>
-            <li><a href="../paikkatietopalvelut/">Paikkatietopalvelut</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2>Yritys</h2>
-          <ul>
-            <li><a href="../yritys/">Yritys</a></li>
-            <li><a href="../referenssit/">Referenssit</a></li>
-            <li><a href="../yhteystiedot/">Yhteystiedot</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2>Yhteystiedot</h2>
-          <ul>
-            <li><a href="tel:+358443012471">+358 44 301 2471</a></li>
-            <li><a href="mailto:virpi@vlindata.fi">virpi@vlindata.fi</a></li>
-            <li>Y-tunnus 3410053-6</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <span>© 2026 VLiNdATA Oy</span>
-        <a href="../evasteet/">Evästeet</a>
-        <button type="button" id="consent-open">Evästeasetukset</button>
-        <span class="footer__version">versio <span data-site-version>2.1.1</span></span>
-      </div>
-    </div>
-  </footer>
   <div class="consent" id="consent" role="region" aria-label="Evästeilmoitus" hidden>
     <p class="consent__text">Käytän evästeitä kävijämäärän analysoimiseen. Google Analytics ladataan vain, jos hyväksyt. <a href="../evasteet/">Lisätietoja evästeistä</a></p>
     <div class="consent__actions">
