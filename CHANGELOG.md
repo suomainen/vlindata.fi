@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.4.3
+
+- Puhelimen valikossa "Tekninen toteutus: summanen.org" omalle rivilleen.
+
 ## 2.4.2
 
 - "Toteutus: summanen.org" → "Tekninen toteutus: summanen.org" (englanniksi "Technical implementation") Evästeet-sivulla ja puhelimen valikossa.

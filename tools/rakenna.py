@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.4.2"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.4.3"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # ---------------------------------------------------------------------------
 # Sivut: avain -> polku kummallakin kielellä. Navigaation järjestys on tämä.
@@ -402,7 +402,8 @@ def header(kieli, avain, root):
           <li class="nav__evasteet"><a class="nav__link nav__link--pieni" href="{href(root, POLUT['evasteet'][kieli])}"{' aria-current="page"' if avain == 'evasteet' else ''}>{t['f_cookies']}</a></li>
           <li class="nav__meta">
             <button class="nav__meta-nappi" type="button" id="consent-open">{t['f_cookie_settings']}</button>
-            <span>© {VUOSI} VLiNdATA Oy · {t['f_version']} <span data-site-version>{VERSIO}</span> · {t['toteutus']}: <a href="https://summanen.org/" target="_blank" rel="noopener">summanen.org<span class="sr-only"> {t['new_tab']}</span></a></span>
+            <span>© {VUOSI} VLiNdATA Oy · {t['f_version']} <span data-site-version>{VERSIO}</span></span>
+            <span class="nav__toteutus">{t['toteutus']}: <a href="https://summanen.org/" target="_blank" rel="noopener">summanen.org<span class="sr-only"> {t['new_tab']}</span></a></span>
           </li>
         </ul>
       </nav>

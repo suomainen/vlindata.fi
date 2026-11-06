@@ -620,6 +620,8 @@ p { text-wrap: pretty; }
 }
 
 .nav__meta a { color: inherit; }
+.nav__toteutus { flex-basis: 100%; }
+.nav__meta > span { padding: 0 16px; }
 
 /* Referenssit: tapauskuvaus ja aikajana */
 .tapaus__otsikko { max-width: 52rem; }
