@@ -619,23 +619,6 @@ p { text-wrap: pretty; }
   font: 800 1.1rem/1 var(--font-otsikko);
 }
 
-/* Yritys: yhteistyökumppanin kortti */
-.kumppani { margin-top: 36px; }
-.kumppani__kortti {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 20px;
-  align-items: start;
-  margin-top: 14px;
-  padding: 22px 24px;
-  border-radius: var(--kulma);
-  background: #fff;
-  box-shadow: inset 0 0 0 1px var(--viiva);
-}
-.kumppani__kortti img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; }
-.kumppani__kortti p + p { margin-top: 6px; }
-.kumppani__yritys { font: 800 1.2rem/1.25 var(--font-otsikko); }
-.kumppani__nimi { color: var(--teksti-2); font-weight: 600; }
 .nav__meta a { color: inherit; }
 
 /* Referenssit: tapauskuvaus ja aikajana */
@@ -857,8 +840,6 @@ p { text-wrap: pretty; }
   .hero__image img { aspect-ratio: 1 / 1; }
   .founder__image img { aspect-ratio: 1 / 1; }
   .steps--kuvaus li { padding: 20px; }
-  .kumppani__kortti { gap: 14px; padding: 18px; }
-  .kumppani__kortti img { width: 64px; height: 64px; }
   .steps--kuvaus li::before { grid-row: auto; }
   .steps--kuvaus p { grid-column: 1 / -1; margin-top: 12px; }
 }
