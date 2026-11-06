@@ -4,6 +4,13 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.4.7
+
+- Vaakavierityksen paneelit tiivistetty, jotta ne mahtuvat näkymään ilman sisäistä pystyvieritystä (tietokoneen näytöt noin 1440 × 900 ja suuremmat):
+  - Referenssit kahdessa sarakkeessa: lainaus vasemmalla, teksti, logot ja painike oikealla.
+  - Yhteystietojen lomake tiiviimmäksi (nimi ja organisaatio rinnakkain, matalampi viestikenttä).
+  - Yleisesti pienemmät välit, ingressit ja korttien täytteet vaakatilassa.
+
 ## 2.4.6
 
 - Evästeet-sivulta poistettu Etusivulle-painike.

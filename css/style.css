@@ -927,6 +927,53 @@ html.hz-on { scroll-behavior: auto; } /* JS päättää pehmeästä vierityksest
 .hz-on .hz .h2 { font-size: clamp(1.9rem, min(3.2vw, 5.6vh), 3rem); }
 .hz-on .hz .hero__text .h1 { max-width: 18ch; }
 .hz-on .hz .hero__nosto { margin-bottom: 18px; }
+/* Tiivistys vaakatilassa, jotta paneelit mahtuvat näkymään ilman sisäistä vieritystä */
+.hz-on .hz .lead { font-size: clamp(1.05rem, 1.25vw, 1.2rem); }
+.hz-on .hz .flow > * + * { margin-top: 0.8em; }
+.hz-on .hz .h2 + .flow,
+.hz-on .hz .h2 + .stats { margin-top: 18px; }
+.hz-on .hz .actions { margin-top: 24px; }
+.hz-on .hz .cards,
+.hz-on .hz .stats { margin-top: 28px; }
+.hz-on .hz .card,
+.hz-on .hz .stat { padding: 22px; }
+
+/* Referenssit: lainaus vasemmalle, teksti ja logot oikealle */
+.hz-on #referenssit > .wrap {
+  display: grid;
+  grid-template-columns: 6fr 5fr;
+  column-gap: clamp(32px, 4vw, 64px);
+  align-items: start;
+}
+.hz-on #referenssit > .wrap > .hero__nosto,
+.hz-on #referenssit > .wrap > .h2 { grid-column: 1 / -1; }
+.hz-on #referenssit .quote { grid-column: 1; grid-row: 3 / span 4; margin-top: 28px; }
+.hz-on #referenssit .quote blockquote p { font-size: clamp(1.4rem, 2.1vw, 2.1rem); }
+.hz-on #referenssit .quote__lisa,
+.hz-on #referenssit .logos__otsikko,
+.hz-on #referenssit .logos,
+.hz-on #referenssit .actions { grid-column: 2; }
+.hz-on #referenssit .quote__lisa { margin-top: 28px; }
+.hz-on #referenssit .logos__otsikko { margin-top: 24px; }
+.hz-on #referenssit .logos { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
+.hz-on #referenssit .logos a { height: 64px; padding: 8px; border-radius: var(--kulma-pieni); }
+.hz-on #referenssit .logos img { height: 30px; }
+.hz-on #referenssit .logos img.korkea { height: 46px; }
+
+/* Yhteystiedot: tiiviimpi lomake */
+.hz-on #yhteys .form { grid-template-columns: 1fr 1fr; gap: 12px 14px; padding: 24px; }
+.hz-on #yhteys .form > * { grid-column: 1 / -1; }
+.hz-on #yhteys .form > .field:nth-of-type(1) { grid-column: 1; }
+.hz-on #yhteys .form > .field:nth-of-type(2) { grid-column: 2; }
+.hz-on #yhteys .form .btn { justify-self: start; }
+.hz-on #yhteys .field input { min-height: 44px; padding: 8px 14px; }
+.hz-on #yhteys .field textarea { min-height: 76px; }
+.hz-on #yhteys .form__note { font-size: 0.85rem; line-height: 1.5; }
+.hz-on #yhteys .field { gap: 4px; }
+/* Ilmaisin on vasemmassa alakulmassa lyhyemmän sarakkeen alla, joten lomake saa käyttää alareunan */
+.hz-on #yhteys > .wrap { padding-bottom: clamp(32px, 5vh, 64px); }
+.hz-on #yhteys .contact-name { margin-top: 20px; }
+.hz-on #yhteys .contact-list { gap: 8px; margin-top: 16px; }
 .hz-on .hz .hero__image img,
 .hz-on .hz .founder__image img { max-height: calc(100vh - var(--hz-ylaosa, 72px) - 120px); width: auto; max-width: 100%; margin-inline: auto; }
 .hz-on .hz .hero__image,
