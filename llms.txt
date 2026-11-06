@@ -5,6 +5,7 @@
 ## Palvelut
 
 - [Kiinteistöveroselvitykset](https://vlindata.fi/kiinteistoveroselvitykset/): rekistereistä puuttuvien rakennusten tunnistaminen, rakennusrekisterin ja kiinteistöverotietojen vertailu, omistajakyselyt, maastotarkistukset ja raportointi. Työ etenee vaiheittain kunnan resurssien mukaan.
+- [Raportit kunnan johdolle](https://vlindata.fi/kiinteistoveroselvitykset/#raportit): kiinteistöveroanalyysi (mistä kiinteistöverotulojen kasvu muodostuu: veroprosentit, rakennuskanta, muut verotusarvon muutokset) ja kiinteistöveroprojektin vaikuttavuusseuranta (raportti kolme kertaa vuodessa).
 - [Paikkatietopalvelut](https://vlindata.fi/paikkatietopalvelut/): uudet paikkatietoaineistot, aineistojen päivittäminen, paikkatietoanalyysit ja rekisterivertailut, paikkatietojärjestelmät ja tietokannat sekä asiantuntija-apu toimintatapojen kehittämiseen.
 
 ## Yritys
@@ -18,5 +19,6 @@
 > VLiNdATA Oy (Virpi Lindvall) helps Finnish municipalities with property tax audits, building register quality, and producing, updating and analysing GIS datasets. Over 20 years of GIS experience.
 
 - [Property tax audits](https://vlindata.fi/en/property-tax-audits/): identifying buildings missing from registers, comparing building register and property tax data, owner enquiries, field checks and reporting.
+- [Reports for municipal management](https://vlindata.fi/en/property-tax-audits/#raportit): property tax analysis (what property tax revenue growth is made of) and impact monitoring of property tax projects (report three times a year).
 - [GIS services](https://vlindata.fi/en/gis-services/): new datasets, dataset updates, spatial analysis, GIS systems and databases, expert help.
 - [Company](https://vlindata.fi/en/company/), [References](https://vlindata.fi/en/references/), [Contact](https://vlindata.fi/en/contact/): phone +358 44 301 2471, email virpi@vlindata.fi.

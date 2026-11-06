@@ -4,6 +4,11 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.3.0
+
+- Kiinteistöveroselvitykset-sivulle uusi osio "Raportit kunnan johdolle" (`#raportit`): kiinteistöveroanalyysi ja kiinteistöveroprojektin vaikuttavuusseuranta (kolme kertaa vuodessa), tekstit Virpiltä. Kummassakin "Kysy raportista" -painike Yhteystiedot-sivulle.
+- Sama englanniksi ("Reports for municipal management") ja llms.txt-tiedostoon.
+
 ## 2.2.0
 
 Virpin muutospyynnöt (marraskuu 2026).

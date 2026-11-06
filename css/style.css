@@ -678,6 +678,18 @@ p { text-wrap: pretty; }
 .palvelu .card__icon { margin-bottom: 0; }
 .palvelu .h2 { font-size: clamp(1.6rem, 2.6vw, 2.2rem); }
 .palvelu .prose { max-width: 44rem; }
+.palvelut--raportit { margin-top: 28px; }
+.palvelu__nimi { font: 800 1.35rem/1.25 var(--font-otsikko); letter-spacing: -0.01em; }
+.palvelu__merkki {
+  justify-self: start;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--metsa);
+  color: var(--valkoinen);
+  font: 700 0.88rem/1.4 var(--font-otsikko);
+}
+.palvelu__kysymys { font-size: clamp(1.3rem, 2vw, 1.6rem); line-height: 1.3; }
+.palvelu .prose .btn { margin-top: 8px; }
 
 .steps--kuvaus { margin-top: 28px; }
 .steps--kuvaus li { align-items: start; gap: 0 20px; padding: 22px 28px; font-weight: 400; }
