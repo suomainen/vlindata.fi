@@ -4,6 +4,11 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.4.6
+
+- Evästeet-sivulta poistettu Etusivulle-painike.
+- Yhteystiedoissa (etusivu ja Yhteystiedot-sivu) verkkosivu linkkinä muodossa vlindata.fi ja Y-tunnus linkkinä YTJ:n yritystietoihin.
+
 ## 2.4.5
 
 - Evästeet-sivun toteutusriville pieni pyöreä kuva ja nimi: "Tekninen toteutus: Oskari Summanen, summanen.org".
