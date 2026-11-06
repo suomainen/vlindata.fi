@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.4.1"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.4.2"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # ---------------------------------------------------------------------------
 # Sivut: avain -> polku kummallakin kielellä. Navigaation järjestys on tämä.
@@ -134,7 +134,7 @@ TEKSTIT = {
         "crumbs_label": "Murupolku",
         "og_alt": "VLiNdATA Oy: paikkatietoa ja rakennustietoja, joista kunta hyötyy. Kuvassa Virpi Lindvall.",
         "og_locale": "fi_FI", "og_locale_alt": "en_GB",
-        "toteutus": "Toteutus", "f_cookies": "Evästeet", "f_cookie_settings": "Evästeasetukset", "f_version": "versio",
+        "toteutus": "Tekninen toteutus", "f_cookies": "Evästeet", "f_cookie_settings": "Evästeasetukset", "f_version": "versio",
         "consent_label": "Evästeilmoitus",
         "consent_text": "Käytän evästeitä kävijämäärän analysoimiseen. Google Analytics ladataan vain, jos hyväksyt.",
         "consent_more": "Lisätietoja evästeistä",
@@ -152,7 +152,7 @@ TEKSTIT = {
         "crumbs_label": "Breadcrumb",
         "og_alt": "VLiNdATA Oy: GIS and building data that benefit municipalities. Photo of Virpi Lindvall.",
         "og_locale": "en_GB", "og_locale_alt": "fi_FI",
-        "toteutus": "Website by", "f_cookies": "Cookies", "f_cookie_settings": "Cookie settings", "f_version": "version",
+        "toteutus": "Technical implementation", "f_cookies": "Cookies", "f_cookie_settings": "Cookie settings", "f_version": "version",
         "consent_label": "Cookie notice",
         "consent_text": "I use cookies to analyse visitor numbers. Google Analytics is loaded only if you accept.",
         "consent_more": "More about cookies",

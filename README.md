@@ -1,6 +1,6 @@
 # vlindata.fi
 
-VLiNdATA Oy:n kotisivu, https://vlindata.fi/. Toteutus ja ylläpito: Oskari Summanen, [summanen.org](https://summanen.org/). Staattinen sivusto: tavallisia HTML-, CSS- ja JavaScript-tiedostoja ilman julkaisutyökalua. Sivut kootaan pienellä Python-skriptillä, ja ne voi julkaista sellaisenaan GitHub Pagesissa tai millä tahansa palvelimella.
+VLiNdATA Oy:n kotisivu, https://vlindata.fi/. Tekninen toteutus ja ylläpito: Oskari Summanen, [summanen.org](https://summanen.org/). Staattinen sivusto: tavallisia HTML-, CSS- ja JavaScript-tiedostoja ilman julkaisutyökalua. Sivut kootaan pienellä Python-skriptillä, ja ne voi julkaista sellaisenaan GitHub Pagesissa tai millä tahansa palvelimella.
 
 ## Rakenne
 
