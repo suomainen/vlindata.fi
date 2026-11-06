@@ -89,5 +89,6 @@ Jokaisella sivulla on otsikko, kuvaus, canonical, kieliversiolinkit (hreflang), 
 | Ikonit (`tools/ikonit/`) | lucide-static 1.66.0 | ISC, `LICENSE-lucide.txt` |
 | Kuntien logot (`img/logot/`) | – | kuntien tavaramerkkejä, käytössä referensseinä |
 | Valokuvat (`img/virpi-*.jpg`) | – | kuvaajan tekijänoikeus, käyttölupa VLiNdATA Oy:llä |
+| Kuva `img/oskari-summanen.webp` | – | Oskari Summasen kuva, käyttölupa |
 
 © VLiNdATA Oy. Kaikki oikeudet pidätetään.

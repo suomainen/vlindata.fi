@@ -739,6 +739,8 @@ p { text-wrap: pretty; }
 }
 .sivustotiedot .nav__meta-nappi { margin-left: -16px; }
 .sivustotiedot a { color: inherit; }
+.sivustotiedot__toteutus { display: flex; align-items: center; gap: 10px; }
+.sivustotiedot__toteutus img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
 
 /* 13. Evästeilmoitus ja evästesivu ----------------------------------------- */
 .consent {

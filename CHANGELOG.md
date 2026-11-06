@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.4.5
+
+- Evästeet-sivun toteutusriville pieni pyöreä kuva ja nimi: "Tekninen toteutus: Oskari Summanen, summanen.org".
+
 ## 2.4.4
 
 - Evästeet-sivun alalaita samaan tyyliin kuin puhelimen valikko: Evästeasetukset, © ja versio, tekninen toteutus omilla riveillään. Erillinen "Muuta evästevalintaa" -painike korvattu Evästeasetukset-linkillä.
