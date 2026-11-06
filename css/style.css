@@ -726,6 +726,20 @@ p { text-wrap: pretty; }
 }
 .nav__meta-nappi:hover { background: var(--vihrea-vaalea); }
 
+/* Evästesivun alalaita: samat tiedot kuin puhelimen valikon alarivillä */
+.sivustotiedot {
+  display: grid;
+  justify-items: start;
+  gap: 4px;
+  margin-top: 40px;
+  padding-top: 14px;
+  border-top: 1px solid var(--viiva);
+  color: var(--teksti-2);
+  font-size: 0.9rem;
+}
+.sivustotiedot .nav__meta-nappi { margin-left: -16px; }
+.sivustotiedot a { color: inherit; }
+
 /* 13. Evästeilmoitus ja evästesivu ----------------------------------------- */
 .consent {
   position: fixed;
