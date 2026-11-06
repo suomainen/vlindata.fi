@@ -1,6 +1,6 @@
 # vlindata.fi
 
-VLiNdATA Oy:n kotisivu, https://vlindata.fi/. Staattinen sivusto: tavallisia HTML-, CSS- ja JavaScript-tiedostoja ilman julkaisutyökalua. Sivut kootaan pienellä Python-skriptillä, ja ne voi julkaista sellaisenaan GitHub Pagesissa tai millä tahansa palvelimella.
+VLiNdATA Oy:n kotisivu, https://vlindata.fi/. Toteutus ja ylläpito: Oskari Summanen, [summanen.org](https://summanen.org/). Staattinen sivusto: tavallisia HTML-, CSS- ja JavaScript-tiedostoja ilman julkaisutyökalua. Sivut kootaan pienellä Python-skriptillä, ja ne voi julkaista sellaisenaan GitHub Pagesissa tai millä tahansa palvelimella.
 
 ## Rakenne
 
@@ -89,5 +89,6 @@ Jokaisella sivulla on otsikko, kuvaus, canonical, kieliversiolinkit (hreflang), 
 | Ikonit (`tools/ikonit/`) | lucide-static 1.66.0 | ISC, `LICENSE-lucide.txt` |
 | Kuntien logot (`img/logot/`) | – | kuntien tavaramerkkejä, käytössä referensseinä |
 | Valokuvat (`img/virpi-*.jpg`) | – | kuvaajan tekijänoikeus, käyttölupa VLiNdATA Oy:llä |
+| Kuva `img/oskari-summanen.webp` | – | Oskari Summasen kuva, käyttölupa |
 
 © VLiNdATA Oy. Kaikki oikeudet pidätetään.

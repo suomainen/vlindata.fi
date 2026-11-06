@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.3.0"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.4.0"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # ---------------------------------------------------------------------------
 # Sivut: avain -> polku kummallakin kielellä. Navigaation järjestys on tämä.
@@ -134,7 +134,7 @@ TEKSTIT = {
         "crumbs_label": "Murupolku",
         "og_alt": "VLiNdATA Oy: paikkatietoa ja rakennustietoja, joista kunta hyötyy. Kuvassa Virpi Lindvall.",
         "og_locale": "fi_FI", "og_locale_alt": "en_GB",
-        "f_cookies": "Evästeet", "f_cookie_settings": "Evästeasetukset", "f_version": "versio",
+        "toteutus": "Toteutus", "f_cookies": "Evästeet", "f_cookie_settings": "Evästeasetukset", "f_version": "versio",
         "consent_label": "Evästeilmoitus",
         "consent_text": "Käytän evästeitä kävijämäärän analysoimiseen. Google Analytics ladataan vain, jos hyväksyt.",
         "consent_more": "Lisätietoja evästeistä",
@@ -152,7 +152,7 @@ TEKSTIT = {
         "crumbs_label": "Breadcrumb",
         "og_alt": "VLiNdATA Oy: GIS and building data that benefit municipalities. Photo of Virpi Lindvall.",
         "og_locale": "en_GB", "og_locale_alt": "fi_FI",
-        "f_cookies": "Cookies", "f_cookie_settings": "Cookie settings", "f_version": "version",
+        "toteutus": "Website by", "f_cookies": "Cookies", "f_cookie_settings": "Cookie settings", "f_version": "version",
         "consent_label": "Cookie notice",
         "consent_text": "I use cookies to analyse visitor numbers. Google Analytics is loaded only if you accept.",
         "consent_more": "More about cookies",
@@ -272,6 +272,13 @@ def jsonld(kieli, avain):
             "@type": "WebSite", "@id": DOMAIN + "#website", "url": DOMAIN,
             "name": "VLiNdATA Oy", "inLanguage": ["fi", "en"],
             "publisher": {"@id": DOMAIN + "#organization"},
+            "creator": {"@id": "https://summanen.org/#oskari-summanen"},
+        },
+        {
+            "@type": "Person", "@id": "https://summanen.org/#oskari-summanen", "name": "Oskari Summanen",
+            "url": "https://summanen.org/",
+            "description": ("VLiNdATA Oy:n kumppani ja sivuston tekninen toteuttaja (summanen.org)" if kieli == "fi"
+                            else "Partner of VLiNdATA Oy and technical builder of this website (summanen.org)"),
         },
         {
             "@type": "Organization", "@id": DOMAIN + "#organization", "name": "VLiNdATA Oy",
@@ -395,7 +402,7 @@ def header(kieli, avain, root):
           <li class="nav__evasteet"><a class="nav__link nav__link--pieni" href="{href(root, POLUT['evasteet'][kieli])}"{' aria-current="page"' if avain == 'evasteet' else ''}>{t['f_cookies']}</a></li>
           <li class="nav__meta">
             <button class="nav__meta-nappi" type="button" id="consent-open">{t['f_cookie_settings']}</button>
-            <span>© {VUOSI} VLiNdATA Oy · {t['f_version']} <span data-site-version>{VERSIO}</span></span>
+            <span>© {VUOSI} VLiNdATA Oy · {t['f_version']} <span data-site-version>{VERSIO}</span> · {t['toteutus']}: <a href="https://summanen.org/" target="_blank" rel="noopener">summanen.org<span class="sr-only"> {t['new_tab']}</span></a></span>
           </li>
         </ul>
       </nav>

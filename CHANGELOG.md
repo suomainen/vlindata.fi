@@ -4,6 +4,12 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.4.0
+
+- Yritys-sivulle "Yhteistyössä"-kortti: Oskari Summanen, summanen.org – kumppani, joka tekee rekisterivertailut ja analyysit sekä toteuttaa ja ylläpitää sivuston. Kuva `img/oskari-summanen.webp`.
+- Toteuttajamaininta "Toteutus: summanen.org" Evästeet-sivun alalaitaan ja puhelimen valikon alariville.
+- Hakukonetietoihin sivuston tekijä (`creator`): Oskari Summanen, summanen.org.
+
 ## 2.3.0
 
 - Kiinteistöveroselvitykset-sivulle uusi osio "Raportit kunnan johdolle" (`#raportit`): kiinteistöveroanalyysi ja kiinteistöveroprojektin vaikuttavuusseuranta (kolme kertaa vuodessa), tekstit Virpiltä. Kummassakin "Kysy raportista" -painike Yhteystiedot-sivulle.
