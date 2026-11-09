@@ -1,0 +1,51 @@
+    <section class="panel panel--vihrea-vaalea panel--kartta page-hero" aria-labelledby="sivu-otsikko">
+      <div class="wrap">
+      {{murupolku}}
+        <p class="hero__nosto">Paikkatiedon jatkuvuus ja varautuminen</p>
+        <h1 class="h1" id="sivu-otsikko">Kartta toimii, vaikka rajapinta ei vastaa.</h1>
+        <p class="lead">Kunnan paikkatietopalvelut nojaavat usein ulkoisiin rajapintoihin. Kun palvelu tai verkkoyhteys katkeaa, karttaa tarvitaan silti – esimerkiksi rakennusvalvonnassa, maankäytössä ja häiriötilanteissa.</p>
+        <p>Paikallinen varajärjestelmä pitää kunnan valitsemista aineistoista paikallisen kopion, jota voi käyttää selaimessa ja QGISissä myös katkon aikana.</p>
+        <div class="actions">
+          <a class="btn btn--ensisijainen" href="{{sivu:yhteystiedot}}">Pyydä tarjous {{ikoni:arrow-right}}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel--valkoinen page-content">
+      <div class="wrap">
+        <div>
+          <h2 class="h2">Miten se toimii?</h2>
+          <ol class="kulku">
+            <li><span class="card__icon">{{ikoni:list-checks}}</span><h3 class="h3">Aineistot valitaan</h3><p>Sovitaan yhdessä, mitkä aineistot ja mikä alue kunta tarvitsee käyttöönsä myös häiriötilanteessa.</p></li>
+            <li><span class="card__icon">{{ikoni:download}}</span><h3 class="h3">Haku ja muunnos</h3><p>Aineistot haetaan rajapinnoista ajastetusti ja tallennetaan paikallisiin GeoPackage- ja MBTiles-tiedostoihin.</p></li>
+            <li><span class="card__icon">{{ikoni:map}}</span><h3 class="h3">Paikallinen kartta</h3><p>Selainkartta käyttää paikallisia aineistoja jo normaalitilassa. Samat aineistot aukeavat myös QGISissä.</p></li>
+            <li><span class="card__icon">{{ikoni:activity}}</span><h3 class="h3">Valvonta</h3><p>Lähteiden ja paikallisen palvelun tila tarkistetaan säännöllisesti, ja tapahtumista kootaan raportti.</p></li>
+          </ol>
+        </div>
+
+        <div>
+          <h2 class="h2">Mitä kunta saa?</h2>
+          <ul class="cards">
+            <li class="card"><span class="card__icon">{{ikoni:wrench}}</span><h3 class="h3">Käyttöönotto</h3><p>Aineistolähteiden määrittely, asennus kunnan ympäristöön ja ohjeet käyttäjille.</p></li>
+            <li class="card"><span class="card__icon">{{ikoni:life-buoy}}</span><h3 class="h3">Ylläpito</h3><p>Päivitykset, valvonnan seuranta ja muutokset, kun aineistolähteet muuttuvat.</p></li>
+            <li class="card"><span class="card__icon">{{ikoni:shield-check}}</span><h3 class="h3">Tukea varautumiseen</h3><p>Kuvaus ratkaisusta kunnan jatkuvuussuunnittelun sekä NIS2- ja ISO 22301 -arvioinnin tueksi.</p></li>
+          </ul>
+        </div>
+
+        <aside class="callout" aria-labelledby="tausta-otsikko">
+          <h2 class="h2" id="tausta-otsikko">Taustaa</h2>
+          <p>Ratkaisu perustuu avoimen lähdekoodin ohjelmistoihin, kuten GDAL, MapLibre ja QGIS.</p>
+          <p>Soveltuvuus arvioidaan aina kunnan omilla aineistoilla ja käyttötarpeilla. Uusien aineistojen hakeminen edellyttää yhteyttä lähdepalveluun, mutta jo tallennettu aineisto on käytössä katkon aikana.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="panel panel--metsa panel--kartta cta" aria-labelledby="cta-otsikko">
+      <div class="wrap">
+        <h2 class="h2" id="cta-otsikko">Pysyvätkö kuntanne paikkatiedot käytössä häiriötilanteessa?</h2>
+        <div class="actions">
+          <a class="btn btn--ensisijainen" href="{{sivu:yhteystiedot}}">Pyydä tarjous {{ikoni:arrow-right}}</a>
+          <a class="btn btn--reuna" href="tel:+358443012471">{{ikoni:phone}} +358 44 301 2471</a>
+        </div>
+      </div>
+    </section>

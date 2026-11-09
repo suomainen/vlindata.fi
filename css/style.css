@@ -230,7 +230,7 @@ p { text-wrap: pretty; }
   align-items: center;
   gap: 8px 16px;
   min-height: var(--header-h);
-  max-width: calc(var(--leveys) + 2 * var(--reuna));
+  max-width: calc(1440px + 2 * var(--reuna)); /* yläpalkki leveämpi kuin sisältö, jotta valikko mahtuu riville */
   margin: 0 auto;
   padding: 0 var(--reuna);
 }
@@ -457,6 +457,8 @@ p { text-wrap: pretty; }
 }
 .card__icon svg { width: 26px; height: 26px; }
 .card .h3 + p { margin-top: 10px; color: var(--teksti-2); }
+.card__linkki { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+.card__linkki:hover { text-decoration-thickness: 2px; }
 
 .stats {
   display: grid;
@@ -622,6 +624,22 @@ p { text-wrap: pretty; }
 .nav__meta a { color: inherit; }
 .nav__toteutus { flex-basis: 100%; }
 .nav__meta > span { padding: 0 16px; }
+
+/* Paikkatiedon jatkuvuus: toiminnan vaiheet nuolin */
+.kulku { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 28px; counter-reset: kulku; }
+.kulku li { position: relative; padding: 24px; border-radius: var(--kulma); background: var(--vihrea-vaalea); counter-increment: kulku; }
+.kulku li:nth-child(2) { background: var(--hiekka); }
+.kulku li:nth-child(3) { background: var(--terra-vaalea); }
+.kulku li:nth-child(4) { background: #fff; box-shadow: inset 0 0 0 1px var(--viiva); }
+.kulku li::before {
+  content: counter(kulku);
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  font: 800 2rem/1 var(--font-otsikko);
+  color: var(--teksti-2);
+}
+.kulku .h3 + p { margin-top: 8px; color: var(--teksti-2); }
 
 /* Referenssit: tapauskuvaus ja aikajana */
 .tapaus__otsikko { max-width: 52rem; }
@@ -806,8 +824,19 @@ p { text-wrap: pretty; }
   .cards,
   .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .cards--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cards--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .block { grid-template-columns: 4fr 7fr; }
   .palvelu { grid-template-columns: 4fr 7fr; }
+  .kulku { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .kulku li:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    right: -13px;
+    top: 34px;
+    z-index: 2;
+    color: var(--terra-tumma);
+    font: 800 1.3rem/1 var(--font-otsikko);
+  }
   /* Aikajana vaakasuunnassa: kolme vaihetta rinnakkain */
   .tapaus__osa--aikajana { max-width: none; }
   .aikajana { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; padding: 40px 0 0; }
@@ -817,6 +846,7 @@ p { text-wrap: pretty; }
 
 @media (min-width: 1100px) {
   .chips { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .cards--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
 /* Valikko avautuu napista, kun kaikki linkit eivät mahdu riville */
@@ -838,7 +868,7 @@ p { text-wrap: pretty; }
     font-size: 0.9rem;
   }}
 /* Kapeahko tietokonenäyttö: valikko mahtuu yhdelle riville evästelinkin kanssa */
-@media (min-width: 1180px) and (max-width: 1439.98px) {
+@media (min-width: 1180px) and (max-width: 1599.98px) {
   .topbar__inner { padding: 0 20px; gap: 8px 10px; }
   .brand small { display: none; }
   .nav__list { gap: 0; }
@@ -937,6 +967,9 @@ html.hz-on { scroll-behavior: auto; } /* JS päättää pehmeästä vierityksest
 .hz-on .hz .stats { margin-top: 28px; }
 .hz-on .hz .card,
 .hz-on .hz .stat { padding: 22px; }
+.hz-on .hz .cards--4 .card { padding: 18px; }
+.hz-on .hz .cards--4 .card__icon { width: 44px; height: 44px; margin-bottom: 12px; }
+.hz-on .hz .cards--4 .h3 { font-size: 1.1rem; }
 
 /* Referenssit: lainaus vasemmalle, teksti ja logot oikealle */
 .hz-on #referenssit > .wrap {

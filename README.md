@@ -8,6 +8,7 @@ VLiNdATA Oy:n kotisivu, https://vlindata.fi/. Tekninen toteutus ja ylläpito: Os
 index.html                       etusivu (koottu, älä muokkaa käsin)
 kiinteistoveroselvitykset/       palvelusivu
 paikkatietopalvelut/             palvelusivu
+paikkatiedon-jatkuvuus/          palvelusivu: paikallinen varajärjestelmä (valikossa "Varautuminen")
 yritys/  referenssit/  yhteystiedot/  evasteet/
 en/                              englanninkieliset sivut samassa järjestyksessä
 404.html                         "sivua ei löytynyt" molemmilla kielillä

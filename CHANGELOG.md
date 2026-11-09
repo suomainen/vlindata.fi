@@ -4,6 +4,13 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.5.0
+
+- Uusi palvelusivu "Paikkatiedon jatkuvuus" (`/paikkatiedon-jatkuvuus/`, englanniksi `/en/gis-continuity/`), valikossa nimellä Varautuminen / Preparedness Kiinteistöveroselvitysten ja Paikkatietopalvelujen rinnalla: ongelma, toiminta neljänä vaiheena, mitä kunta saa (käyttöönotto, ylläpito, tuki varautumiseen), taustaa ja tarjouspyyntö. Tuotenimeä tai opinnäytetyötä ei mainita.
+- Etusivun Paikkatietopalvelut-paneeliin neljäs kortti, joka vie uudelle sivulle.
+- Yläpalkki levennetty (enintään 1440 px sisältöä) ja valikon tiivis tila 1180–1600 px näytöille, jotta valikko mahtuu yhdelle riville.
+- Hakukonetiedot (Service), sitemap.xml ja llms.txt päivitetty.
+
 ## 2.4.7
 
 - Vaakavierityksen paneelit tiivistetty, jotta ne mahtuvat näkymään ilman sisäistä pystyvieritystä (tietokoneen näytöt noin 1440 × 900 ja suuremmat):

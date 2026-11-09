@@ -7,6 +7,7 @@
 - [Kiinteistöveroselvitykset](https://vlindata.fi/kiinteistoveroselvitykset/): rekistereistä puuttuvien rakennusten tunnistaminen, rakennusrekisterin ja kiinteistöverotietojen vertailu, omistajakyselyt, maastotarkistukset ja raportointi. Työ etenee vaiheittain kunnan resurssien mukaan.
 - [Raportit kunnan johdolle](https://vlindata.fi/kiinteistoveroselvitykset/#raportit): kiinteistöveroanalyysi (mistä kiinteistöverotulojen kasvu muodostuu: veroprosentit, rakennuskanta, muut verotusarvon muutokset) ja kiinteistöveroprojektin vaikuttavuusseuranta (raportti kolme kertaa vuodessa).
 - [Paikkatietopalvelut](https://vlindata.fi/paikkatietopalvelut/): uudet paikkatietoaineistot, aineistojen päivittäminen, paikkatietoanalyysit ja rekisterivertailut, paikkatietojärjestelmät ja tietokannat sekä asiantuntija-apu toimintatapojen kehittämiseen.
+- [Paikkatiedon jatkuvuus ja varautuminen](https://vlindata.fi/paikkatiedon-jatkuvuus/): paikallinen varajärjestelmä, joka pitää kunnan valitsemista paikkatietoaineistoista paikallisen kopion (GeoPackage, MBTiles) selain- ja QGIS-käyttöön rajapinta- tai verkkokatkon ajaksi; käyttöönotto, ylläpito ja tuki varautumiseen.
 
 ## Yritys
 
@@ -21,4 +22,5 @@
 - [Property tax audits](https://vlindata.fi/en/property-tax-audits/): identifying buildings missing from registers, comparing building register and property tax data, owner enquiries, field checks and reporting.
 - [Reports for municipal management](https://vlindata.fi/en/property-tax-audits/#raportit): property tax analysis (what property tax revenue growth is made of) and impact monitoring of property tax projects (report three times a year).
 - [GIS services](https://vlindata.fi/en/gis-services/): new datasets, dataset updates, spatial analysis, GIS systems and databases, expert help.
+- [GIS continuity and preparedness](https://vlindata.fi/en/gis-continuity/): a local backup system keeping a local copy of selected municipal GIS datasets for browser and QGIS use during interface or network outages; deployment, maintenance and preparedness support.
 - [Company](https://vlindata.fi/en/company/), [References](https://vlindata.fi/en/references/), [Contact](https://vlindata.fi/en/contact/): phone +358 44 301 2471, email virpi@vlindata.fi.

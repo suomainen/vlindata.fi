@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.4.7"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.5.0"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # ---------------------------------------------------------------------------
 # Sivut: avain -> polku kummallakin kielellä. Navigaation järjestys on tämä.
@@ -32,12 +32,13 @@ POLUT = {
     "etusivu":        {"fi": "",                           "en": "en/"},
     "kiinteistovero": {"fi": "kiinteistoveroselvitykset/", "en": "en/property-tax-audits/"},
     "paikkatieto":    {"fi": "paikkatietopalvelut/",       "en": "en/gis-services/"},
+    "jatkuvuus":      {"fi": "paikkatiedon-jatkuvuus/",    "en": "en/gis-continuity/"},
     "yritys":         {"fi": "yritys/",                    "en": "en/company/"},
     "referenssit":    {"fi": "referenssit/",               "en": "en/references/"},
     "yhteystiedot":   {"fi": "yhteystiedot/",              "en": "en/contact/"},
     "evasteet":       {"fi": "evasteet/",                  "en": "en/cookies/"},
 }
-NAVIGAATIO = ["etusivu", "kiinteistovero", "paikkatieto", "yritys", "referenssit", "yhteystiedot"]
+NAVIGAATIO = ["etusivu", "kiinteistovero", "paikkatieto", "jatkuvuus", "yritys", "referenssit", "yhteystiedot"]
 
 SIVUT = {
     "fi": {
@@ -57,6 +58,12 @@ SIVUT = {
             "title": "Paikkatietopalvelut kunnille – VLiNdATA Oy",
             "description": "Paikkatietoaineistojen tuottaminen, päivittäminen ja analysointi sekä asiantuntija-apu järjestelmiin, rekistereihin ja tiedonhallintaan.",
             "service": "Paikkatietopalvelut",
+        },
+        "jatkuvuus": {
+            "nav": "Varautuminen",
+            "title": "Paikkatiedon jatkuvuus ja varautuminen – VLiNdATA Oy",
+            "description": "Paikallinen varajärjestelmä kunnan paikkatietoaineistoille: kartta toimii selaimessa ja QGISissä myös silloin, kun ulkoinen rajapinta tai verkkoyhteys katkeaa.",
+            "service": "Paikkatiedon jatkuvuus ja varajärjestelmä",
         },
         "yritys": {
             "nav": "Yritys",
@@ -97,6 +104,12 @@ SIVUT = {
             "title": "GIS services for municipalities – VLiNdATA Oy",
             "description": "Producing, updating and analysing GIS datasets, and expert help with systems, registers and information management.",
             "service": "GIS services",
+        },
+        "jatkuvuus": {
+            "nav": "Preparedness",
+            "title": "GIS continuity and preparedness – VLiNdATA Oy",
+            "description": "A local backup system for municipal GIS data: the map works in the browser and in QGIS even when an external interface or network connection is down.",
+            "service": "GIS continuity and backup system",
         },
         "yritys": {
             "nav": "Company",

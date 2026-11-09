@@ -37,6 +37,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/paikkatietopalvelut/"/>
   </url>
   <url>
+    <loc>https://vlindata.fi/paikkatiedon-jatkuvuus/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/paikkatiedon-jatkuvuus/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/gis-continuity/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/paikkatiedon-jatkuvuus/"/>
+  </url>
+  <url>
+    <loc>https://vlindata.fi/en/gis-continuity/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/paikkatiedon-jatkuvuus/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/gis-continuity/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vlindata.fi/paikkatiedon-jatkuvuus/"/>
+  </url>
+  <url>
     <loc>https://vlindata.fi/yritys/</loc>
     <xhtml:link rel="alternate" hreflang="fi" href="https://vlindata.fi/yritys/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vlindata.fi/en/company/"/>
