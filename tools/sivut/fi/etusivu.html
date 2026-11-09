@@ -18,10 +18,11 @@
         <nav class="chips" aria-label="Etusivun osiot">
           <a class="chip chip--hiekka" href="#kiinteistovero"><span class="chip__nro" aria-hidden="true">02</span>Kiinteistö&shy;vero&shy;selvitykset</a>
           <a class="chip chip--vihrea" href="#paikkatieto"><span class="chip__nro" aria-hidden="true">03</span>Paikkatieto&shy;palvelut</a>
-          <a class="chip chip--valkoinen" href="#miksi"><span class="chip__nro" aria-hidden="true">04</span>Miksi VLiNdATA?</a>
-          <a class="chip chip--terra" href="#referenssit"><span class="chip__nro" aria-hidden="true">05</span>Referenssit</a>
-          <a class="chip chip--metsa" href="#virpi"><span class="chip__nro" aria-hidden="true">06</span>Yrittäjä</a>
-          <a class="chip chip--salvia" href="#yhteys"><span class="chip__nro" aria-hidden="true">07</span>Yhteystiedot</a>
+          <a class="chip chip--salvia" href="#varautuminen"><span class="chip__nro" aria-hidden="true">04</span>Varautuminen</a>
+          <a class="chip chip--valkoinen" href="#miksi"><span class="chip__nro" aria-hidden="true">05</span>Miksi VLiNdATA?</a>
+          <a class="chip chip--terra" href="#referenssit"><span class="chip__nro" aria-hidden="true">06</span>Referenssit</a>
+          <a class="chip chip--metsa" href="#virpi"><span class="chip__nro" aria-hidden="true">07</span>Yrittäjä</a>
+          <a class="chip chip--vihrea" href="#yhteys"><span class="chip__nro" aria-hidden="true">08</span>Yhteystiedot</a>
         </nav>
       </div>
     </section>
@@ -62,7 +63,7 @@
             <p>Autan myös pohtimaan, miten kunnan paikkatietoaineistot, rekisterit ja järjestelmät kannattaisi järjestää.</p>
           </div>
         </div>
-        <ul class="cards cards--4">
+        <ul class="cards">
           <li class="card">
             <span class="card__icon">{{ikoni:layers}}</span>
             <h3 class="h3">Uudet paikkatietoaineistot ja aineistopäivitykset.</h3>
@@ -75,13 +76,39 @@
             <span class="card__icon">{{ikoni:workflow}}</span>
             <h3 class="h3">Järjestelmien ja tiedonhallinnan asiantuntija-apu.</h3>
           </li>
-          <li class="card">
-            <span class="card__icon">{{ikoni:cloud-off}}</span>
-            <h3 class="h3"><a class="card__linkki" href="{{sivu:jatkuvuus}}">Paikkatiedon jatkuvuus ja varautuminen häiriötilanteisiin →</a></h3>
-          </li>
         </ul>
         <div class="actions">
           <a class="btn btn--toissijainen" href="{{sivu:paikkatieto}}">Tutustu paikkatietopalveluihin {{ikoni:arrow-right}}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel--salvia panel--kartta" id="varautuminen" data-hz="Varautuminen" aria-labelledby="varautuminen-otsikko">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="hero__nosto">Varautuminen</p>
+          <h2 class="h2" id="varautuminen-otsikko">Kartta toimii, vaikka rajapinta ei vastaa.</h2>
+          <div class="flow">
+            <p class="lead">Kun ulkoinen rajapinta tai verkkoyhteys katkeaa, kunnan karttaa tarvitaan silti – esimerkiksi rakennusvalvonnassa, maankäytössä ja häiriötilanteissa.</p>
+            <p>Paikallinen varajärjestelmä pitää kunnan valitsemista aineistoista paikallisen kopion, jota voi käyttää selaimessa ja QGISissä myös katkon aikana.</p>
+          </div>
+        </div>
+        <ul class="cards">
+          <li class="card">
+            <span class="card__icon">{{ikoni:wrench}}</span>
+            <h3 class="h3">Käyttöönotto kunnan ympäristöön.</h3>
+          </li>
+          <li class="card">
+            <span class="card__icon">{{ikoni:life-buoy}}</span>
+            <h3 class="h3">Ylläpito ja valvonnan seuranta.</h3>
+          </li>
+          <li class="card">
+            <span class="card__icon">{{ikoni:shield-check}}</span>
+            <h3 class="h3">Tukea jatkuvuussuunnitteluun ja varautumiseen.</h3>
+          </li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn--toissijainen" href="{{sivu:jatkuvuus}}">Tutustu varautumiseen {{ikoni:arrow-right}}</a>
         </div>
       </div>
     </section>

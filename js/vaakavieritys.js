@@ -13,8 +13,8 @@
 (() => {
   // Milloin vaakavieritys on käytössä (vastaa CSS:n .hz-tilaa)
   const KAYTOSSA = '(min-width: 1180px) and (min-height: 620px) and (prefers-reduced-motion: no-preference)';
-  const KAISTA_SEURAAVA = 58;   // tulevan paneelin kaistan leveys (px)
-  const KAISTA_EDELLINEN = 58;  // ohitetun paneelin kaistan leveys (px), sama kuin tulevilla
+  const KAISTA_SEURAAVA = 50;   // tulevan paneelin kaistan leveys (px)
+  const KAISTA_EDELLINEN = 50;  // ohitetun paneelin kaistan leveys (px), sama kuin tulevilla
   const VALI = 8;               // paneelien väli (px)
   const AVAUS = 0.9;            // paneelin avautumiseen kuluva vieritys näkymän korkeuksina
   const PYSAHDYS = 0.3;         // vähimmäisvieritys avatun paneelin kohdalla

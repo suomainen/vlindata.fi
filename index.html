@@ -145,7 +145,7 @@
           <li class="nav__evasteet"><a class="nav__link nav__link--pieni" href="./evasteet/">Evästeet</a></li>
           <li class="nav__meta">
             <button class="nav__meta-nappi" type="button" id="consent-open">Evästeasetukset</button>
-            <span>© 2026 VLiNdATA Oy · versio <span data-site-version>2.5.0</span></span>
+            <span>© 2026 VLiNdATA Oy · versio <span data-site-version>2.6.0</span></span>
             <span class="nav__toteutus">Tekninen toteutus: <a href="https://summanen.org/" target="_blank" rel="noopener">summanen.org<span class="sr-only">  (avautuu uuteen välilehteen)</span></a></span>
           </li>
         </ul>
@@ -177,10 +177,11 @@
         <nav class="chips" aria-label="Etusivun osiot">
           <a class="chip chip--hiekka" href="#kiinteistovero"><span class="chip__nro" aria-hidden="true">02</span>Kiinteistö&shy;vero&shy;selvitykset</a>
           <a class="chip chip--vihrea" href="#paikkatieto"><span class="chip__nro" aria-hidden="true">03</span>Paikkatieto&shy;palvelut</a>
-          <a class="chip chip--valkoinen" href="#miksi"><span class="chip__nro" aria-hidden="true">04</span>Miksi VLiNdATA?</a>
-          <a class="chip chip--terra" href="#referenssit"><span class="chip__nro" aria-hidden="true">05</span>Referenssit</a>
-          <a class="chip chip--metsa" href="#virpi"><span class="chip__nro" aria-hidden="true">06</span>Yrittäjä</a>
-          <a class="chip chip--salvia" href="#yhteys"><span class="chip__nro" aria-hidden="true">07</span>Yhteystiedot</a>
+          <a class="chip chip--salvia" href="#varautuminen"><span class="chip__nro" aria-hidden="true">04</span>Varautuminen</a>
+          <a class="chip chip--valkoinen" href="#miksi"><span class="chip__nro" aria-hidden="true">05</span>Miksi VLiNdATA?</a>
+          <a class="chip chip--terra" href="#referenssit"><span class="chip__nro" aria-hidden="true">06</span>Referenssit</a>
+          <a class="chip chip--metsa" href="#virpi"><span class="chip__nro" aria-hidden="true">07</span>Yrittäjä</a>
+          <a class="chip chip--vihrea" href="#yhteys"><span class="chip__nro" aria-hidden="true">08</span>Yhteystiedot</a>
         </nav>
       </div>
     </section>
@@ -221,7 +222,7 @@
             <p>Autan myös pohtimaan, miten kunnan paikkatietoaineistot, rekisterit ja järjestelmät kannattaisi järjestää.</p>
           </div>
         </div>
-        <ul class="cards cards--4">
+        <ul class="cards">
           <li class="card">
             <span class="card__icon"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/> <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/> <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/> </svg></span>
             <h3 class="h3">Uudet paikkatietoaineistot ja aineistopäivitykset.</h3>
@@ -234,13 +235,39 @@
             <span class="card__icon"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect width="8" height="8" x="3" y="3" rx="2"/> <path d="M7 11v4a2 2 0 0 0 2 2h4"/> <rect width="8" height="8" x="13" y="13" rx="2"/> </svg></span>
             <h3 class="h3">Järjestelmien ja tiedonhallinnan asiantuntija-apu.</h3>
           </li>
-          <li class="card">
-            <span class="card__icon"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M10.94 5.274A7 7 0 0 1 15.71 10h1.79a4.5 4.5 0 0 1 4.222 6.057"/> <path d="M18.796 18.81A4.5 4.5 0 0 1 17.5 19H9A7 7 0 0 1 5.79 5.78"/> <path d="m2 2 20 20"/> </svg></span>
-            <h3 class="h3"><a class="card__linkki" href="./paikkatiedon-jatkuvuus/">Paikkatiedon jatkuvuus ja varautuminen häiriötilanteisiin →</a></h3>
-          </li>
         </ul>
         <div class="actions">
           <a class="btn btn--toissijainen" href="./paikkatietopalvelut/">Tutustu paikkatietopalveluihin <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M5 12h14"/> <path d="m12 5 7 7-7 7"/> </svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel--salvia panel--kartta" id="varautuminen" data-hz="Varautuminen" aria-labelledby="varautuminen-otsikko">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="hero__nosto">Varautuminen</p>
+          <h2 class="h2" id="varautuminen-otsikko">Kartta toimii, vaikka rajapinta ei vastaa.</h2>
+          <div class="flow">
+            <p class="lead">Kun ulkoinen rajapinta tai verkkoyhteys katkeaa, kunnan karttaa tarvitaan silti – esimerkiksi rakennusvalvonnassa, maankäytössä ja häiriötilanteissa.</p>
+            <p>Paikallinen varajärjestelmä pitää kunnan valitsemista aineistoista paikallisen kopion, jota voi käyttää selaimessa ja QGISissä myös katkon aikana.</p>
+          </div>
+        </div>
+        <ul class="cards">
+          <li class="card">
+            <span class="card__icon"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"/> </svg></span>
+            <h3 class="h3">Käyttöönotto kunnan ympäristöön.</h3>
+          </li>
+          <li class="card">
+            <span class="card__icon"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <circle cx="12" cy="12" r="10"/> <path d="m4.93 4.93 4.24 4.24"/> <path d="m14.83 9.17 4.24-4.24"/> <path d="m14.83 14.83 4.24 4.24"/> <path d="m9.17 14.83-4.24 4.24"/> <circle cx="12" cy="12" r="4"/> </svg></span>
+            <h3 class="h3">Ylläpito ja valvonnan seuranta.</h3>
+          </li>
+          <li class="card">
+            <span class="card__icon"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/> <path d="m9 12 2 2 4-4"/> </svg></span>
+            <h3 class="h3">Tukea jatkuvuussuunnitteluun ja varautumiseen.</h3>
+          </li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn--toissijainen" href="./paikkatiedon-jatkuvuus/">Tutustu varautumiseen <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M5 12h14"/> <path d="m12 5 7 7-7 7"/> </svg></a>
         </div>
       </div>
     </section>
