@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.7.1"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.7.2"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # ---------------------------------------------------------------------------
 # Sivut: avain -> polku kummallakin kielellä. Navigaation järjestys on tämä.
@@ -361,7 +361,7 @@ def head(kieli, avain, root):
     robots = meta.get("robots", "index, follow")
     return f"""<head>
   <meta charset="utf-8">
-  <meta name="color-scheme" content="light dark">
+  <meta name="color-scheme" content="only light">
   <script src="{root}js/teema.js"></script>
   <script src="{root}js/consent.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -373,8 +373,7 @@ def head(kieli, avain, root):
   <link rel="alternate" hreflang="x-default" href="{url_fi}">
   <meta name="robots" content="{robots}">
   <meta name="author" content="Virpi Lindvall, VLiNdATA Oy">
-  <meta name="theme-color" content="#f7f4ec" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#18201b" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f7f4ec">
   <link rel="icon" href="{root}favicon.ico" sizes="48x48">
   <link rel="icon" href="{root}img/icons/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="{root}apple-touch-icon.png">

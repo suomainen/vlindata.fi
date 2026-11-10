@@ -47,7 +47,7 @@ Avaa selaimessa http://localhost:8000/.
 - **Yläpalkki ja valikko (myös Evästeet, Evästeasetukset ja versio), evästeilmoitus:** `tools/rakenna.py`, funktiot `header` ja `evasteilmoitus` sekä `TEKSTIT`. Sivustolla ei ole erillistä alatunnistetta.
 - **Referenssikuntien logot:** `tools/rakenna.py`, kohta `LOGOT`, ja kuvat kansioon `img/logot/`.
 - **Värit ja fontit:** `css/style.css`, kohta 1. Kontrastit on laskettu kommentteihin; tarkista ne, jos vaihdat värejä.
-- **Tumma ulkoasu:** `css/style.css`, kohta 1. Tummat värit ovat kahdessa samanlaisessa lohkossa (laitteen tumma tila ja kävijän oma valinta); muuta molempia. Valinta tallentuu selaimeen avaimella `vlindata-teema` (js/teema.js).
+- **Tumma ulkoasu:** `css/style.css`, kohta 1. Oletus on aina vaalea; tumma ulkoasu tulee käyttöön vain yläpalkin napista (`:root[data-teema="tumma"]`). Valinta tallentuu selaimeen avaimella `vlindata-teema` (js/teema.js).
 - Sivupohjien merkinnät (`{{root}}`, `{{ikoni:nimi}}`, `{{sivu:avain}}`, `{{lomake}}`, `{{logot}}`, `{{murupolku}}`, `{{versio}}`) on selitetty skriptin alussa.
 
 ## Julkaisu

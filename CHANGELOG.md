@@ -4,6 +4,11 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.7.2
+
+- Oletuksena aina vaalea ulkoasu: tumma tulee käyttöön vain yläpalkin kuu-napista, ei enää laitteen asetuksesta. Selaimen pakotettu tummennus estetty taas (`color-scheme: only light`).
+- Evästeet-sivun "Ulkoasu laitteen asetuksen mukaan" -nappi poistettu.
+
 ## 2.7.1
 
 - Puhelimella ja tabletilla valikkonappi yläpalkin oikeaan reunaan (järjestys: logo, teemanappi, kielivalinta, valikko).

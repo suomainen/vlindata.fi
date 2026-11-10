@@ -23,9 +23,9 @@
 
 /* 1. Muuttujat ja perusasetukset ------------------------------------ */
 :root {
-  /* Vaalea ulkoasu on oletus; tumma ulkoasu alla (laitteen asetus tai yläpalkin nappi, js/teema.js).
-     Kun sivulla on oma tumma ulkoasu, selaimet eivät tummenna sitä omalla tavallaan. */
-  color-scheme: light;
+  /* Oletuksena vaalea ulkoasu: "only light" estää selainten pakotetun tumman tilan
+     (Chrome, Samsung Internet). Oma tumma ulkoasu alla, yläpalkin napista (js/teema.js). */
+  color-scheme: only light;
   /* Virpin paletti (toteutusohje, kohta 2) */
   --salvia: #a7b59c;
   --vihrea-vaalea: #dde6d5;
@@ -67,34 +67,11 @@
   --kulma-pieni: 12px;
 }
 
-/* Tumma ulkoasu Virpin väreillä. Sama lohko kahdesti (pidä samana):
-   1) laitteen tumma tila, ellei kävijä ole valinnut vaaleaa
-   2) kävijän oma valinta yläpalkin napista
+/* Tumma ulkoasu Virpin väreillä: vain kun kävijä valitsee sen yläpalkin napista
+   (js/teema.js lisää html-elementtiin data-teema="tumma"). Oletus on aina vaalea.
    Kontrastit (laskettu): --teksti 8,9–13,5:1 kaikilla tummilla pohjilla,
    --teksti-2 5,9–9,0:1, --terra-tumma 5,4–8,2:1, metsän pinnoilla tumma teksti 13:1,
    terrakottapainike 5,9:1. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-teema="vaalea"]) {
-    color-scheme: dark;
-    --salvia: #34402f;
-    --vihrea-vaalea: #222d26;
-    --metsa: #dde6d5;            /* metsänvihreät pinnat kääntyvät vaaleiksi korostuksiksi */
-    --hiekka: #2a2720;
-    --valkoinen: #18201b;        /* sivun pohja ja vaalean pinnan teksti */
-    --terra-vaalea: #332520;
-    --teksti: #ece7db;
-    --teksti-2: #b8c1b3;
-    --terra-tumma: #e3a993;
-    --viiva: #3a463e;
-    --valkoinen-rgb: 24, 32, 27;
-    --teksti-rgb: 0, 0, 0;
-    --pinta: #202a24;
-    --logo-pohja: #f2efe6;
-    --brand-pohja: #f7f4ec;
-    --terra-teksti: #1b231e;
-    --kartta-voimakkuus: 0.3;
-  }
-}
 :root[data-teema="tumma"] {
   color-scheme: dark;
   --salvia: #34402f;
@@ -1008,9 +985,6 @@ p { text-wrap: pretty; }
 @media (prefers-contrast: more) {
   :root { --teksti-2: #29362e; --viiva: #6c7769; }
   :root[data-teema="tumma"] { --teksti-2: var(--teksti); --viiva: #8a9686; }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-teema="vaalea"]) { --teksti-2: var(--teksti); --viiva: #8a9686; }
-  }
   .panel--kartta::before { display: none; }
 }
 
