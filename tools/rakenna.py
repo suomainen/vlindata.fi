@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.6.2"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.6.3"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # ---------------------------------------------------------------------------
 # Sivut: avain -> polku kummallakin kielellä. Navigaation järjestys on tämä.
@@ -365,7 +365,7 @@ def head(kieli, avain, root):
   <meta name="author" content="Virpi Lindvall, VLiNdATA Oy">
   <meta name="theme-color" content="#f7f4ec">
   <link rel="icon" href="{root}favicon.ico" sizes="48x48">
-  <link rel="icon" href="{root}favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="{root}img/icons/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="{root}apple-touch-icon.png">
   <link rel="manifest" href="{root}site.webmanifest">
   <meta property="og:type" content="website">

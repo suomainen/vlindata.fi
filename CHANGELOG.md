@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.6.3
+
+- Favicon ja sovelluskuvakkeet tehty oikeasta logosta: kehys, kartta ja VL-merkki ilman alaosan VLiNdATA-tekstiä, valkoisella pohjalla (`favicon.ico` 16/32/48, `apple-touch-icon.png`, `img/icons/`). Vanha tekstipohjainen `favicon.svg` poistettu.
+
 ## 2.6.2
 
 - Kuntien logot tarkistettu läpinäkyvyyden osalta: Liedon logon valkoinen tausta muutettu läpinäkyväksi ja rajattu, Naantalin SVG siivottu (Inkscapen metatiedot pois, väri suoraan polussa). Muut logot olivat jo läpinäkyviä.
