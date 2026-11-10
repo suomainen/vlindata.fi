@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.6.6"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.6.7"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # ---------------------------------------------------------------------------
 # Sivut: avain -> polku kummallakin kielellä. Navigaation järjestys on tämä.
@@ -361,7 +361,7 @@ def head(kieli, avain, root):
     robots = meta.get("robots", "index, follow")
     return f"""<head>
   <meta charset="utf-8">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="only light">
   <script src="{root}js/consent.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="{meta['description']}">

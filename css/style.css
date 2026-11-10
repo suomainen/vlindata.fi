@@ -23,6 +23,8 @@
 
 /* 1. Muuttujat ja perusasetukset ------------------------------------ */
 :root {
+  /* Sivulla on vain vaalea ulkoasu: estää selainten pakotetun tumman tilan (Chrome, uudet Samsung Internetit) */
+  color-scheme: only light;
   /* Virpin paletti (toteutusohje, kohta 2) */
   --salvia: #a7b59c;
   --vihrea-vaalea: #dde6d5;
