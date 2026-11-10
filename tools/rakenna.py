@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.6.4"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.6.5"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # ---------------------------------------------------------------------------
 # Sivut: avain -> polku kummallakin kielellä. Navigaation järjestys on tämä.
@@ -49,12 +49,14 @@ SIVUT = {
         },
         "kiinteistovero": {
             "nav": "Kiinteistöveroselvitykset",
+            "valikko": "Kiinteistövero",
             "title": "Kiinteistöveroselvitykset ja rakennusrekisterit – VLiNdATA Oy",
             "description": "Kiinteistöveroselvitys tunnistaa rekistereistä puuttuvat ja virheelliset rakennukset. Työ etenee vaiheittain kunnan resurssien mukaan.",
             "service": "Kiinteistöveroselvitykset ja rakennusrekisterien laadun parantaminen",
         },
         "paikkatieto": {
             "nav": "Paikkatietopalvelut",
+            "valikko": "Paikkatieto",
             "title": "Paikkatietopalvelut kunnille – VLiNdATA Oy",
             "description": "Paikkatietoaineistojen tuottaminen, päivittäminen ja analysointi sekä asiantuntija-apu järjestelmiin, rekistereihin ja tiedonhallintaan.",
             "service": "Paikkatietopalvelut",
@@ -95,12 +97,14 @@ SIVUT = {
         },
         "kiinteistovero": {
             "nav": "Property tax audits",
+            "valikko": "Property tax",
             "title": "Property tax audits and building registers – VLiNdATA Oy",
             "description": "A property tax audit identifies buildings that are missing or incorrect in the registers. The work proceeds in stages to suit the municipality's resources.",
             "service": "Property tax audits and building register quality",
         },
         "paikkatieto": {
             "nav": "GIS services",
+            "valikko": "GIS",
             "title": "GIS services for municipalities – VLiNdATA Oy",
             "description": "Producing, updating and analysing GIS datasets, and expert help with systems, registers and information management.",
             "service": "GIS services",
@@ -405,7 +409,7 @@ def header(kieli, avain, root):
     linkit = []
     for k in NAVIGAATIO:
         nykyinen = ' aria-current="page"' if k == avain else ""
-        linkit.append(f'        <li><a class="nav__link" href="{href(root, POLUT[k][kieli])}"{nykyinen}>{SIVUT[kieli][k]["nav"]}</a></li>')
+        linkit.append(f'        <li><a class="nav__link" href="{href(root, POLUT[k][kieli])}"{nykyinen}>{SIVUT[kieli][k].get("valikko", SIVUT[kieli][k]["nav"])}</a></li>')
     fi_href = href(root, POLUT[avain]["fi"])
     en_href = href(root, POLUT[avain]["en"])
     fi_cur = ' aria-current="page"' if kieli == "fi" else ""
