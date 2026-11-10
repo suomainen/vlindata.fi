@@ -1048,6 +1048,8 @@ html.hz-on { scroll-behavior: auto; } /* JS päättää pehmeästä vierityksest
 .hz-on .hz .actions { margin-top: 24px; }
 .hz-on .hz .cards,
 .hz-on .hz .stats { margin-top: 28px; }
+.hz-on .hz .stats--4 .stat { padding: 22px; }
+.hz-on .hz .stats--4 .stat__teksti { font-size: 1.05rem; }
 .hz-on .hz .card,
 .hz-on .hz .stat { padding: 22px; }
 .hz-on .hz .cards--4 .card { padding: 18px; }
