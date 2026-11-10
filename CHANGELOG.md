@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.6.1
+
+- Julkaisu Domainhotellin kotisivutilaan: `.htaccess` (https- ja www-ohjaus, 404-sivu, tiedostotyypit, pakkaus, välimuisti, tietoturvaotsakkeet, ylläpitotiedostojen esto) ja julkaisuskripti `tools/julkaise.ps1` (WinSCP).
+
 ## 2.6.0
 
 - Etusivulle oma Varautuminen-paneeli (04, salvianvihreä) Paikkatietopalvelujen jälkeen: otsikko, kaksi kappaletta, kolme korttia ja painike Varautuminen-sivulle. Paneelivalitsimeen uusi laatta, numerot 04–08.

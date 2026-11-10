@@ -1,6 +1,6 @@
 # vlindata.fi
 
-VLiNdATA Oy:n kotisivu, https://vlindata.fi/. Tekninen toteutus ja ylläpito: Oskari Summanen, [summanen.org](https://summanen.org/). Staattinen sivusto: tavallisia HTML-, CSS- ja JavaScript-tiedostoja ilman julkaisutyökalua. Sivut kootaan pienellä Python-skriptillä, ja ne voi julkaista sellaisenaan GitHub Pagesissa tai millä tahansa palvelimella.
+VLiNdATA Oy:n kotisivu, https://vlindata.fi/. Tekninen toteutus ja ylläpito: Oskari Summanen, [summanen.org](https://summanen.org/). Staattinen sivusto: tavallisia HTML-, CSS- ja JavaScript-tiedostoja ilman julkaisutyökalua. Sivut kootaan pienellä Python-skriptillä ja julkaistaan Domainhotellin kotisivutilaan WinSCP:llä.
 
 ## Rakenne
 
@@ -23,6 +23,8 @@ img/                             valokuvat, karttakuviot, logot, jakokuvat
 favicon.*, apple-touch-icon.png, img/icons/, site.webmanifest   kuvakkeet
 robots.txt, sitemap.xml, llms.txt                               hakukoneille
 tools/rakenna.py                 kokoaa sivut ja sitemap.xml:n
+tools/julkaise.ps1               julkaisu Domainhotelliin WinSCP:llä
+.htaccess                        palvelimen asetukset (https, 404, välimuisti)
 tools/sivut/fi/, tools/sivut/en/ sivujen tekstit (yksi tiedosto per sivu)
 tools/ikonit/                    Lucide-ikonit, jotka skripti upottaa sivuille
 ```
@@ -47,18 +49,46 @@ Avaa selaimessa http://localhost:8000/.
 
 ## Julkaisu
 
+Sivusto julkaistaan Domainhotellin kotisivutilaan (`/public_html`) WinSCP:llä skriptillä `tools/julkaise.ps1`. GitHub on versionhallinta ja varmuuskopio; sivu ei ole GitHub Pagesissa.
+
+### Kertaluonteinen valmistelu
+
+1. Asenna [WinSCP](https://winscp.net/).
+2. Luo WinSCP:ssä uusi yhteys (New Site) Domainhotellin FTP-tunnuksilla:
+   - protokolla **SFTP** (portti 22), jos SSH on käytössä, muuten **FTP** + salaus **TLS/SSL Explicit** (portti 21). Ei salaamatonta FTP:tä.
+   - palvelin, käyttäjätunnus ja salasana Domainhotellin tunnusviestistä
+   - tallenna nimellä **vlindata** ja valitse tallenna salasana.
+3. Avaa yhteys kerran WinSCP:n ikkunassa ja hyväksy palvelimen avain tai varmenne. Tarkista samalla, että sivuston juurikansio on `/public_html`.
+
+Tunnuksia ei tallenneta repoon.
+
+### Julkaisu
+
 ```
 git add -A
 git commit -m "Kuvaus muutoksesta"
+git tag -a v2.6.1 -m "Kuvaus"
 git push --follow-tags
+.\tools\julkaise.ps1 -Esikatselu   # näyttää, mitä siirtyisi
+.\tools\julkaise.ps1               # julkaisee muuttuneet tiedostot
 ```
 
-Jos push hylätään ("fetch first"), GitHubissa on muutos, jota koneella ei ole (esim. GitHubin luoma `CNAME`):
+Ensimmäisellä kerralla:
 
 ```
-git pull --rebase
-git push --follow-tags
+.\tools\julkaise.ps1 -Varmuuskopio   # vanha sivu talteen kansioon ..\vlindata-varmuuskopio\
+.\tools\julkaise.ps1                 # uusi sivu palvelimelle
+.\tools\julkaise.ps1 -Poista -Esikatselu   # näyttää vanhan sivun jäänteet
+.\tools\julkaise.ps1 -Poista               # poistaa ne
 ```
+
+Skripti ei siirrä ylläpitotiedostoja (`tools/`, `.git/`, `README.md`, `CHANGELOG.md`), eikä `-Poista` koske palvelimen omiin kansioihin (`.well-known/`, `cgi-bin/`). Se varoittaa, jos repossa on tallentamattomia muutoksia. Loki: `%TEMP%\vlindata-julkaisu.log`.
+
+### Palvelimen asetukset (`.htaccess`)
+
+`.htaccess` julkaistaan muiden tiedostojen mukana. Se ohjaa osoitteet muotoon `https://vlindata.fi/` (myös www- ja http-osoitteet), ottaa käyttöön 404-sivun, estää kansiolistauksen ja ylläpitotiedostojen näkymisen, asettaa tiedostotyypit, pakkauksen, välimuistin ja tietoturvaotsakkeet.
+
+Jos push GitHubiin hylätään ("fetch first"): `git pull --rebase` ja uudelleen `git push --follow-tags`.
 
 ## Versiointi
 

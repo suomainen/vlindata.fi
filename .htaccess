@@ -1,0 +1,63 @@
+# Apache-asetukset vlindata.fi-sivustolle (Domainhotellin kotisivutila)
+# Tiedosto julkaistaan sivuston juureen (public_html) muiden tiedostojen mukana.
+
+# Kansiolistaus pois, etusivuna index.html, oma 404-sivu
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+AddDefaultCharset utf-8
+
+# Aina https ja osoite ilman www-alkua (sama kuin hakukonetiedoissa).
+# .well-known jätetään rauhaan, jotta SSL-sertifikaatin automaattinen uusinta toimii.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_URI} !^/\.well-known/
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^ https://vlindata.fi%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Ylläpitotiedostot eivät kuulu julkiseksi, vaikka ne siirtyisivät palvelimelle
+RedirectMatch 404 ^/(tools|\.git)(/|$)
+<FilesMatch "\.(md|py|ps1|bundle)$|^\.git">
+  Require all denied
+</FilesMatch>
+
+# Tiedostotyypit
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType image/svg+xml .svg
+  AddType font/woff2 .woff2
+  AddType application/manifest+json .webmanifest
+  AddCharset utf-8 .html .css .js .txt .xml .webmanifest
+</IfModule>
+
+# Pakkaus: tekstitiedostot siirtyvät pienempinä
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml text/javascript application/javascript application/json application/xml application/manifest+json image/svg+xml
+</IfModule>
+
+# Selaimen välimuisti. Tiedostonimissä ei ole versiota, joten tyylit ja skriptit
+# tarkistetaan päivittäin ja sivut aina; kuvat ja fontit säilyvät kuukauden.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 hour"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 day"
+  ExpiresByType text/javascript "access plus 1 day"
+  ExpiresByType application/javascript "access plus 1 day"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# Tietoturvaotsakkeet
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
