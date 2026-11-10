@@ -1,6 +1,7 @@
 /* Yhteydenottolomake: kokoaa viestin ja avaa sen kävijän omassa sähköpostiohjelmassa.
    Tietoja ei lähetetä sivuston palvelimelle eikä kolmannelle osapuolelle.
-   Ilman JavaScriptiä lomake toimii selaimen omalla mailto-lähetyksellä. */
+   Lomakkeella ei ole mailto-actionia (selain varoittaisi https-sivulla); ilman
+   JavaScriptiä näytetään sähköpostiosoite <noscript>-tekstinä. */
 (() => {
   const form = document.querySelector('[data-contact-form]');
   if (!form) return;

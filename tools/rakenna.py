@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.6.3"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.6.4"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # ---------------------------------------------------------------------------
 # Sivut: avain -> polku kummallakin kielellä. Navigaation järjestys on tämä.
@@ -198,6 +198,7 @@ LOMAKE = {
         "required": "pakollinen",
         "name": "Nimi", "org": "Kunta tai organisaatio", "email": "Sähköpostiosoite", "message": "Viesti",
         "button": "Lähetä viesti",
+        "noscript": "Lomake tarvitsee JavaScriptin. Voit lähettää viestin myös suoraan osoitteeseen <a href=\"mailto:virpi@vlindata.fi\">virpi@vlindata.fi</a>.",
         "note": "Lomake ei tallenna tietoja sivustolle. Viesti lähtee omasta sähköpostistasi, kun painat siellä Lähetä.",
     },
     "en": {
@@ -206,6 +207,7 @@ LOMAKE = {
         "required": "required",
         "name": "Name", "org": "Municipality or organisation", "email": "Email address", "message": "Message",
         "button": "Send message",
+        "noscript": "The form needs JavaScript. You can also email <a href=\"mailto:virpi@vlindata.fi\">virpi@vlindata.fi</a> directly.",
         "note": "The form does not store anything on this site. The message is sent from your own email when you press Send there.",
     },
 }
@@ -254,7 +256,10 @@ def lomake(kieli):
         return (f'      <div class="field">\n        <label for="{id_}">{label}{merkki}</label>\n'
                 f'        {ohjain}{virhe}\n      </div>')
     return "\n".join([
-        '<form class="form" action="mailto:virpi@vlindata.fi" method="post" enctype="text/plain" data-contact-form novalidate>',
+        # Ei mailto-actionia: selain merkitsee https-sivun lomakkeen, joka lähettää mailto-osoitteeseen,
+        # "ei täysin turvalliseksi". Viestin avaa js/contact-form.js; ilman JavaScriptiä näytetään osoite.
+        '<form class="form" method="post" data-contact-form novalidate>',
+        f'      <noscript><p class="form__note">{t["noscript"]}</p></noscript>',
         f'      <h3 class="h3">{t["title"]}</h3>',
         f'      <p class="form__note">{t["intro"]}</p>',
         kentta("lomake-nimi", "nimi", t["name"], auto="name"),

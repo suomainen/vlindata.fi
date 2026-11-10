@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.6.4
+
+- Korjattu selaimen varoitus "yhteys ei ole täysin turvallinen": yhteydenottolomakkeella oli mailto-osoite lähetyskohteena, jota selain pitää salaamattomana. Lomake avaa viestin edelleen sähköpostiohjelmassa JavaScriptillä; ilman JavaScriptiä näytetään sähköpostiosoite.
+
 ## 2.6.3
 
 - Favicon ja sovelluskuvakkeet tehty oikeasta logosta: kehys, kartta ja VL-merkki ilman alaosan VLiNdATA-tekstiä, valkoisella pohjalla (`favicon.ico` 16/32/48, `apple-touch-icon.png`, `img/icons/`). Vanha tekstipohjainen `favicon.svg` poistettu.
