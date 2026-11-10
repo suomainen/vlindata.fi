@@ -24,6 +24,7 @@ favicon.*, apple-touch-icon.png, img/icons/, site.webmanifest   kuvakkeet
 robots.txt, sitemap.xml, llms.txt                               hakukoneille
 tools/rakenna.py                 kokoaa sivut ja sitemap.xml:n
 tools/julkaise.ps1               julkaisu Domainhotelliin WinSCP:llä
+tools/commitviesti.ps1           automaattinen commit-viesti julkaise.bat:lle
 .htaccess                        palvelimen asetukset (https, 404, välimuisti)
 tools/sivut/fi/, tools/sivut/en/ sivujen tekstit (yksi tiedosto per sivu)
 tools/ikonit/                    Lucide-ikonit, jotka skripti upottaa sivuille
@@ -86,7 +87,9 @@ Skripti ei siirrä ylläpitotiedostoja (`tools/`, `.git/`, `README.md`, `CHANGEL
 
 ### Pikakomento `julkaise.bat`
 
-Oskarin koneella repon juuressa on `julkaise.bat`, joka ei ole versionhallinnassa (`.git/info/exclude`). Se kokoaa sivut, tekee commitin ja version tagin (`js/menu.js`:n `SITE_VERSION`), vie muutokset GitHubiin ja julkaisee esikatselun jälkeen palvelimelle.
+Oskarin koneella repon juuressa on `julkaise.bat`, joka ei ole versionhallinnassa (`.git/info/exclude`). Se kokoaa sivut, tekee commitin ja version tagin (`js/menu.js`:n `SITE_VERSION`), vie muutokset GitHubiin ja julkaisee esikatselun jälkeen palvelimelle. Commit-viestin muodostaa `tools/commitviesti.ps1`: uuden version kohdalla muutoslokin ensimmäinen kohta, muuten "ylläpito", ja runkoon muuttuneet tiedostot.
+
+`tools/rakenna.py` kirjoittaa sivut aina LF-rivinvaihdoin, jotta Windowsissa ajettuna git ei näe kaikkia sivuja muuttuneina.
 
 ### Palvelimen asetukset (`.htaccess`)
 

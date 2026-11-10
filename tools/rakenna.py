@@ -214,6 +214,13 @@ LOMAKE = {
 # ---------------------------------------------------------------------------
 # Apufunktiot
 # ---------------------------------------------------------------------------
+def kirjoita(polku, teksti):
+    """Kirjoittaa UTF-8:na ja aina LF-rivinvaihdoin, myös Windowsissa.
+    Muuten git näkisi jokaisen sivun muuttuneen pelkkien rivinvaihtojen takia."""
+    with open(polku, "w", encoding="utf-8", newline="\n") as f:
+        f.write(teksti)
+
+
 def ikoni(nimi):
     svg = (TYOKALUT / "ikonit" / f"{nimi}.svg").read_text(encoding="utf-8")
     svg = re.sub(r"<!--.*?-->", "", svg, flags=re.S)
@@ -487,7 +494,7 @@ def rakenna_sivu(kieli, avain):
 """
     kohde = JUURI / polku / "index.html"
     kohde.parent.mkdir(parents=True, exist_ok=True)
-    kohde.write_text(html, encoding="utf-8")
+    kirjoita(kohde, html)
     return kohde
 
 
@@ -510,7 +517,7 @@ def uudelleenohjaus(vanha, uusi_polku):
 </body>
 </html>
 """
-    (JUURI / vanha).write_text(html, encoding="utf-8")
+    kirjoita(JUURI / vanha, html)
 
 
 def sitemap():
@@ -527,7 +534,7 @@ def sitemap():
             rivit.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{DOMAIN}{POLUT[avain]["fi"]}"/>')
             rivit.append("  </url>")
     rivit.append("</urlset>")
-    (JUURI / "sitemap.xml").write_text("\n".join(rivit) + "\n", encoding="utf-8")
+    kirjoita(JUURI / "sitemap.xml", "\n".join(rivit) + "\n")
 
 
 if __name__ == "__main__":
