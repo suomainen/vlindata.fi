@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.7.1
+
+- Puhelimella ja tabletilla valikkonappi yläpalkin oikeaan reunaan (järjestys: logo, teemanappi, kielivalinta, valikko).
+
 ## 2.7.0
 
 - Oma tumma ulkoasu Virpin väreillä: syvä metsänvihreä pohja, luonnonvalkoinen teksti, paneeleissa tummat sävyt vihreästä, hiekasta, savesta ja salviasta, terrakotta korostuksena. Yrittäjäpaneeli ja metsänvihreät pinnat kääntyvät vaaleiksi. Kontrastit 5,4–13,5:1.
