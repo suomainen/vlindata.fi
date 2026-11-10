@@ -4,6 +4,13 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.7.0
+
+- Oma tumma ulkoasu Virpin väreillä: syvä metsänvihreä pohja, luonnonvalkoinen teksti, paneeleissa tummat sävyt vihreästä, hiekasta, savesta ja salviasta, terrakotta korostuksena. Yrittäjäpaneeli ja metsänvihreät pinnat kääntyvät vaaleiksi. Kontrastit 5,4–13,5:1.
+- Sivu seuraa laitteen asetusta (vaalea/tumma), joten selaimet eivät enää tummenna sitä omalla tavallaan (korvaa 2.6.7:n `only light` -eston).
+- Yläpalkissa kuu/aurinko-nappi kielivalinnan vieressä (tietokone ja puhelin). Valinta jää selaimen muistiin; Evästeet-sivun "Ulkoasu laitteen asetuksen mukaan" palauttaa automaattisen tilan.
+- Puhelimen yläpalkki tiivistetty, jotta logo, nappi, valikko ja kielivalinta mahtuvat yhdelle riville (alle 380 px leveydellä yrityksen nimi piiloutuu logon vierestä).
+
 ## 2.6.7
 
 - Selaimen pakotettu tumma tila estetty: `color-scheme: only light` (meta-tagi ja CSS). Sivu näkyy vaaleana myös, kun puhelin on tummassa tilassa.

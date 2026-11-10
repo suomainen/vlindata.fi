@@ -17,6 +17,7 @@ css/style.css                    kaikki tyylit, värit muuttujina alussa
 css/fonts.css, fonts/            Manrope ja Inter sekä lisenssit
 js/consent.js                    evästeilmoitus ja Google Analytics 4
 js/menu.js                       mobiilivalikko ja versionumero
+js/teema.js                      vaalea/tumma ulkoasu ja yläpalkin teemanappi (ladataan heti, ilman deferiä)
 js/contact-form.js               yhteydenottolomake (avaa sähköpostin)
 js/vaakavieritys.js              etusivun vaakavieritys tietokoneella
 img/                             valokuvat, karttakuviot, logot, jakokuvat
@@ -46,6 +47,7 @@ Avaa selaimessa http://localhost:8000/.
 - **Yläpalkki ja valikko (myös Evästeet, Evästeasetukset ja versio), evästeilmoitus:** `tools/rakenna.py`, funktiot `header` ja `evasteilmoitus` sekä `TEKSTIT`. Sivustolla ei ole erillistä alatunnistetta.
 - **Referenssikuntien logot:** `tools/rakenna.py`, kohta `LOGOT`, ja kuvat kansioon `img/logot/`.
 - **Värit ja fontit:** `css/style.css`, kohta 1. Kontrastit on laskettu kommentteihin; tarkista ne, jos vaihdat värejä.
+- **Tumma ulkoasu:** `css/style.css`, kohta 1. Tummat värit ovat kahdessa samanlaisessa lohkossa (laitteen tumma tila ja kävijän oma valinta); muuta molempia. Valinta tallentuu selaimeen avaimella `vlindata-teema` (js/teema.js).
 - Sivupohjien merkinnät (`{{root}}`, `{{ikoni:nimi}}`, `{{sivu:avain}}`, `{{lomake}}`, `{{logot}}`, `{{murupolku}}`, `{{versio}}`) on selitetty skriptin alussa.
 
 ## Julkaisu

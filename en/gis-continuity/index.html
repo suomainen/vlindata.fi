@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="color-scheme" content="only light">
+  <meta name="color-scheme" content="light dark">
+  <script src="../../js/teema.js"></script>
   <script src="../../js/consent.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="A local backup system for municipal GIS data: the map works in the browser and in QGIS even when an external interface or network connection is down.">
@@ -13,7 +14,8 @@
   <link rel="alternate" hreflang="x-default" href="https://vlindata.fi/paikkatiedon-jatkuvuus/">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Virpi Lindvall, VLiNdATA Oy">
-  <meta name="theme-color" content="#f7f4ec">
+  <meta name="theme-color" content="#f7f4ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#18201b" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="../../favicon.ico" sizes="48x48">
   <link rel="icon" href="../../img/icons/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
@@ -180,11 +182,12 @@
           <li class="nav__evasteet"><a class="nav__link nav__link--pieni" href="../../en/cookies/">Cookies</a></li>
           <li class="nav__meta">
             <button class="nav__meta-nappi" type="button" id="consent-open">Cookie settings</button>
-            <span>© 2026 VLiNdATA Oy · version <span data-site-version>2.6.7</span></span>
+            <span>© 2026 VLiNdATA Oy · version <span data-site-version>2.7.0</span></span>
             <span class="nav__toteutus">Technical implementation: <a href="https://summanen.org/" target="_blank" rel="noopener">summanen.org<span class="sr-only">  (opens in a new tab, in Finnish)</span></a></span>
           </li>
         </ul>
       </nav>
+      <button class="teemanappi" type="button" aria-pressed="false" aria-label="Dark theme" title="Dark theme" data-teema-nappi><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/> </svg><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <circle cx="12" cy="12" r="4"/> <path d="M12 2v2"/> <path d="M12 20v2"/> <path d="m4.93 4.93 1.41 1.41"/> <path d="m17.66 17.66 1.41 1.41"/> <path d="M2 12h2"/> <path d="M20 12h2"/> <path d="m6.34 17.66-1.41 1.41"/> <path d="m19.07 4.93-1.41 1.41"/> </svg></button>
       <div class="lang" role="group" aria-label="Kieli – Language">
         <a href="../../paikkatiedon-jatkuvuus/" hreflang="fi" lang="fi" aria-label="FI – suomeksi">FI</a>
         <a href="../../en/gis-continuity/" hreflang="en" lang="en" aria-current="page" aria-label="EN – in English">EN</a>

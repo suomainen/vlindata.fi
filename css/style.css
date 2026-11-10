@@ -23,8 +23,9 @@
 
 /* 1. Muuttujat ja perusasetukset ------------------------------------ */
 :root {
-  /* Sivulla on vain vaalea ulkoasu: estää selainten pakotetun tumman tilan (Chrome, uudet Samsung Internetit) */
-  color-scheme: only light;
+  /* Vaalea ulkoasu on oletus; tumma ulkoasu alla (laitteen asetus tai yläpalkin nappi, js/teema.js).
+     Kun sivulla on oma tumma ulkoasu, selaimet eivät tummenna sitä omalla tavallaan. */
+  color-scheme: light;
   /* Virpin paletti (toteutusohje, kohta 2) */
   --salvia: #a7b59c;
   --vihrea-vaalea: #dde6d5;
@@ -47,6 +48,13 @@
   --valkoinen-rgb: 247, 244, 236;
   --teksti-rgb: 41, 54, 46;
 
+  /* Roolivärit: nämä vaihtuvat tummassa ulkoasussa eri tavalla kuin paletti */
+  --pinta: #fff;               /* lomake, kortit ja vaiheet alasivuilla */
+  --logo-pohja: #fff;          /* kuntien logojen laatat (logot ovat tummia, pohja pysyy vaaleana) */
+  --brand-pohja: transparent;  /* yläpalkin logon tausta */
+  --terra-teksti: #29362e;     /* teksti terrakottapainikkeessa */
+  --kartta-voimakkuus: 1;      /* karttakuvion näkyvyys (kerroin) */
+
   --font-otsikko: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-teksti: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 
@@ -57,6 +65,55 @@
   --kulma-iso: 28px;
   --kulma: 18px;
   --kulma-pieni: 12px;
+}
+
+/* Tumma ulkoasu Virpin väreillä. Sama lohko kahdesti (pidä samana):
+   1) laitteen tumma tila, ellei kävijä ole valinnut vaaleaa
+   2) kävijän oma valinta yläpalkin napista
+   Kontrastit (laskettu): --teksti 8,9–13,5:1 kaikilla tummilla pohjilla,
+   --teksti-2 5,9–9,0:1, --terra-tumma 5,4–8,2:1, metsän pinnoilla tumma teksti 13:1,
+   terrakottapainike 5,9:1. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-teema="vaalea"]) {
+    color-scheme: dark;
+    --salvia: #34402f;
+    --vihrea-vaalea: #222d26;
+    --metsa: #dde6d5;            /* metsänvihreät pinnat kääntyvät vaaleiksi korostuksiksi */
+    --hiekka: #2a2720;
+    --valkoinen: #18201b;        /* sivun pohja ja vaalean pinnan teksti */
+    --terra-vaalea: #332520;
+    --teksti: #ece7db;
+    --teksti-2: #b8c1b3;
+    --terra-tumma: #e3a993;
+    --viiva: #3a463e;
+    --valkoinen-rgb: 24, 32, 27;
+    --teksti-rgb: 0, 0, 0;
+    --pinta: #202a24;
+    --logo-pohja: #f2efe6;
+    --brand-pohja: #f7f4ec;
+    --terra-teksti: #1b231e;
+    --kartta-voimakkuus: 0.3;
+  }
+}
+:root[data-teema="tumma"] {
+  color-scheme: dark;
+  --salvia: #34402f;
+  --vihrea-vaalea: #222d26;
+  --metsa: #dde6d5;            /* metsänvihreät pinnat kääntyvät vaaleiksi korostuksiksi */
+  --hiekka: #2a2720;
+  --valkoinen: #18201b;        /* sivun pohja ja vaalean pinnan teksti */
+  --terra-vaalea: #332520;
+  --teksti: #ece7db;
+  --teksti-2: #b8c1b3;
+  --terra-tumma: #e3a993;
+  --viiva: #3a463e;
+  --valkoinen-rgb: 24, 32, 27;
+  --teksti-rgb: 0, 0, 0;
+  --pinta: #202a24;
+  --logo-pohja: #f2efe6;
+  --brand-pohja: #f7f4ec;
+  --terra-teksti: #1b231e;
+  --kartta-voimakkuus: 0.3;
 }
 
 *,
@@ -138,7 +195,7 @@ p { text-wrap: pretty; }
   z-index: -1;
   width: min(62%, 820px);
   background: url("../img/kartta-salvia.webp") center / cover no-repeat;
-  opacity: 0.55;
+  opacity: calc(0.55 * var(--kartta-voimakkuus));
   -webkit-mask-image: linear-gradient(to left, #000 35%, transparent);
           mask-image: linear-gradient(to left, #000 35%, transparent);
 }
@@ -178,7 +235,7 @@ p { text-wrap: pretty; }
 }
 .btn svg { width: 20px; height: 20px; flex: none; transition: transform 0.2s ease; }
 .btn:hover svg { transform: translateX(3px); }
-.btn--ensisijainen { background: var(--terra); color: var(--teksti); }
+.btn--ensisijainen { background: var(--terra); color: var(--terra-teksti); }
 .btn--ensisijainen:hover,
 .btn--ensisijainen:focus-visible { background: var(--teksti); color: var(--valkoinen); }
 .btn--toissijainen { background: var(--metsa); color: var(--valkoinen); }
@@ -249,7 +306,7 @@ p { text-wrap: pretty; }
   letter-spacing: -0.01em;
   text-decoration: none;
 }
-.brand img { width: 40px; height: 44px; }
+.brand img { width: 40px; height: 44px; border-radius: 6px; background: var(--brand-pohja); box-shadow: 0 0 0 3px var(--brand-pohja); }
 .brand small { display: block; font-family: var(--font-teksti); font-weight: 500; font-size: 0.8rem; color: var(--teksti-2); letter-spacing: 0; }
 
 .nav__list { display: flex; align-items: center; gap: 2px; }
@@ -287,6 +344,26 @@ p { text-wrap: pretty; }
 }
 .lang a[aria-current="page"] { background: var(--metsa); color: var(--valkoinen); }
 .lang a:not([aria-current="page"]):hover { background: var(--vihrea-vaalea); }
+
+/* Vaalea/tumma-nappi: kuu vaaleassa, aurinko tummassa ulkoasussa */
+.teemanappi {
+  display: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--viiva);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--teksti);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.teema-js .teemanappi { display: grid; }
+.teemanappi:hover { background: var(--vihrea-vaalea); }
+.teemanappi svg { grid-area: 1 / 1; width: 20px; height: 20px; }
+.teemanappi[aria-pressed="true"] svg:first-child,
+.teemanappi[aria-pressed="false"] svg:last-child { display: none; }
 
 .menu-toggle {
   display: none;
@@ -390,7 +467,7 @@ p { text-wrap: pretty; }
   inset: 0;
   z-index: -1;
   background: url("../img/kartta-salvia.webp") center / cover no-repeat;
-  opacity: 0.35;
+  opacity: calc(0.35 * var(--kartta-voimakkuus));
 }
 .stat__ikoni {
   display: grid;
@@ -447,7 +524,7 @@ p { text-wrap: pretty; }
   background: rgba(var(--valkoinen-rgb), 0.82);
 }
 .panel--valkoinen .card,
-.page-content .card { background: #fff; box-shadow: inset 0 0 0 1px var(--viiva); }
+.page-content .card { background: var(--pinta); box-shadow: inset 0 0 0 1px var(--viiva); }
 .card__icon {
   display: grid;
   place-items: center;
@@ -507,7 +584,7 @@ p { text-wrap: pretty; }
   height: 104px;
   padding: 16px;
   border-radius: var(--kulma);
-  background: #fff;
+  background: var(--logo-pohja);
   transition: transform 0.2s ease;
 }
 .logos a:hover { transform: translateY(-3px); }
@@ -540,7 +617,7 @@ p { text-wrap: pretty; }
   gap: 18px;
   padding: clamp(24px, 3vw, 36px);
   border-radius: var(--kulma-iso);
-  background: #fff;
+  background: var(--pinta);
   box-shadow: inset 0 0 0 1px var(--viiva);
 }
 .form .h3 { margin-bottom: 4px; }
@@ -607,7 +684,7 @@ p { text-wrap: pretty; }
   align-items: center;
   padding: 20px 24px;
   border-radius: var(--kulma);
-  background: #fff;
+  background: var(--pinta);
   box-shadow: inset 0 0 0 1px var(--viiva);
   counter-increment: vaihe;
   font-weight: 600;
@@ -633,7 +710,7 @@ p { text-wrap: pretty; }
 .kulku li { position: relative; padding: 24px; border-radius: var(--kulma); background: var(--vihrea-vaalea); counter-increment: kulku; }
 .kulku li:nth-child(2) { background: var(--hiekka); }
 .kulku li:nth-child(3) { background: var(--terra-vaalea); }
-.kulku li:nth-child(4) { background: #fff; box-shadow: inset 0 0 0 1px var(--viiva); }
+.kulku li:nth-child(4) { background: var(--pinta); box-shadow: inset 0 0 0 1px var(--viiva); }
 .kulku li::before {
   content: counter(kulku);
   position: absolute;
@@ -774,7 +851,7 @@ p { text-wrap: pretty; }
   margin: 0 auto;
   padding: 22px 24px;
   border-radius: var(--kulma);
-  background: #fff;
+  background: var(--pinta);
   color: var(--teksti);
   box-shadow: 0 10px 40px rgba(var(--teksti-rgb), 0.25), inset 0 0 0 1px var(--viiva);
 }
@@ -793,7 +870,7 @@ p { text-wrap: pretty; }
 /* 14. 404-sivu ------------------------------------------------------------ */
 .notfound { min-height: calc(100vh - 2 * var(--paneeli-vali)); margin-top: var(--paneeli-vali); display: grid; place-items: center; text-align: center; }
 .notfound__box { max-width: 720px; padding: clamp(28px, 4vw, 48px); border-radius: var(--kulma-iso); background: rgba(var(--valkoinen-rgb), 0.94); }
-.notfound__logo { width: 72px; margin: 0 auto 20px; }
+.notfound__logo { width: 72px; margin: 0 auto 20px; border-radius: 10px; background: var(--brand-pohja); box-shadow: 0 0 0 6px var(--brand-pohja); }
 .notfound__code { color: var(--teksti-2); font-weight: 600; letter-spacing: 0.06em; }
 .notfound h1 { margin: 8px 0 16px; }
 .notfound h1 .en { display: block; margin-top: 8px; font-size: max(0.45em, 1.15rem); font-weight: 600; color: var(--teksti-2); }
@@ -880,7 +957,8 @@ p { text-wrap: pretty; }
 }
 @media (min-width: 1180px) {
   .nav { order: 2; }
-  .lang { order: 3; }
+  .teemanappi { order: 3; }
+  .lang { order: 4; }
 }
 
 @media (max-width: 760px) {
@@ -895,6 +973,23 @@ p { text-wrap: pretty; }
   .steps--kuvaus p { grid-column: 1 / -1; margin-top: 12px; }
 }
 
+/* Puhelin: logo, teemanappi, valikko ja kielivalinta mahtuvat yhdelle riville */
+@media (max-width: 480px) {
+  .topbar__inner { gap: 8px; padding: 0 16px; }
+  .brand { gap: 8px; font-size: 0.9rem; }
+  .menu-toggle { width: 44px; height: 44px; }
+  .menu-toggle span { left: 12px; }
+  .menu-toggle span:nth-child(1) { top: 15px; }
+  .menu-toggle span:nth-child(2),
+  .menu-toggle[aria-expanded="true"] span:nth-child(1),
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) { top: 21px; }
+  .menu-toggle span:nth-child(3) { top: 27px; }
+}
+/* Kapein puhelin: nimi piiloon, logo ja linkin nimi (aria-label) jäävät */
+@media (max-width: 379.98px) {
+  .brand > span { display: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .btn,
@@ -903,6 +998,7 @@ p { text-wrap: pretty; }
   .logos a,
   .nav__link,
   .menu-toggle span,
+  .teemanappi,
   .topbar { transition: none; }
   .btn:hover svg,
   .chip:hover,
@@ -911,6 +1007,10 @@ p { text-wrap: pretty; }
 
 @media (prefers-contrast: more) {
   :root { --teksti-2: #29362e; --viiva: #6c7769; }
+  :root[data-teema="tumma"] { --teksti-2: var(--teksti); --viiva: #8a9686; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-teema="vaalea"]) { --teksti-2: var(--teksti); --viiva: #8a9686; }
+  }
   .panel--kartta::before { display: none; }
 }
 

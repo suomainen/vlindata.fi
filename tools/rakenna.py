@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.6.7"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.7.0"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # ---------------------------------------------------------------------------
 # Sivut: avain -> polku kummallakin kielellä. Navigaation järjestys on tämä.
@@ -151,7 +151,7 @@ TEKSTIT = {
         "crumbs_label": "Murupolku",
         "og_alt": "VLiNdATA Oy: paikkatietoa ja rakennustietoja, joista kunta hyötyy. Kuvassa Virpi Lindvall.",
         "og_locale": "fi_FI", "og_locale_alt": "en_GB",
-        "toteutus": "Tekninen toteutus", "f_cookies": "Evästeet", "f_cookie_settings": "Evästeasetukset", "f_version": "versio",
+        "toteutus": "Tekninen toteutus", "teema": "Tumma ulkoasu", "f_cookies": "Evästeet", "f_cookie_settings": "Evästeasetukset", "f_version": "versio",
         "consent_label": "Evästeilmoitus",
         "consent_text": "Käytän evästeitä kävijämäärän analysoimiseen. Google Analytics ladataan vain, jos hyväksyt.",
         "consent_more": "Lisätietoja evästeistä",
@@ -169,7 +169,7 @@ TEKSTIT = {
         "crumbs_label": "Breadcrumb",
         "og_alt": "VLiNdATA Oy: GIS and building data that benefit municipalities. Photo of Virpi Lindvall.",
         "og_locale": "en_GB", "og_locale_alt": "fi_FI",
-        "toteutus": "Technical implementation", "f_cookies": "Cookies", "f_cookie_settings": "Cookie settings", "f_version": "version",
+        "toteutus": "Technical implementation", "teema": "Dark theme", "f_cookies": "Cookies", "f_cookie_settings": "Cookie settings", "f_version": "version",
         "consent_label": "Cookie notice",
         "consent_text": "I use cookies to analyse visitor numbers. Google Analytics is loaded only if you accept.",
         "consent_more": "More about cookies",
@@ -361,7 +361,8 @@ def head(kieli, avain, root):
     robots = meta.get("robots", "index, follow")
     return f"""<head>
   <meta charset="utf-8">
-  <meta name="color-scheme" content="only light">
+  <meta name="color-scheme" content="light dark">
+  <script src="{root}js/teema.js"></script>
   <script src="{root}js/consent.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="{meta['description']}">
@@ -372,7 +373,8 @@ def head(kieli, avain, root):
   <link rel="alternate" hreflang="x-default" href="{url_fi}">
   <meta name="robots" content="{robots}">
   <meta name="author" content="Virpi Lindvall, VLiNdATA Oy">
-  <meta name="theme-color" content="#f7f4ec">
+  <meta name="theme-color" content="#f7f4ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#18201b" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="{root}favicon.ico" sizes="48x48">
   <link rel="icon" href="{root}img/icons/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="{root}apple-touch-icon.png">
@@ -436,6 +438,7 @@ def header(kieli, avain, root):
           </li>
         </ul>
       </nav>
+      <button class="teemanappi" type="button" aria-pressed="false" aria-label="{t['teema']}" title="{t['teema']}" data-teema-nappi>{ikoni('moon')}{ikoni('sun')}</button>
       <div class="lang" role="group" aria-label="{t['lang_label']}">
         <a href="{fi_href}" hreflang="fi" lang="fi"{fi_cur} aria-label="FI – suomeksi">FI</a>
         <a href="{en_href}" hreflang="en" lang="en"{en_cur} aria-label="EN – in English">EN</a>
