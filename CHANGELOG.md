@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.8.0
+
+- Yritys-sivun VLiNdATA Oy -nostoihin neljäs kortti: kumppanina Oskari Summanen (kuva, lyhyt kuvaus ja linkki summanen.orgiin). Nostot neljässä sarakkeessa leveällä näytöllä ja kahdessa keskikokoisella.
+
 ## 2.7.2
 
 - Oletuksena aina vaalea ulkoasu: tumma tulee käyttöön vain yläpalkin kuu-napista, ei enää laitteen asetuksesta. Selaimen pakotettu tummennus estetty taas (`color-scheme: only light`).

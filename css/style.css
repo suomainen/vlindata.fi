@@ -537,6 +537,10 @@ p { text-wrap: pretty; }
   margin-bottom: 12px;
 }
 .stat__teksti { font: 700 1.15rem/1.35 var(--font-otsikko); }
+/* Yritys-sivun kumppanikortti: kuva ikonin paikalla, linkki tekstin alla */
+.stat__kuva { width: 56px; height: 56px; margin-bottom: 16px; border-radius: 50%; object-fit: cover; }
+.stat__linkki { display: block; width: fit-content; margin-top: 10px; color: inherit; font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
+.stat__linkki:hover { text-decoration-thickness: 2px; }
 
 /* 8. Lainaus ja referenssikunnat ----------------------------------------- */
 .quote { max-width: 60rem; }
@@ -881,7 +885,8 @@ p { text-wrap: pretty; }
   .cards,
   .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .cards--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .cards--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cards--4,
+  .stats--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .block { grid-template-columns: 4fr 7fr; }
   .palvelu { grid-template-columns: 4fr 7fr; }
   .kulku { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -903,7 +908,8 @@ p { text-wrap: pretty; }
 
 @media (min-width: 1100px) {
   .chips { grid-template-columns: repeat(7, minmax(0, 1fr)); }
-  .cards--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .cards--4,
+  .stats--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
 /* Valikko avautuu napista, kun kaikki linkit eivät mahdu riville */
