@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.8.0"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.8.1"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # ---------------------------------------------------------------------------
 # Sivut: avain -> polku kummallakin kielellä. Navigaation järjestys on tämä.
@@ -306,8 +306,13 @@ def jsonld(kieli, avain):
         {
             "@type": "Person", "@id": "https://summanen.org/#oskari-summanen", "name": "Oskari Summanen",
             "url": "https://summanen.org/",
-            "description": ("VLiNdATA Oy:n kumppani ja sivuston tekninen toteuttaja (summanen.org)" if kieli == "fi"
-                            else "Partner of VLiNdATA Oy and technical builder of this website (summanen.org)"),
+            "image": DOMAIN + "img/oskari-summanen.webp",
+            "description": ("VLiNdATA Oy:n kumppani: yli 20 vuotta IT-alalta ja yli 10 vuotta paikkatiedosta. "
+                            "Myös sivuston tekninen toteuttaja." if kieli == "fi"
+                            else "Partner of VLiNdATA Oy: over 20 years in IT and over 10 years in GIS. "
+                                 "Also the technical builder of this website."),
+            "affiliation": {"@id": DOMAIN + "#organization"},
+            "knowsAbout": ["IT", "Paikkatieto" if kieli == "fi" else "GIS"],
         },
         {
             "@type": "Organization", "@id": DOMAIN + "#organization", "name": "VLiNdATA Oy",

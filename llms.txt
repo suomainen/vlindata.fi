@@ -12,6 +12,7 @@
 ## Yritys
 
 - [Yritys](https://vlindata.fi/yritys/): Virpi Lindvall, yrittäjä ja paikkatietoalan asiantuntija. Tausta kuntien paikkatiedosta, rakennusrekistereistä, rakennusvalvonnasta ja maankäytöstä. Y-tunnus 3410053-6.
+- Kumppani: Oskari Summanen ([summanen.org](https://summanen.org/)), yli 20 vuotta IT-alalta ja yli 10 vuotta paikkatiedosta. Toteuttanut myös tämän sivuston.
 - [Referenssit](https://vlindata.fi/referenssit/): Auran kunta (rakennusrekisteritietojen selvittäminen). Muita referenssikuntia: Rusko, Sauvo, Oripää, Lieto, Naantali, Masku, Säkylä.
 - [Yhteystiedot](https://vlindata.fi/yhteystiedot/): puhelin +358 44 301 2471, sähköposti virpi@vlindata.fi.
 
@@ -23,4 +24,5 @@
 - [Reports for municipal management](https://vlindata.fi/en/property-tax-audits/#raportit): property tax analysis (what property tax revenue growth is made of) and impact monitoring of property tax projects (report three times a year).
 - [GIS services](https://vlindata.fi/en/gis-services/): new datasets, dataset updates, spatial analysis, GIS systems and databases, expert help.
 - [GIS continuity and preparedness](https://vlindata.fi/en/gis-continuity/): a local backup system keeping a local copy of selected municipal GIS datasets for browser and QGIS use during interface or network outages; deployment, maintenance and preparedness support.
+- Partner: Oskari Summanen ([summanen.org](https://summanen.org/)), over 20 years in IT and over 10 years in GIS. Also built this website.
 - [Company](https://vlindata.fi/en/company/), [References](https://vlindata.fi/en/references/), [Contact](https://vlindata.fi/en/contact/): phone +358 44 301 2471, email virpi@vlindata.fi.

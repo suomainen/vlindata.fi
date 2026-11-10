@@ -4,6 +4,11 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.8.1
+
+- Hakukonetiedoissa (JSON-LD) Oskari Summanen merkitty VLiNdATA Oy:n kumppaniksi (`affiliation`), kuvaus ja kuva kumppanikortin mukaan.
+- llms.txt: kumppanirivi suomeksi ja englanniksi.
+
 ## 2.8.0
 
 - Yritys-sivun VLiNdATA Oy -nostoihin neljäs kortti: kumppanina Oskari Summanen (kuva, lyhyt kuvaus ja linkki summanen.orgiin). Nostot neljässä sarakkeessa leveällä näytöllä ja kahdessa keskikokoisella.
