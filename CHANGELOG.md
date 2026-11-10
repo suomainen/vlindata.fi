@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.6.2
+
+- Kuntien logot tarkistettu läpinäkyvyyden osalta: Liedon logon valkoinen tausta muutettu läpinäkyväksi ja rajattu, Naantalin SVG siivottu (Inkscapen metatiedot pois, väri suoraan polussa). Muut logot olivat jo läpinäkyviä.
+
 ## 2.6.1
 
 - Julkaisu Domainhotellin kotisivutilaan: `.htaccess` (https- ja www-ohjaus, 404-sivu, tiedostotyypit, pakkaus, välimuisti, tietoturvaotsakkeet, ylläpitotiedostojen esto) ja julkaisuskripti `tools/julkaise.ps1` (WinSCP).

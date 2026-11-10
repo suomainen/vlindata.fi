@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.6.1"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.6.2"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # ---------------------------------------------------------------------------
 # Sivut: avain -> polku kummallakin kielellä. Navigaation järjestys on tämä.
@@ -184,7 +184,7 @@ LOGOT = [
      "https://www.sauvo.fi/asuminen-ja-ymparisto/rakennusvalvonta/kiinteistokartoitus/", True),
     ("oripaa.webp", 240, 100, "Oripään kunta", "Municipality of Oripää",
      "https://oripaa.fi/asukkaalle/tekninen-toimi/kiinteistoselvitys/", False),
-    ("lieto.webp", 240, 240, "Liedon kaupunki", "City of Lieto",
+    ("lieto.webp", 144, 190, "Liedon kaupunki", "City of Lieto",
      "https://lieto.fi/palvelut-ja-asiointi/rakentaminen/rakennusrekisterin-paivitys/", True),
     ("naantali.svg", 2675, 1066, "Naantalin kaupunki", "City of Naantali", "https://www.naantali.fi/fi", False),
     ("masku.webp", 308, 121, "Maskun kunta", "Municipality of Masku", "https://www.masku.fi/", False),
