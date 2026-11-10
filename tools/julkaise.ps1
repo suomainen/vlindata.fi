@@ -3,7 +3,7 @@
   Julkaisee vlindata.fi-sivuston Domainhotellin kotisivutilaan WinSCP:llä.
 
 .DESCRIPTION
-  Siirtää repon sivustotiedostot palvelimen juurikansioon (oletus /public_html).
+  Siirtää repon sivustotiedostot palvelimen juurikansioon (oletus /).
   Vain muuttuneet tiedostot siirretään. Tunnuksia ei ole tässä tiedostossa:
   skripti käyttää WinSCP:hen tallennettua yhteyttä (oletusnimi "vlindata").
 
@@ -18,7 +18,7 @@
 #>
 param(
   [string]$Istunto = "vlindata",        # WinSCP:hen tallennetun yhteyden nimi
-  [string]$Etakansio = "/public_html",  # sivuston juurikansio palvelimella
+  [string]$Etakansio = "/",  # sivuston juurikansio palvelimella
   [switch]$Esikatselu,
   [switch]$Poista,
   [switch]$Varmuuskopio,
