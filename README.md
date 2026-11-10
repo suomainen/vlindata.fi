@@ -82,7 +82,11 @@ Ensimmäisellä kerralla:
 .\tools\julkaise.ps1 -Poista               # poistaa ne
 ```
 
-Skripti ei siirrä ylläpitotiedostoja (`tools/`, `.git/`, `README.md`, `CHANGELOG.md`), eikä `-Poista` koske palvelimen omiin kansioihin (`.well-known/`, `cgi-bin/`). Se varoittaa, jos repossa on tallentamattomia muutoksia. Loki: `%TEMP%\vlindata-julkaisu.log`.
+Skripti ei siirrä ylläpitotiedostoja (`tools/`, `.git/`, `README.md`, `CHANGELOG.md`, `*.bat`), eikä `-Poista` koske palvelimen omiin kansioihin (`.well-known/`, `cgi-bin/`). Se varoittaa, jos repossa on tallentamattomia muutoksia. Loki: `%TEMP%\vlindata-julkaisu.log`.
+
+### Pikakomento `julkaise.bat`
+
+Oskarin koneella repon juuressa on `julkaise.bat`, joka ei ole versionhallinnassa (`.git/info/exclude`). Se kokoaa sivut, tekee commitin ja version tagin (`js/menu.js`:n `SITE_VERSION`), vie muutokset GitHubiin ja julkaisee esikatselun jälkeen palvelimelle.
 
 ### Palvelimen asetukset (`.htaccess`)
 

@@ -30,7 +30,7 @@ $juuri = Split-Path -Parent $PSScriptRoot
 
 # Ei siirretä eikä poisteta palvelimelta. Palvelimen omat kansiot (.well-known, cgi-bin)
 # ovat listassa, jotta -Poista ei koske niihin.
-$ohitettavat = ".git/; tools/; README.md; CHANGELOG.md; .gitignore; .nojekyll; .well-known/; cgi-bin/; .user.ini; error_log"
+$ohitettavat = ".git/; tools/; README.md; CHANGELOG.md; .gitignore; .nojekyll; *.bat; .well-known/; cgi-bin/; .user.ini; error_log"
 
 # --- WinSCP ----------------------------------------------------------------
 $winscp = @(
