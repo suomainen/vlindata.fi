@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.6.6
+
+- Etusivun vaakavierityksen kaistoissa, etenemisilmaisimessa ja aloituksen paneelilaatoissa samat lyhyet nimet kuin valikossa: Kiinteistövero ja Paikkatieto (Property tax, GIS).
+
 ## 2.6.5
 
 - Valikossa lyhyemmät nimet: Kiinteistövero ja Paikkatieto (englanniksi Property tax ja GIS). Sivujen otsikot, murupolut ja hakukonetiedot pysyvät pitkinä (`SIVUT`-kohdan uusi `valikko`-kenttä).
