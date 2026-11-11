@@ -26,6 +26,8 @@ robots.txt, sitemap.xml, llms.txt                               hakukoneille
 tools/rakenna.py                 kokoaa sivut ja sitemap.xml:n
 tools/julkaise.ps1               julkaisu Domainhotelliin WinSCP:llä
 tools/commitviesti.ps1           automaattinen commit-viesti julkaise.bat:lle
+Sivutyokalu.bat, tools/sivutyokalu.ps1   päivitystyökalu (ikkuna): hae, esikatsele, julkaise, zip
+tools/asennus/                   työkalun asennus toiselle koneelle ja käyttöohje (OHJE.md, OHJE.pdf)
 .htaccess                        palvelimen asetukset (https, 404, välimuisti)
 tools/sivut/fi/, tools/sivut/en/ sivujen tekstit (yksi tiedosto per sivu)
 tools/ikonit/                    Lucide-ikonit, jotka skripti upottaa sivuille
@@ -92,6 +94,18 @@ Skripti ei siirrä ylläpitotiedostoja (`tools/`, `.git/`, `README.md`, `CHANGEL
 Oskarin koneella repon juuressa on `julkaise.bat`, joka ei ole versionhallinnassa (`.git/info/exclude`). Se kokoaa sivut, tekee commitin ja version tagin (`js/menu.js`:n `SITE_VERSION`), vie muutokset GitHubiin ja julkaisee esikatselun jälkeen palvelimelle. Commit-viestin muodostaa `tools/commitviesti.ps1`: uuden version kohdalla muutoslokin ensimmäinen kohta, muuten "ylläpito", ja runkoon muuttuneet tiedostot.
 
 `tools/rakenna.py` kirjoittaa sivut aina LF-rivinvaihdoin, jotta Windowsissa ajettuna git ei näe kaikkia sivuja muuttuneina.
+
+### Sivutyökalu (Virpi)
+
+`Sivutyokalu.bat` avaa ikkunan (`tools/sivutyokalu.ps1`, PowerShell + Windows Forms), jolla sivuja voi päivittää ilman komentoriviä:
+
+- **Hae uusin versio**: `git pull --rebase`. Omat muutokset pannaan hetkeksi sivuun (`git stash`) ja palautetaan; kootut sivut palautetaan ensin ennalleen ja kootaan lopuksi uudelleen, jotta ne eivät aiheuta ristiriitoja. Jos sama kohta on muuttunut molemmilla, muutokset jäävät `git stash`iin ja työkalu pyytää ottamaan yhteyttä Oskariin.
+- **Julkaise**: hakee uusimman, kokoaa sivut, nostaa korjausversiota (2.8.2 → 2.8.3, ohittaa varatut tagit), kirjaa muutoslokiin kävijän kirjoittaman kuvauksen, tekee commitin `vlindata.fi X.Y.Z: kuvaus`, vie GitHubiin, tekee tagin ja julkaisee `tools/julkaise.ps1`:llä esikatselun ja vahvistuksen jälkeen. Jos joku ehti viedä muutoksia väliin, versionnosto kumotaan ja kaikki tehdään uudelleen uusimman päälle.
+- **Avaa tekstit**, **Esikatsele** (paikallinen palvelin portissa 8765), **Tee zip työpöydälle**, **Avaa vlindata.fi**.
+
+Loki: `%TEMP%\vlindata-sivutyokalu.log`. Funktioita voi testata ilman ikkunaa: `. .\tools\sivutyokalu.ps1 -EiIkkunaa`.
+
+Asennus toiselle koneelle: `tools/asennus/asenna.bat` (Git, Python ja WinSCP wingetillä, repon haku, nimi muutoshistoriaan, työpöydän pikakuvake, WinSCP-yhteyden ohje). Käyttäjä tarvitsee GitHub-tunnuksen, jolla on pääsy repoon. Käyttöohje: `tools/asennus/OHJE.pdf`.
 
 ### Palvelimen asetukset (`.htaccess`)
 
