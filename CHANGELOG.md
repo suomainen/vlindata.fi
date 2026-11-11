@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.8.3
+
+- Etusivun osiopalat kapeammilla näytöillä: tabletilla ja kapealla tietokoneella kaksi täyttä riviä (4 + 3), puhelimella viimeinen pala koko leveydelle. Värit vuorottelevat, eikä riville jää yksinäistä palaa.
+
 ## 2.8.2
 
 - Kumppanikortti (Oskari Summanen, summanen.org) myös etusivun Miksi VLiNdATA? -paneelin nostoihin.
