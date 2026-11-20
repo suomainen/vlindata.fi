@@ -141,6 +141,7 @@ Jokaisella sivulla on otsikko, kuvaus, canonical, kieliversiolinkit (hreflang), 
 | Manrope (`fonts/manrope-latin-wght.woff2`) | @fontsource-variable/manrope 5.3.0 | SIL Open Font License 1.1, `fonts/OFL-Manrope.txt` |
 | Inter (`fonts/inter-latin-wght.woff2`) | @fontsource-variable/inter 5.3.0 | SIL Open Font License 1.1, `fonts/OFL-Inter.txt` |
 | Ikonit (`tools/ikonit/`) | lucide-static 1.66.0 | ISC, `LICENSE-lucide.txt` |
+| LinkedIn-ikoni (`tools/ikonit/linkedin.svg`) | lucide-static 0.460.0 (brändi-ikonit poistuivat myöhemmistä versioista) | ISC; LinkedIn on LinkedIn Corporationin tavaramerkki |
 | Kuntien logot (`img/logot/`) | – | kuntien tavaramerkkejä, käytössä referensseinä |
 | Valokuvat (`img/virpi-*.jpg`) | – | kuvaajan tekijänoikeus, käyttölupa VLiNdATA Oy:llä |
 | Kuva `img/oskari-summanen.webp` | – | Oskari Summasen kuva, käyttölupa |

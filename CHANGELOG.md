@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.8.4
+
+- Virpin LinkedIn-profiili yhteystietoihin (etusivu ja Yhteystiedot-sivu, suomeksi ja englanniksi), hakukonetietoihin (`sameAs`) ja llms.txt:hen.
+
 ## 2.8.3
 
 - Etusivun osiopalat kapeammilla näytöillä: tabletilla ja kapealla tietokoneella kaksi täyttä riviä (4 + 3), puhelimella viimeinen pala koko leveydelle. Värit vuorottelevat, eikä riville jää yksinäistä palaa.

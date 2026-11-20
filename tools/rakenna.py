@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.8.3"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.8.4"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # ---------------------------------------------------------------------------
 # Sivut: avain -> polku kummallakin kielellä. Navigaation järjestys on tämä.
@@ -329,6 +329,7 @@ def jsonld(kieli, avain):
             "jobTitle": "Yrittäjä, paikkatietoalan asiantuntija" if kieli == "fi" else "Founder, GIS specialist",
             "image": DOMAIN + "img/virpi-metsa-pysty-1000.jpg",
             "worksFor": {"@id": DOMAIN + "#organization"},
+            "sameAs": ["https://www.linkedin.com/in/lindvall-virpi/"],
         },
         {
             "@type": "WebPage", "@id": url + "#webpage", "url": url, "name": meta["title"],
