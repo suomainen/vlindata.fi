@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.9.11
+
+- Evästeet-sivun "Lain mukaan" -kohdan tilalle lain nimi linkkinä Finlexiin: sähköisen viestinnän palveluista annettu laki (917/2014) 205 § (englanniksi lain käännös).
+
 ## 2.9.10
 
 - Evästeilmoitus pysyy näkyvissä, kunnes kävijä valitsee, myös kun ilmoituksen linkistä siirrytään Evästeet-sivulle. Sivun alalaitaan varataan ilmoituksen korkuinen tila, jotta kaiken tekstin voi vierittää esiin.
