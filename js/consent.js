@@ -79,7 +79,27 @@
 
     // Evästeet-sivulla valinta tehdään sivun omassa laatikossa, eikä kelluva ilmoitus peitä tekstiä
     const inline = document.querySelector('[data-consent-tila]');
+    // Evästeasetukset-napeissa näkyy nykyinen valinta, esim. "Evästeasetukset: hylätty"
+    const TILAT = document.documentElement.lang === 'en'
+      ? { granted: 'accepted', denied: 'declined', none: 'not chosen' }
+      : { granted: 'hyväksytty', denied: 'hylätty', none: 'ei valintaa' };
+    const openButtons = document.querySelectorAll('#consent-open, [data-consent-open]');
+    const updateButtons = () => {
+      const choice = readChoice();
+      const tila = TILAT[choice === 'granted' || choice === 'denied' ? choice : 'none'];
+      openButtons.forEach((button) => {
+        let span = button.querySelector('.evaste-tila');
+        if (!span) {
+          span = document.createElement('span');
+          span.className = 'evaste-tila';
+          button.appendChild(span);
+        }
+        span.textContent = `: ${tila}`;
+      });
+    };
+
     const updateInline = () => {
+      updateButtons();
       if (!inline) return;
       const choice = readChoice();
       const key = choice === 'granted' ? 'tilaKylla' : choice === 'denied' ? 'tilaHylatty' : 'tilaEi';
@@ -113,8 +133,17 @@
       }
     });
 
-    document.querySelectorAll('#consent-open, [data-consent-open]').forEach((button) => {
-      button.addEventListener('click', show);
+    // Evästeet-sivulla nappi vie sivun omaan valintalaatikkoon, muualla avaa ilmoituksen
+    openButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        if (inline) {
+          inline.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          const first = inline.querySelector('button');
+          if (first) first.focus({ preventScroll: true });
+        } else {
+          show();
+        }
+      });
     });
 
     if (!readChoice() && !inline) banner.hidden = false;

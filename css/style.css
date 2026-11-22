@@ -801,12 +801,14 @@ p { text-wrap: pretty; }
   border-radius: 999px;
   background: none;
   color: var(--teksti);
-  font: 500 1rem/1 var(--font-teksti);
-  text-decoration: underline;
-  text-underline-offset: 0.22em;
+  font: 600 0.95rem/1 var(--font-teksti);
   cursor: pointer;
 }
 .nav__meta-nappi:hover { background: var(--vihrea-vaalea); }
+/* Evästeasetukset oikeana nappina: reunus ja nykyinen valinta näkyvissä */
+.nav__meta-nappi[data-consent-open],
+.nav__meta-nappi#consent-open { border: 1px solid currentColor; }
+.evaste-tila { font-weight: 400; color: var(--teksti-2); }
 
 /* Evästesivun alalaita: samat tiedot kuin puhelimen valikon alarivillä */
 .sivustotiedot {
@@ -819,7 +821,7 @@ p { text-wrap: pretty; }
   color: var(--teksti-2);
   font-size: 0.9rem;
 }
-.sivustotiedot .nav__meta-nappi { margin-left: -16px; }
+.sivustotiedot .nav__meta-nappi { margin-bottom: 8px; }
 .sivustotiedot a { color: inherit; }
 .sivustotiedot__toteutus { display: flex; align-items: center; gap: 10px; }
 .sivustotiedot__toteutus img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }

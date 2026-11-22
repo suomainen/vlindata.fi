@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.9.3
+
+- Evästeasetukset-nappi (Evästeet-sivun alalaita ja puhelimen valikko) näyttää oikealta napilta ja kertoo nykyisen valinnan: hyväksytty, hylätty tai ei valintaa. Evästeet-sivulla nappi vie sivun omaan valintalaatikkoon.
+
 ## 2.9.2
 
 - Evästeet-sivulla oma valintalaatikko (nykyinen valinta ja Hyväksy/Hylkää): kelluva evästeilmoitus ei enää aukea sivulle ja peitä tekstiä, kun ilmoituksen linkistä tullaan Evästeet-sivulle.
