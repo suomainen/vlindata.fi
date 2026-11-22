@@ -801,38 +801,44 @@ p { text-wrap: pretty; }
 /* 12. Valikon evästelinkit ja versio (sivulla ei ole erillistä alatunnistetta) */
 .nav__link--pieni { font-size: 0.88rem; color: var(--teksti-2); }
 .nav__meta { display: none; }
-.nav__meta-nappi {
+.kytkin {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   min-height: 44px;
-  padding: 0 16px;
+  padding: 0;
   border: 0;
-  border-radius: 999px;
   background: none;
   color: var(--teksti);
-  font: 600 0.95rem/1 var(--font-teksti);
+  font: 600 0.95rem/1.2 var(--font-teksti);
+  text-align: left;
   cursor: pointer;
 }
-.nav__meta-nappi:hover { background: var(--vihrea-vaalea); }
-/* Evästeasetukset oikeana nappina: reunus ja nykyinen valinta näkyvissä */
-.nav__meta-nappi[data-consent-open],
-.nav__meta-nappi#consent-open { border: 1px solid currentColor; }
-.evaste-tila { font-weight: 400; color: var(--teksti-2); }
-/* Väri kertoo tilan: vihreä = hyväksytty, terrakotta = hylätty, hiekka = ei valintaa (teksti kertoo saman) */
-.nav__meta-nappi[data-tila]::before {
-  content: "";
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin-right: 8px;
+/* Kytkimen rata ja nuppi: päällä metsänvihreä, pois hiekka (tila myös tekstinä) */
+.kytkin__rata {
+  position: relative;
+  flex: none;
+  width: 48px;
+  height: 28px;
+  border: 1px solid var(--teksti-2);
+  border-radius: 999px;
+  background: var(--hiekka);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.kytkin__nuppi {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: var(--teksti-2);
-  vertical-align: 0.05em;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
-.nav__meta-nappi[data-tila="granted"] { background: var(--vihrea-vaalea); border-color: var(--metsa); }
-.nav__meta-nappi[data-tila="granted"]::before { background: var(--metsa); }
-.nav__meta-nappi[data-tila="denied"] { background: var(--terra-vaalea); border-color: var(--terra-tumma); }
-.nav__meta-nappi[data-tila="denied"]::before { background: var(--terra-tumma); }
-.nav__meta-nappi[data-tila="none"] { background: var(--hiekka); }
-.nav__meta-nappi[data-tila]:hover { filter: brightness(0.96); }
+.kytkin[aria-checked="true"] .kytkin__rata { background: var(--metsa); border-color: var(--metsa); }
+.kytkin[aria-checked="true"] .kytkin__nuppi { transform: translateX(20px); background: var(--valkoinen); }
+.kytkin__tila { font-weight: 400; color: var(--teksti-2); }
+.kytkin:hover .kytkin__rata { border-color: var(--teksti); }
 
 /* Evästesivun alalaita: samat tiedot kuin puhelimen valikon alarivillä */
 .sivustotiedot {
@@ -845,7 +851,8 @@ p { text-wrap: pretty; }
   color: var(--teksti-2);
   font-size: 0.9rem;
 }
-.sivustotiedot .nav__meta-nappi { margin-bottom: 8px; }
+.sivustotiedot .kytkin { margin-bottom: 8px; }
+.nav__meta .kytkin { padding: 0 16px; }  /* samaan linjaan valikon alarivin tekstien kanssa */
 .sivustotiedot a { color: inherit; }
 .sivustotiedot__toteutus { display: flex; align-items: center; gap: 10px; }
 .sivustotiedot__toteutus img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
@@ -1026,6 +1033,8 @@ p { text-wrap: pretty; }
   .nav__link,
   .menu-toggle span,
   .teemanappi,
+  .kytkin__rata,
+  .kytkin__nuppi,
   .topbar { transition: none; }
   .btn:hover svg,
   .chip:hover,

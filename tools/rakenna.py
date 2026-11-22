@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.9.7"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.9.8"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # ---------------------------------------------------------------------------
 # Sivut: avain -> polku kummallakin kielellä. Navigaation järjestys on tämä.
@@ -151,7 +151,7 @@ TEKSTIT = {
         "crumbs_label": "Murupolku",
         "og_alt": "VLiNdATA Oy: paikkatietoa ja rakennustietoja, joista kunta hyötyy. Kuvassa Virpi Lindvall.",
         "og_locale": "fi_FI", "og_locale_alt": "en_GB",
-        "toteutus": "Tekninen toteutus", "teema": "Tumma ulkoasu", "f_cookies": "Evästeet", "f_cookie_settings": "Evästeasetukset", "f_version": "versio",
+        "toteutus": "Tekninen toteutus", "kytkin": "Analytiikkaevästeet", "kytkin_pois": "Pois", "teema": "Tumma ulkoasu", "f_cookies": "Evästeet", "f_cookie_settings": "Evästeasetukset", "f_version": "versio",
         "consent_label": "Evästeilmoitus",
         "consent_text": "Käytän Google Analyticsia nähdäkseni, kuinka moni sivulla käy, ja Microsoft Claritya nähdäkseni, miten sivua käytetään (klikkausten lämpökartat ja istuntojen tallenteet). Seuranta alkaa vain, jos hyväksyt sen.",
         "consent_more": "Evästeet ja tietosuoja",
@@ -169,7 +169,7 @@ TEKSTIT = {
         "crumbs_label": "Breadcrumb",
         "og_alt": "VLiNdATA Oy: GIS and building data that benefit municipalities. Photo of Virpi Lindvall.",
         "og_locale": "en_GB", "og_locale_alt": "fi_FI",
-        "toteutus": "Technical implementation", "teema": "Dark theme", "f_cookies": "Cookies", "f_cookie_settings": "Cookie settings", "f_version": "version",
+        "toteutus": "Technical implementation", "kytkin": "Analytics cookies", "kytkin_pois": "Off", "teema": "Dark theme", "f_cookies": "Cookies", "f_cookie_settings": "Cookie settings", "f_version": "version",
         "consent_label": "Cookie notice",
         "consent_text": "I use Google Analytics to see how many people visit the site and Microsoft Clarity to see how it is used (click heatmaps and session recordings). Tracking starts only if you accept it.",
         "consent_more": "Cookies and privacy",
@@ -437,7 +437,7 @@ def header(kieli, avain, root):
 {chr(10).join(linkit)}
           <li class="nav__evasteet"><a class="nav__link nav__link--pieni" href="{href(root, POLUT['evasteet'][kieli])}"{' aria-current="page"' if avain == 'evasteet' else ''}>{t['f_cookies']}</a></li>
           <li class="nav__meta">
-            <button class="nav__meta-nappi" type="button" id="consent-open">{t['f_cookie_settings']}</button>
+            <button class="kytkin" type="button" role="switch" aria-checked="false" data-consent-kytkin><span class="kytkin__rata" aria-hidden="true"><span class="kytkin__nuppi"></span></span><span class="kytkin__teksti">{t['kytkin']}</span><span class="kytkin__tila" aria-hidden="true">{t['kytkin_pois']}</span></button>
             <span>© {VUOSI} VLiNdATA Oy · {t['f_version']} <span data-site-version>{VERSIO}</span></span>
             <span class="nav__toteutus">{t['toteutus']}: <a href="https://summanen.org/" target="_blank" rel="noopener">summanen.org<span class="sr-only"> {t['new_tab']}</span></a></span>
           </li>

@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.9.8
+
+- Evästeasetukset-nappi vaihdettu Analytiikkaevästeet-kytkimeksi (Evästeet-sivu ja puhelimen valikko): päällä = seuranta hyväksytty, pois = hylätty tai ei valittu. Kytkin muuttaa valinnan suoraan.
+
 ## 2.9.7
 
 - Evästeet-sivun valintalaatikko poistettu: tila näkyy Evästeasetukset-napissa (väri ja teksti), josta ilmoitus aukeaa. Kelluva ilmoitus ei edelleenkään aukea Evästeet-sivulla itsestään.

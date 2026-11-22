@@ -2,7 +2,7 @@
    - Kaikki analytiikka on oletuksena kielletty.
    - gtag.js ja Clarity ladataan vasta, kun kävijä painaa "Hyväksy".
    - Valinta tallennetaan selaimen localStorageen.
-   - Valinnan voi muuttaa alatunnisteen "Evästeasetukset"-napista (id consent-open). */
+   - Valinnan voi muuttaa Analytiikkaevästeet-kytkimestä (Evästeet-sivu ja puhelimen valikko). */
 (() => {
   const GA_ID = 'G-73CPF19H48';
   const CLARITY_ID = 'zho2cm3xyq';           // Microsoft Clarity: lämpökartat ja istuntotallenteet
@@ -78,55 +78,53 @@
     const hide = () => { banner.hidden = true; };
 
     // Evästeet-sivulla ilmoitus ei aukea itsestään (se peittäisi tekstin, jota kävijä tuli lukemaan);
-    // valinnan tila näkyy Evästeasetukset-napissa, josta ilmoituksen saa auki
+    // valinta tehdään siellä Analytiikkaevästeet-kytkimellä
     const noAutoBanner = document.querySelector('[data-ei-evasteilmoitusta]');
-    // Evästeasetukset-napeissa näkyy nykyinen valinta, esim. "Evästeasetukset: hylätty"
+
+    // Kytkin näyttää nykyisen tilan: päällä = hyväksytty, pois = hylätty tai ei valintaa
     const TILAT = document.documentElement.lang === 'en'
-      ? { granted: 'accepted', denied: 'declined', none: 'not chosen' }
-      : { granted: 'hyväksytty', denied: 'hylätty', none: 'ei valintaa' };
-    const openButtons = document.querySelectorAll('#consent-open, [data-consent-open]');
-    const updateButtons = () => {
+      ? { granted: 'On', denied: 'Off', none: 'Off (not chosen)' }
+      : { granted: 'Päällä', denied: 'Pois', none: 'Pois (ei valittu)' };
+    const switches = document.querySelectorAll('[data-consent-kytkin]');
+    const updateSwitches = () => {
       const choice = readChoice();
       const avain = choice === 'granted' || choice === 'denied' ? choice : 'none';
-      const tila = TILAT[avain];
-      openButtons.forEach((button) => {
-        button.dataset.tila = avain;   // väri tilan mukaan (css: .nav__meta-nappi[data-tila])
-        let span = button.querySelector('.evaste-tila');
-        if (!span) {
-          span = document.createElement('span');
-          span.className = 'evaste-tila';
-          button.appendChild(span);
-        }
-        span.textContent = `: ${tila}`;
+      switches.forEach((kytkin) => {
+        kytkin.setAttribute('aria-checked', String(avain === 'granted'));
+        kytkin.dataset.tila = avain;
+        kytkin.querySelector('.kytkin__tila').textContent = TILAT[avain];
       });
     };
+    updateSwitches();
 
-    updateButtons();
+    const accept = () => {
+      saveChoice('granted');
+      hide();
+      loadAnalytics();
+      updateSwitches();
+    };
+    const deny = () => {
+      const previous = readChoice();
+      saveChoice('denied');
+      hide();
+      if (window.clarity) window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
+      updateSwitches();
+      if (previous === 'granted') {
+        // Aiempi hyväksyntä perutaan: evästeet pois ja sivu uudelleen ilman analytiikkaa
+        removeAnalyticsCookies();
+        location.reload();
+      }
+    };
 
     document.addEventListener('click', (event) => {
       const button = event.target.closest('[data-consent]');
-      if (!button) return;
-      const previous = readChoice();
-      if (button.dataset.consent === 'accept') {
-        saveChoice('granted');
-        hide();
-        loadAnalytics();
-        updateButtons();
-      } else {
-        saveChoice('denied');
-        hide();
-        if (window.clarity) window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
-        updateButtons();
-        if (previous === 'granted') {
-          // Aiempi hyväksyntä perutaan: evästeet pois ja sivu uudelleen ilman analytiikkaa
-          removeAnalyticsCookies();
-          location.reload();
-        }
+      if (button) {
+        if (button.dataset.consent === 'accept') accept(); else deny();
+        return;
       }
-    });
-
-    openButtons.forEach((button) => {
-      button.addEventListener('click', show);
+      if (event.target.closest('[data-consent-kytkin]')) {
+        if (readChoice() === 'granted') deny(); else accept();
+      }
     });
 
     if (!readChoice() && !noAutoBanner) banner.hidden = false;

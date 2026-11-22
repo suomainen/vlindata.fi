@@ -46,7 +46,7 @@ Avaa selaimessa http://localhost:8000/.
 
 - **Tekstit:** muokkaa tiedostoa `tools/sivut/fi/<sivu>.html` ja vastaavaa `tools/sivut/en/<sivu>.html`, aja sitten `python tools/rakenna.py`. Älä muokkaa koottuja `index.html`-tiedostoja käsin, koska skripti kirjoittaa ne yli.
 - **Sivujen otsikot, kuvaukset ja valikko:** `tools/rakenna.py`, kohta `SIVUT`.
-- **Yläpalkki ja valikko (myös Evästeet, Evästeasetukset ja versio), evästeilmoitus:** `tools/rakenna.py`, funktiot `header` ja `evasteilmoitus` sekä `TEKSTIT`. Sivustolla ei ole erillistä alatunnistetta.
+- **Yläpalkki ja valikko (myös Evästeet, Analytiikkaevästeet-kytkin ja versio), evästeilmoitus:** `tools/rakenna.py`, funktiot `header` ja `evasteilmoitus` sekä `TEKSTIT`. Sivustolla ei ole erillistä alatunnistetta.
 - **Referenssikuntien logot:** `tools/rakenna.py`, kohta `LOGOT`, ja kuvat kansioon `img/logot/`.
 - **Värit ja fontit:** `css/style.css`, kohta 1. Kontrastit on laskettu kommentteihin; tarkista ne, jos vaihdat värejä.
 - **Tumma ulkoasu:** `css/style.css`, kohta 1. Oletus on aina vaalea; tumma ulkoasu tulee käyttöön vain yläpalkin napista (`:root[data-teema="tumma"]`). Valinta tallentuu selaimeen avaimella `vlindata-teema` (js/teema.js).
@@ -126,7 +126,7 @@ Jos push GitHubiin hylätään ("fetch first"): `git pull --rebase` ja uudelleen
 
 ## Analytiikka ja evästeet
 
-Google Analytics 4 (G-73CPF19H48) ja Microsoft Clarity (`zho2cm3xyq`, lämpökartat ja istuntotallenteet) ladataan vasta, kun kävijä hyväksyy evästeet (Google Consent Mode v2 ja Clarityn `consentv2`). Valinta tallennetaan selaimeen (`vlindata-consent`), ja sen voi muuttaa Evästeet-sivun napista tai puhelimen valikon Evästeasetukset-napista. Peruminen poistaa GA- ja Clarity-evästeet (`_ga*`, `_clck`, `_clsk`).
+Google Analytics 4 (G-73CPF19H48) ja Microsoft Clarity (`zho2cm3xyq`, lämpökartat ja istuntotallenteet) ladataan vasta, kun kävijä hyväksyy evästeet (Google Consent Mode v2 ja Clarityn `consentv2`). Valinta tallennetaan selaimeen (`vlindata-consent`), ja sen voi muuttaa Analytiikkaevästeet-kytkimellä (Evästeet-sivun alalaita ja puhelimen valikko). Evästeet-sivulla kelluva ilmoitus ei aukea itsestään. Peruminen poistaa GA- ja Clarity-evästeet (`_ga*`, `_clck`, `_clsk`).
 
 Yhteydenottolomake ei lähetä tietoja millekään palvelimelle: se avaa viestin kävijän omassa sähköpostiohjelmassa. Siksi lomakkeen kautta ei voi tulla roskapostia eikä tietoja tallennu sivustolle.
 
