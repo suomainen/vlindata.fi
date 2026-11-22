@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.9.5
+
+- Referenssit-sivun otsikkopaneeliin karttakuvio terrakotan sävyssä (`img/kartta-terra.webp`) peilattuna vasempaan reunaan ja Evästeet-sivun otsikkopaneeliin vihreä karttakuvio alareunaan (`.panel--kartta-vasen`, `.panel--kartta-ala`).
+
 ## 2.9.4
 
 - Evästeasetukset-napin väri kertoo tilan: vihreä = hyväksytty, terrakotta = hylätty, hiekka = ei valintaa (lisäksi pallo ja teksti).

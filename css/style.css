@@ -176,6 +176,17 @@ p { text-wrap: pretty; }
   -webkit-mask-image: linear-gradient(to left, #000 35%, transparent);
           mask-image: linear-gradient(to left, #000 35%, transparent);
 }
+.panel--terra-vaalea.panel--kartta::before { background-image: url("../img/kartta-terra.webp"); }
+/* Vaihtelua: kuvio peilattuna vasemmassa reunassa tai koko leveydellä alareunassa */
+.panel--kartta-vasen::before { inset: 0 auto 0 0; transform: scaleX(-1); }
+.panel--kartta-ala::before {
+  inset: auto 0 0 0;
+  width: auto;
+  height: 75%;
+  background-position: center 70%;
+  -webkit-mask-image: linear-gradient(to top, #000 30%, transparent);
+          mask-image: linear-gradient(to top, #000 30%, transparent);
+}
 .panel--metsa.panel--kartta::before {
   background-image: url("../img/kartta-vaalea.webp");
   opacity: 0.09;
