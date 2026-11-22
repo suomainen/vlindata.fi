@@ -86,8 +86,10 @@
     const openButtons = document.querySelectorAll('#consent-open, [data-consent-open]');
     const updateButtons = () => {
       const choice = readChoice();
-      const tila = TILAT[choice === 'granted' || choice === 'denied' ? choice : 'none'];
+      const avain = choice === 'granted' || choice === 'denied' ? choice : 'none';
+      const tila = TILAT[avain];
       openButtons.forEach((button) => {
+        button.dataset.tila = avain;   // väri tilan mukaan (css: .nav__meta-nappi[data-tila])
         let span = button.querySelector('.evaste-tila');
         if (!span) {
           span = document.createElement('span');

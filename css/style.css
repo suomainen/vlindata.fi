@@ -809,6 +809,23 @@ p { text-wrap: pretty; }
 .nav__meta-nappi[data-consent-open],
 .nav__meta-nappi#consent-open { border: 1px solid currentColor; }
 .evaste-tila { font-weight: 400; color: var(--teksti-2); }
+/* Väri kertoo tilan: vihreä = hyväksytty, terrakotta = hylätty, hiekka = ei valintaa (teksti kertoo saman) */
+.nav__meta-nappi[data-tila]::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--teksti-2);
+  vertical-align: 0.05em;
+}
+.nav__meta-nappi[data-tila="granted"] { background: var(--vihrea-vaalea); border-color: var(--metsa); }
+.nav__meta-nappi[data-tila="granted"]::before { background: var(--metsa); }
+.nav__meta-nappi[data-tila="denied"] { background: var(--terra-vaalea); border-color: var(--terra-tumma); }
+.nav__meta-nappi[data-tila="denied"]::before { background: var(--terra-tumma); }
+.nav__meta-nappi[data-tila="none"] { background: var(--hiekka); }
+.nav__meta-nappi[data-tila]:hover { filter: brightness(0.96); }
 
 /* Evästesivun alalaita: samat tiedot kuin puhelimen valikon alarivillä */
 .sivustotiedot {
