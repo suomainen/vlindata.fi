@@ -177,16 +177,8 @@ p { text-wrap: pretty; }
           mask-image: linear-gradient(to left, #000 35%, transparent);
 }
 .panel--terra-vaalea.panel--kartta::before { background-image: url("../img/kartta-terra.webp"); }
-/* Vaihtelua: kuvio peilattuna vasemmassa reunassa tai koko leveydellä alareunassa */
+/* Vaihtelua: kuvio peilattuna vasemmassa reunassa ja teksti oikealla (Referenssit, Evästeet) */
 .panel--kartta-vasen::before { inset: 0 auto 0 0; transform: scaleX(-1); }
-.panel--kartta-ala::before {
-  inset: auto 0 0 0;
-  width: auto;
-  height: 75%;
-  background-position: center 70%;
-  -webkit-mask-image: linear-gradient(to top, #000 30%, transparent);
-          mask-image: linear-gradient(to top, #000 30%, transparent);
-}
 .panel--metsa.panel--kartta::before {
   background-image: url("../img/kartta-vaalea.webp");
   opacity: 0.09;
@@ -642,6 +634,10 @@ p { text-wrap: pretty; }
 .page-hero .h1 { max-width: 22ch; }
 .page-hero .lead { margin-top: 24px; max-width: 46rem; }
 .page-hero .lead + p { margin-top: 14px; max-width: 46rem; }
+@media (min-width: 900px) {
+  .page-hero.panel--kartta-vasen .wrap { display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
+  .page-hero.panel--kartta-vasen .crumbs ol { justify-content: flex-end; }
+}
 .crumbs { margin-bottom: 20px; font-size: 0.92rem; }
 .crumbs ol { display: flex; flex-wrap: wrap; gap: 6px; }
 .crumbs li + li::before { content: "/"; margin-right: 6px; color: var(--teksti-2); }
