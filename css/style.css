@@ -646,6 +646,7 @@ p { text-wrap: pretty; }
 .block .h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
 .block .prose { max-width: 44rem; }
 .prose > * + * { margin-top: 1em; }
+.prose > .tietosuoja__otsikko { margin-top: 2em; }
 .prose ul { display: grid; gap: 10px; }
 .prose ul li { position: relative; padding-left: 26px; }
 .prose ul li::before {
@@ -849,6 +850,14 @@ p { text-wrap: pretty; }
 .cookie-table th,
 .cookie-table td { padding: 10px 12px; border-bottom: 1px solid var(--viiva); text-align: left; vertical-align: top; overflow-wrap: anywhere; }
 .cookie-table td { color: var(--teksti-2); }
+/* Puhelimella jokainen eväste omana korttinaan, jotta nimet eivät pilkkoudu (roolit HTML:ssä säilyttävät taulukon ruudunlukijalle) */
+@media (max-width: 600px) {
+  .cookie-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .cookie-table tr { display: block; padding: 12px 0; border-bottom: 1px solid var(--viiva); }
+  .cookie-table td { display: block; padding: 2px 0; border: 0; overflow-wrap: break-word; }
+  .cookie-table td:first-child { color: var(--teksti); font-weight: 700; }
+  .cookie-table td[data-otsikko]::before { content: attr(data-otsikko) ": "; font-weight: 600; }
+}
 
 /* 14. 404-sivu ------------------------------------------------------------ */
 .notfound { min-height: calc(100vh - 2 * var(--paneeli-vali)); margin-top: var(--paneeli-vali); display: grid; place-items: center; text-align: center; }

@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.9.0"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.9.1"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # ---------------------------------------------------------------------------
 # Sivut: avain -> polku kummallakin kielellä. Navigaation järjestys on tämä.
@@ -154,7 +154,7 @@ TEKSTIT = {
         "toteutus": "Tekninen toteutus", "teema": "Tumma ulkoasu", "f_cookies": "Evästeet", "f_cookie_settings": "Evästeasetukset", "f_version": "versio",
         "consent_label": "Evästeilmoitus",
         "consent_text": "Käytän Google Analyticsia nähdäkseni, kuinka moni sivulla käy, ja Microsoft Claritya nähdäkseni, miten sivua käytetään (klikkausten lämpökartat ja istuntojen tallenteet). Seuranta alkaa vain, jos hyväksyt sen.",
-        "consent_more": "Lisätietoja evästeistä",
+        "consent_more": "Evästeet ja tietosuoja",
         "consent_deny": "Hylkää", "consent_accept": "Hyväksy",
         "new_tab": " (avautuu uuteen välilehteen)",
         "ytunnus": "Y-tunnus",
@@ -172,7 +172,7 @@ TEKSTIT = {
         "toteutus": "Technical implementation", "teema": "Dark theme", "f_cookies": "Cookies", "f_cookie_settings": "Cookie settings", "f_version": "version",
         "consent_label": "Cookie notice",
         "consent_text": "I use Google Analytics to see how many people visit the site and Microsoft Clarity to see how it is used (click heatmaps and session recordings). Tracking starts only if you accept it.",
-        "consent_more": "More about cookies",
+        "consent_more": "Cookies and privacy",
         "consent_deny": "Decline", "consent_accept": "Accept",
         "new_tab": " (opens in a new tab, in Finnish)",
         "ytunnus": "Business ID",

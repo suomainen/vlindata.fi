@@ -4,6 +4,12 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.9.1
+
+- Evästeet-sivulle tietosuojaosio (Microsoft Clarityn ohjeen mukainen kuvaus: mitä kerätään, mihin, käsittelijät, EU:n ulkopuolinen käsittely, Microsoftin ja Googlen tietosuojalinkit, suostumuksen peruminen, rekisterinpitäjä).
+- Evästeilmoituksen linkki "Evästeet ja tietosuoja".
+- Evästetaulukko puhelimella korteiksi (nimet eivät enää pilkkoudu), taulukkoroolit säilyvät ruudunlukijalle.
+
 ## 2.9.0
 
 - Microsoft Clarity (lämpökartat ja istuntotallenteet, `zho2cm3xyq`): latautuu vasta evästeiden hyväksynnän jälkeen, `consentv2`-signaali, hylkäys poistaa myös Clarityn evästeet (`_clck`, `_clsk`).
