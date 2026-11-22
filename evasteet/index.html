@@ -178,7 +178,7 @@
           <li class="nav__evasteet"><a class="nav__link nav__link--pieni" href="../evasteet/" aria-current="page">Evästeet</a></li>
           <li class="nav__meta">
             <button class="nav__meta-nappi" type="button" id="consent-open">Evästeasetukset</button>
-            <span>© 2026 VLiNdATA Oy · versio <span data-site-version>2.8.4</span></span>
+            <span>© 2026 VLiNdATA Oy · versio <span data-site-version>2.9.0</span></span>
             <span class="nav__toteutus">Tekninen toteutus: <a href="https://summanen.org/" target="_blank" rel="noopener">summanen.org<span class="sr-only">  (avautuu uuteen välilehteen)</span></a></span>
           </li>
         </ul>
@@ -210,7 +210,7 @@
           <h2 class="h2" id="evasteet-otsikko">Sivuston evästeet</h2>
           <div class="prose">
             <p>Lain mukaan voin tallentaa evästeitä laitteellesi, mikäli se on ehdottoman tärkeää sivuston toiminnan kannalta. Tarvitsen suostumuksesi kaikenlaisten evästeiden käytölle.</p>
-            <p>Google Analyticsin evästeet tallennetaan vain, jos hyväksyt ne. Jos hylkäät, sivu ei lataa Googlen palvelua lainkaan.</p>
+            <p>Google Analyticsin ja Microsoft Clarityn evästeet tallennetaan vain, jos hyväksyt ne. Google Analytics laskee kävijämääriä. Clarity näyttää, miten sivua käytetään: klikkausten lämpökartat ja istuntojen tallenteet, joissa lomakkeisiin kirjoitettu teksti on peitetty. Jos hylkäät, sivu ei lataa kumpaakaan palvelua lainkaan.</p>
             <p>Yhteydenottolomake ei tallenna tietoja: se avaa viestin omassa sähköpostiohjelmassasi.</p>
             <div class="table-wrap">
               <table class="cookie-table">
@@ -222,12 +222,15 @@
                   <tr><td>vlindata-consent</td><td>Muistaa evästevalintasi. Tallennetaan selaimen omaan muistiin, ei lähetetä minnekään.</td><td>Kunnes tyhjennät selaimen tiedot</td></tr>
                   <tr><td>_ga</td><td>Google Analytics: erottaa kävijät toisistaan kävijämäärän laskemista varten.</td><td>2 vuotta</td></tr>
                   <tr><td>_ga_73CPF19H48</td><td>Google Analytics: muistaa käynnin tilan.</td><td>2 vuotta</td></tr>
+                  <tr><td>_clck</td><td>Microsoft Clarity: erottaa kävijät toisistaan ja muistaa asetukset.</td><td>1 vuosi</td></tr>
+                  <tr><td>_clsk</td><td>Microsoft Clarity: yhdistää saman käynnin sivulataukset yhdeksi istunnoksi.</td><td>1 päivä</td></tr>
+                  <tr><td>vlindata-teema</td><td>Muistaa, valitsitko tumman ulkoasun. Tallennetaan selaimen omaan muistiin, ei lähetetä minnekään.</td><td>Kunnes tyhjennät selaimen tiedot</td></tr>
                 </tbody>
               </table>
             </div>
             <div class="sivustotiedot">
               <button class="nav__meta-nappi" type="button" data-consent-open>Evästeasetukset</button>
-              <span>© 2026 VLiNdATA Oy · versio <span data-site-version>2.8.4</span></span>
+              <span>© 2026 VLiNdATA Oy · versio <span data-site-version>2.9.0</span></span>
               <span class="sivustotiedot__toteutus"><img src="../img/oskari-summanen.webp" alt="" width="32" height="32" loading="lazy" decoding="async"><span>Tekninen toteutus: Oskari Summanen, <a href="https://summanen.org/" target="_blank" rel="noopener">summanen.org<span class="sr-only"> (avautuu uuteen välilehteen)</span></a></span></span>
             </div>
           </div>
@@ -236,7 +239,7 @@
     </section>
   </main>
   <div class="consent" id="consent" role="region" aria-label="Evästeilmoitus" hidden>
-    <p class="consent__text">Käytän evästeitä kävijämäärän analysoimiseen. Google Analytics ladataan vain, jos hyväksyt. <a href="../evasteet/">Lisätietoja evästeistä</a></p>
+    <p class="consent__text">Käytän Google Analyticsia nähdäkseni, kuinka moni sivulla käy, ja Microsoft Claritya nähdäkseni, miten sivua käytetään (klikkausten lämpökartat ja istuntojen tallenteet). Seuranta alkaa vain, jos hyväksyt sen. <a href="../evasteet/">Lisätietoja evästeistä</a></p>
     <div class="consent__actions">
       <button class="btn btn--reuna" type="button" data-consent="deny">Hylkää</button>
       <button class="btn btn--toissijainen" type="button" data-consent="accept">Hyväksy</button>

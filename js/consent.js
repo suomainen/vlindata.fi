@@ -1,10 +1,11 @@
-/* Evästeilmoitus ja Google Analytics 4 (Consent Mode v2)
+/* Evästeilmoitus, Google Analytics 4 (Consent Mode v2) ja Microsoft Clarity
    - Kaikki analytiikka on oletuksena kielletty.
-   - gtag.js ladataan vasta, kun kävijä painaa "Hyväksy".
+   - gtag.js ja Clarity ladataan vasta, kun kävijä painaa "Hyväksy".
    - Valinta tallennetaan selaimen localStorageen.
    - Valinnan voi muuttaa alatunnisteen "Evästeasetukset"-napista (id consent-open). */
 (() => {
   const GA_ID = 'G-73CPF19H48';
+  const CLARITY_ID = 'zho2cm3xyq';           // Microsoft Clarity: lämpökartat ja istuntotallenteet
   const STORAGE_KEY = 'vlindata-consent';   // arvo 'granted' tai 'denied'
 
   window.dataLayer = window.dataLayer || [];
@@ -37,14 +38,25 @@
     document.head.appendChild(script);
     gtag('js', new Date());
     gtag('config', GA_ID);
+    loadClarity();
   };
 
-  // Poistaa Google Analyticsin evästeet (_ga, _ga_XXXX) tältä ja ylätason verkkotunnukselta
+  // Microsoft Clarity; sama latauskoodi kuin Clarityn ohjeessa, suostumus kerrotaan consentv2:lla
+  const loadClarity = () => {
+    window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
+    window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'granted' });
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.clarity.ms/tag/${CLARITY_ID}`;
+    document.head.appendChild(script);
+  };
+
+  // Poistaa Google Analyticsin (_ga, _ga_XXXX) ja Clarityn (_clck, _clsk) evästeet tältä ja ylätason verkkotunnukselta
   const removeAnalyticsCookies = () => {
     const host = location.hostname;
     const domains = ['', host, `.${host}`, `.${host.split('.').slice(-2).join('.')}`];
     document.cookie.split(';').map((c) => c.split('=')[0].trim())
-      .filter((name) => name === '_ga' || name.startsWith('_ga_'))
+      .filter((name) => name === '_ga' || name.startsWith('_ga_') || name === '_clck' || name === '_clsk')
       .forEach((name) => {
         domains.forEach((d) => {
           document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/${d ? `; domain=${d}` : ''}`;
@@ -76,6 +88,7 @@
       } else {
         saveChoice('denied');
         hide();
+        if (window.clarity) window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
         if (previous === 'granted') {
           // Aiempi hyväksyntä perutaan: evästeet pois ja sivu uudelleen ilman analytiikkaa
           removeAnalyticsCookies();

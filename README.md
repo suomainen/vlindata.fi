@@ -15,7 +15,7 @@ en/                              englanninkieliset sivut samassa järjestyksess�
 evasteet.html, en/cookies.html   vanhojen osoitteiden ohjaukset
 css/style.css                    kaikki tyylit, värit muuttujina alussa
 css/fonts.css, fonts/            Manrope ja Inter sekä lisenssit
-js/consent.js                    evästeilmoitus ja Google Analytics 4
+js/consent.js                    evästeilmoitus, Google Analytics 4 ja Microsoft Clarity
 js/menu.js                       mobiilivalikko ja versionumero
 js/teema.js                      vaalea/tumma ulkoasu ja yläpalkin teemanappi (ladataan heti, ilman deferiä)
 js/contact-form.js               yhteydenottolomake (avaa sähköpostin)
@@ -126,7 +126,7 @@ Jos push GitHubiin hylätään ("fetch first"): `git pull --rebase` ja uudelleen
 
 ## Analytiikka ja evästeet
 
-Google Analytics 4 (G-73CPF19H48) ladataan vasta, kun kävijä hyväksyy evästeet (Google Consent Mode v2). Valinta tallennetaan selaimeen (`vlindata-consent`), ja sen voi muuttaa Evästeet-sivun napista tai puhelimen valikon Evästeasetukset-napista. Peruminen poistaa GA-evästeet.
+Google Analytics 4 (G-73CPF19H48) ja Microsoft Clarity (`zho2cm3xyq`, lämpökartat ja istuntotallenteet) ladataan vasta, kun kävijä hyväksyy evästeet (Google Consent Mode v2 ja Clarityn `consentv2`). Valinta tallennetaan selaimeen (`vlindata-consent`), ja sen voi muuttaa Evästeet-sivun napista tai puhelimen valikon Evästeasetukset-napista. Peruminen poistaa GA- ja Clarity-evästeet (`_ga*`, `_clck`, `_clsk`).
 
 Yhteydenottolomake ei lähetä tietoja millekään palvelimelle: se avaa viestin kävijän omassa sähköpostiohjelmassa. Siksi lomakkeen kautta ei voi tulla roskapostia eikä tietoja tallennu sivustolle.
 

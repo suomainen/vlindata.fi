@@ -4,6 +4,11 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.9.0
+
+- Microsoft Clarity (lämpökartat ja istuntotallenteet, `zho2cm3xyq`): latautuu vasta evästeiden hyväksynnän jälkeen, `consentv2`-signaali, hylkäys poistaa myös Clarityn evästeet (`_clck`, `_clsk`).
+- Evästeilmoituksen ja Evästeet-sivun tekstit mainitsevat Clarityn; evästetaulukkoon Clarityn evästeet ja ulkoasuvalinta (`vlindata-teema`).
+
 ## 2.8.4
 
 - Virpin LinkedIn-profiili yhteystietoihin (etusivu ja Yhteystiedot-sivu, suomeksi ja englanniksi), hakukonetietoihin (`sameAs`) ja llms.txt:hen.
