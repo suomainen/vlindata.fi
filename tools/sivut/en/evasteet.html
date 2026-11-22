@@ -11,6 +11,13 @@
         <div class="block">
           <h2 class="h2" id="evasteet-otsikko">Cookies on this site</h2>
           <div class="prose">
+            <div class="valinta" data-consent-tila data-tila-ei="You have not made a choice yet, so tracking is off." data-tila-kylla="You have accepted tracking (Google Analytics and Microsoft Clarity)." data-tila-hylatty="You have declined tracking. Google Analytics and Microsoft Clarity are not in use.">
+              <p class="valinta__tila" aria-live="polite"></p>
+              <div class="consent__actions">
+                <button class="btn btn--reuna" type="button" data-consent="deny">Decline</button>
+                <button class="btn btn--toissijainen" type="button" data-consent="accept">Accept</button>
+              </div>
+            </div>
             <p>By law, I may store cookies on your device if they are strictly necessary for the site to work. For all other types of cookies I need your consent.</p>
             <p>Google Analytics and Microsoft Clarity cookies are stored only if you accept them. Google Analytics counts visitors. Clarity shows how the site is used: click heatmaps and session recordings in which text typed into forms is masked. If you decline, the page does not load either service at all.</p>
             <p>The contact form stores nothing: it opens the message in your own email app.</p>

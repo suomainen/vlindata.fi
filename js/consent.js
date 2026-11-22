@@ -77,7 +77,21 @@
     };
     const hide = () => { banner.hidden = true; };
 
-    banner.addEventListener('click', (event) => {
+    // Evästeet-sivulla valinta tehdään sivun omassa laatikossa, eikä kelluva ilmoitus peitä tekstiä
+    const inline = document.querySelector('[data-consent-tila]');
+    const updateInline = () => {
+      if (!inline) return;
+      const choice = readChoice();
+      const key = choice === 'granted' ? 'tilaKylla' : choice === 'denied' ? 'tilaHylatty' : 'tilaEi';
+      inline.querySelector('.valinta__tila').textContent = inline.dataset[key];
+      inline.querySelectorAll('[data-consent]').forEach((b) => {
+        const valittu = (b.dataset.consent === 'accept' && choice === 'granted') || (b.dataset.consent === 'deny' && choice === 'denied');
+        b.setAttribute('aria-pressed', String(valittu));
+      });
+    };
+    updateInline();
+
+    document.addEventListener('click', (event) => {
       const button = event.target.closest('[data-consent]');
       if (!button) return;
       const previous = readChoice();
@@ -85,10 +99,12 @@
         saveChoice('granted');
         hide();
         loadAnalytics();
+        updateInline();
       } else {
         saveChoice('denied');
         hide();
         if (window.clarity) window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
+        updateInline();
         if (previous === 'granted') {
           // Aiempi hyväksyntä perutaan: evästeet pois ja sivu uudelleen ilman analytiikkaa
           removeAnalyticsCookies();
@@ -101,6 +117,6 @@
       button.addEventListener('click', show);
     });
 
-    if (!readChoice()) banner.hidden = false;
+    if (!readChoice() && !inline) banner.hidden = false;
   });
 })();

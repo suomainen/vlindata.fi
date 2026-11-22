@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.9.2
+
+- Evästeet-sivulla oma valintalaatikko (nykyinen valinta ja Hyväksy/Hylkää): kelluva evästeilmoitus ei enää aukea sivulle ja peitä tekstiä, kun ilmoituksen linkistä tullaan Evästeet-sivulle.
+
 ## 2.9.1
 
 - Evästeet-sivulle tietosuojaosio (Microsoft Clarityn ohjeen mukainen kuvaus: mitä kerätään, mihin, käsittelijät, EU:n ulkopuolinen käsittely, Microsoftin ja Googlen tietosuojalinkit, suostumuksen peruminen, rekisterinpitäjä).
