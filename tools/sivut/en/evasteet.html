@@ -9,7 +9,10 @@
     <section class="panel panel--valkoinen page-content" aria-labelledby="evasteet-otsikko">
       <div class="wrap">
         <div class="block">
-          <h2 class="h2" id="evasteet-otsikko">Cookies on this site</h2>
+          <div class="block__otsikko">
+            <h2 class="h2" id="evasteet-otsikko">Cookies on this site</h2>
+            <button class="kytkin" type="button" role="switch" aria-checked="false" data-consent-kytkin><span class="kytkin__rata" aria-hidden="true"><span class="kytkin__nuppi"></span></span><span class="kytkin__teksti">Analytics cookies</span><span class="kytkin__tila" aria-hidden="true">Off</span></button>
+          </div>
           <div class="prose">
             <p>By law, I may store cookies on your device if they are strictly necessary for the site to work. For all other types of cookies I need your consent.</p>
             <p>Google Analytics and Microsoft Clarity cookies are stored only if you accept them. Google Analytics counts visitors. Clarity shows how the site is used: click heatmaps and session recordings in which text typed into forms is masked. If you decline, the page does not load either service at all.</p>
@@ -37,7 +40,6 @@
             <p>You can withdraw your consent at any time with the Cookie settings button. Tracking then stops and the site's cookies are deleted.</p>
             <p>Controller: VLiNdATA Oy (Business ID 3410053-6). Privacy questions: <a class="text-link" href="mailto:virpi@vlindata.fi">virpi@vlindata.fi</a>.</p>
             <div class="sivustotiedot" data-ei-evasteilmoitusta>
-              <button class="kytkin" type="button" role="switch" aria-checked="false" data-consent-kytkin><span class="kytkin__rata" aria-hidden="true"><span class="kytkin__nuppi"></span></span><span class="kytkin__teksti">Analytics cookies</span><span class="kytkin__tila" aria-hidden="true">Off</span></button>
               <span>© 2026 VLiNdATA Oy · version {{versio}}</span>
               <span class="sivustotiedot__toteutus"><img src="{{root}}img/oskari-summanen.webp" alt="" width="32" height="32" loading="lazy" decoding="async"><span>Technical implementation: Oskari Summanen, <a href="https://summanen.org/" target="_blank" rel="noopener">summanen.org<span class="sr-only"> (opens in a new tab, in Finnish)</span></a></span></span>
             </div>

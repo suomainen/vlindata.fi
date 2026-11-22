@@ -851,7 +851,7 @@ p { text-wrap: pretty; }
   color: var(--teksti-2);
   font-size: 0.9rem;
 }
-.sivustotiedot .kytkin { margin-bottom: 8px; }
+.block__otsikko .kytkin { margin-top: 20px; }
 .nav__meta .kytkin { padding: 0 16px; }  /* samaan linjaan valikon alarivin tekstien kanssa */
 .sivustotiedot a { color: inherit; }
 .sivustotiedot__toteutus { display: flex; align-items: center; gap: 10px; }
