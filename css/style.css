@@ -870,10 +870,6 @@ p { text-wrap: pretty; }
 .consent__text a { color: inherit; font-weight: 600; text-underline-offset: 0.2em; }
 .consent__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
 .consent__actions .btn { flex: 1 1 140px; min-height: 48px; }
-/* Evästeet-sivun oma valintalaatikko */
-.valinta { margin-bottom: 8px; padding: 20px 24px; border-radius: var(--kulma); background: var(--vihrea-vaalea); }
-.valinta__tila { font-weight: 600; }
-.valinta [aria-pressed="true"] { outline: 3px solid var(--terra); outline-offset: 2px; }
 
 .table-wrap { overflow-x: auto; margin-top: 12px; }
 .cookie-table { width: 100%; border-collapse: collapse; font-size: 0.98rem; }

@@ -77,8 +77,9 @@
     };
     const hide = () => { banner.hidden = true; };
 
-    // Evästeet-sivulla valinta tehdään sivun omassa laatikossa, eikä kelluva ilmoitus peitä tekstiä
-    const inline = document.querySelector('[data-consent-tila]');
+    // Evästeet-sivulla ilmoitus ei aukea itsestään (se peittäisi tekstin, jota kävijä tuli lukemaan);
+    // valinnan tila näkyy Evästeasetukset-napissa, josta ilmoituksen saa auki
+    const noAutoBanner = document.querySelector('[data-ei-evasteilmoitusta]');
     // Evästeasetukset-napeissa näkyy nykyinen valinta, esim. "Evästeasetukset: hylätty"
     const TILAT = document.documentElement.lang === 'en'
       ? { granted: 'accepted', denied: 'declined', none: 'not chosen' }
@@ -100,18 +101,7 @@
       });
     };
 
-    const updateInline = () => {
-      updateButtons();
-      if (!inline) return;
-      const choice = readChoice();
-      const key = choice === 'granted' ? 'tilaKylla' : choice === 'denied' ? 'tilaHylatty' : 'tilaEi';
-      inline.querySelector('.valinta__tila').textContent = inline.dataset[key];
-      inline.querySelectorAll('[data-consent]').forEach((b) => {
-        const valittu = (b.dataset.consent === 'accept' && choice === 'granted') || (b.dataset.consent === 'deny' && choice === 'denied');
-        b.setAttribute('aria-pressed', String(valittu));
-      });
-    };
-    updateInline();
+    updateButtons();
 
     document.addEventListener('click', (event) => {
       const button = event.target.closest('[data-consent]');
@@ -121,12 +111,12 @@
         saveChoice('granted');
         hide();
         loadAnalytics();
-        updateInline();
+        updateButtons();
       } else {
         saveChoice('denied');
         hide();
         if (window.clarity) window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
-        updateInline();
+        updateButtons();
         if (previous === 'granted') {
           // Aiempi hyväksyntä perutaan: evästeet pois ja sivu uudelleen ilman analytiikkaa
           removeAnalyticsCookies();
@@ -135,19 +125,10 @@
       }
     });
 
-    // Evästeet-sivulla nappi vie sivun omaan valintalaatikkoon, muualla avaa ilmoituksen
     openButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        if (inline) {
-          inline.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          const first = inline.querySelector('button');
-          if (first) first.focus({ preventScroll: true });
-        } else {
-          show();
-        }
-      });
+      button.addEventListener('click', show);
     });
 
-    if (!readChoice() && !inline) banner.hidden = false;
+    if (!readChoice() && !noAutoBanner) banner.hidden = false;
   });
 })();
