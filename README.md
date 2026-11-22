@@ -126,7 +126,7 @@ Jos push GitHubiin hylätään ("fetch first"): `git pull --rebase` ja uudelleen
 
 ## Analytiikka ja evästeet
 
-Google Analytics 4 (G-73CPF19H48) ja Microsoft Clarity (`zho2cm3xyq`, lämpökartat ja istuntotallenteet) ladataan vasta, kun kävijä hyväksyy evästeet (Google Consent Mode v2 ja Clarityn `consentv2`). Valinta tallennetaan selaimeen (`vlindata-consent`), ja sen voi muuttaa Analytiikkaevästeet-kytkimellä (Evästeet-sivulla otsikon alla ja puhelimen valikossa). Evästeet-sivulla kelluva ilmoitus ei aukea itsestään. Peruminen poistaa GA- ja Clarity-evästeet (`_ga*`, `_clck`, `_clsk`).
+Google Analytics 4 (G-73CPF19H48) ja Microsoft Clarity (`zho2cm3xyq`, lämpökartat ja istuntotallenteet) ladataan vasta, kun kävijä hyväksyy evästeet (Google Consent Mode v2 ja Clarityn `consentv2`). Valinta tallennetaan selaimeen (`vlindata-consent`), ja sen voi muuttaa Analytiikkaevästeet-kytkimellä (Evästeet-sivulla otsikon alla ja puhelimen valikossa). Peruminen poistaa GA- ja Clarity-evästeet (`_ga*`, `_clck`, `_clsk`).
 
 Yhteydenottolomake ei lähetä tietoja millekään palvelimelle: se avaa viestin kävijän omassa sähköpostiohjelmassa. Siksi lomakkeen kautta ei voi tulla roskapostia eikä tietoja tallennu sivustolle.
 

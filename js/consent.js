@@ -70,16 +70,15 @@
     const banner = document.getElementById('consent');
     if (!banner) return;
 
-    const show = () => {
-      banner.hidden = false;
-      const first = banner.querySelector('button');
-      if (first) first.focus({ preventScroll: true });
+    // Ilmoitus pysyy näkyvissä, kunnes kävijä valitsee (myös Evästeet-sivulla). Sivun alalaitaan
+    // varataan ilmoituksen korkuinen tila, jotta sen alle ei jää tekstiä, jota ei voi vierittää esiin.
+    const varaaTila = () => {
+      document.body.style.paddingBottom = banner.hidden ? '' : `${banner.offsetHeight + 24}px`;
     };
-    const hide = () => { banner.hidden = true; };
+    window.addEventListener('resize', varaaTila);
 
-    // Evästeet-sivulla ilmoitus ei aukea itsestään (se peittäisi tekstin, jota kävijä tuli lukemaan);
-    // valinta tehdään siellä Analytiikkaevästeet-kytkimellä
-    const noAutoBanner = document.querySelector('[data-ei-evasteilmoitusta]');
+    const hide = () => { banner.hidden = true; varaaTila(); };
+
 
     // Kytkin näyttää nykyisen tilan: päällä = hyväksytty, pois = hylätty tai ei valintaa
     const TILAT = document.documentElement.lang === 'en'
@@ -127,6 +126,6 @@
       }
     });
 
-    if (!readChoice() && !noAutoBanner) banner.hidden = false;
+    if (!readChoice()) { banner.hidden = false; varaaTila(); }
   });
 })();

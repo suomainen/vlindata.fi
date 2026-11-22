@@ -4,6 +4,11 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.9.10
+
+- Evästeilmoitus pysyy näkyvissä, kunnes kävijä valitsee, myös kun ilmoituksen linkistä siirrytään Evästeet-sivulle. Sivun alalaitaan varataan ilmoituksen korkuinen tila, jotta kaiken tekstin voi vierittää esiin.
+- Tietosuojaosion teksti päivitetty kytkimen mukaiseksi.
+
 ## 2.9.9
 
 - Evästeet-sivun Analytiikkaevästeet-kytkin otsikon "Sivuston evästeet" alle (puhelimella heti otsikon alla ennen tekstiä).
