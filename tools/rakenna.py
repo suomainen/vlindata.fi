@@ -23,7 +23,12 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.9.12"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.9.13"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+
+# Sisältöturvakäytäntö: sivu saa ladata vain omia tiedostojaan sekä Google Analyticsin
+# ja Microsoft Clarityn (vasta evästehyväksynnän jälkeen, js/consent.js). Uusi ulkoinen
+# palvelu pitää lisätä tähän, muuten selain estää sen. Sama rivi on 404.html:ssä.
+CSP = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.clarity.ms https://*.clarity.ms; style-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; font-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'"
 
 # ---------------------------------------------------------------------------
 # Sivut: avain -> polku kummallakin kielellä. Navigaation järjestys on tämä.
@@ -367,6 +372,7 @@ def head(kieli, avain, root):
     robots = meta.get("robots", "index, follow")
     return f"""<head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="{CSP}">
   <meta name="color-scheme" content="only light">
   <script src="{root}js/teema.js"></script>
   <script src="{root}js/consent.js" defer></script>
@@ -524,6 +530,7 @@ def uudelleenohjaus(vanha, uusi_polku):
 <html lang="fi">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="{CSP}">
   <title>VLiNdATA Oy</title>
   <meta name="robots" content="noindex">
   <link rel="canonical" href="{DOMAIN}{uusi_polku}">

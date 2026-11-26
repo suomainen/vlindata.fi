@@ -1,0 +1,37 @@
+# Dependabot tarkistaa viikoittain, onko repon riippuvuuksista uusia versioita, ja avaa
+# niistä pull requestin. Riippuvuudet ovat vain ylläpidon apuja: npm-paketeista tulevat
+# fontit ja ikonit (kopioidaan repoon, sivu ei käytä npm:ää) ja Python-paketit vain
+# fonttien tekoon (tools/fontit.py). Fonttipaketin päivityksen jälkeen aja
+# `npm install` ja `python tools/fontit.py`, muuten sivun fontit eivät muutu.
+# Haavoittuvuushälytykset kytketään päälle repon asetuksista:
+# Settings → Advanced Security → Dependabot alerts ja Dependabot security updates.
+# Toimii ilman GitHub Actionsia.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "07:00"
+      timezone: "Europe/Helsinki"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "Riippuvuudet"
+    groups:
+      npm:
+        patterns: ["*"]
+
+  - package-ecosystem: "pip"
+    directory: "/tools"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "07:00"
+      timezone: "Europe/Helsinki"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "Riippuvuudet"
+    groups:
+      python:
+        patterns: ["*"]

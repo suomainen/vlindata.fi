@@ -1,0 +1,4 @@
+# Vain tools/fontit.py tarvitsee nämä (fonttien teko). Sivu ja tools/rakenna.py eivät tarvitse.
+# Asennus: pip install -r tools/requirements.txt
+fonttools==4.67.0
+brotli==1.2.1

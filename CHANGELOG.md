@@ -4,6 +4,12 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.9.13
+
+- Sisältöturvakäytäntö (Content-Security-Policy) kaikille sivuille: selain lataa vain sivuston omat tiedostot sekä Google Analyticsin ja Microsoft Clarityn. Testattu oikealla sivustolla evästeet hyväksyttynä: ei estettyjä latauksia, ja vieraat osoitteet estyvät.
+- Tietoturva: `.github/dependabot.yml` (npm ja pip viikoittain), `SECURITY.md`, `tools/requirements.txt` ja README:n Tietoturva-kohta.
+- Tarkistus: `npm audit` ja `pip-audit` eivät löytäneet haavoittuvuuksia; CISA:n KEV-luettelossa (25.11.2026) ei ole sivuston kirjastoja.
+
 ## 2.9.12
 
 - Fontit kiinteinä painoina (Inter 400–700, Manrope 600–800) muuttuvien fonttien sijaan: vanhojen iPhonejen Safari näyttää muuttuvat fontit puutteellisesti. Tiedostot tehdään skriptillä `tools/fontit.py`.

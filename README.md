@@ -29,8 +29,11 @@ tools/commitviesti.ps1           automaattinen commit-viesti julkaise.bat:lle
 Sivutyokalu.bat, tools/sivutyokalu.ps1   päivitystyökalu (ikkuna): hae, esikatsele, julkaise, zip
 tools/asennus/                   työkalun asennus toiselle koneelle ja käyttöohje (OHJE.md, OHJE.pdf)
 package.json, package-lock.json  fonttien ja ikonien versiot (Dependabot), ei julkaista
+SECURITY.md                      haavoittuvuuksien ilmoittaminen
+.github/dependabot.yml           Dependabotin viikkotarkistus (npm ja pip)
 .htaccess                        palvelimen asetukset (https, 404, välimuisti)
 tools/sivut/fi/, tools/sivut/en/ sivujen tekstit (yksi tiedosto per sivu)
+tools/fontit.py, tools/requirements.txt   kiinteät fontit npm-paketeista (vain ylläpitoon)
 tools/ikonit/                    Lucide-ikonit, jotka skripti upottaa sivuille
 ```
 
@@ -125,14 +128,45 @@ Jos push GitHubiin hylätään ("fetch first"): `git pull --rebase` ja uudelleen
 
 `js/vaakavieritys.js` asettaa etusivun paneelit (`<section class="panel" data-hz="Nimi">`) vierekkäin, kun näyttö on vähintään 1180 × 620 px eikä kävijä ole pyytänyt vähemmän liikettä. Muuten sivu on tavallinen pystysivu. Asetukset (kaistojen leveys 50 px, avautumisen pituus) ovat tiedoston alussa; kaistan leveys on myös `css/style.css`:ssä (`.hz__kaista`) ja tyylit `css/style.css`:n kohdassa 17. Uusi paneeli lisätään etusivun tekstitiedostoon `data-hz`-nimen kanssa, ja se tulee vaakavieritykseen automaattisesti.
 
-## Kirjastot ja tietoturva
+## Tietoturva
 
-Sivu ei käytä JavaScript-kirjastoja eikä tarvitse npm:ää. Kolmannen osapuolen tiedostot (fontit ja ikonit) ovat valmiina repossa. `package.json` ja `package-lock.json` kertovat niiden versiot, jotta GitHubin **Dependabot-hälytykset** ilmoittavat, jos niistä löytyy haavoittuvuus (Settings → Advanced Security → Dependabot alerts → Enable; toimii ilman GitHub Actionsia). Tiedostoja ei julkaista palvelimelle (`tools/julkaise.ps1` ohittaa ne, `.htaccess` estää ne).
+Haavoittuvuuksien ilmoittaminen: ks. [SECURITY.md](SECURITY.md).
 
-- **Fontit** `fonts/inter-400.woff2` … `manrope-800.woff2` ovat kiinteäpainoisia versioita pakettien `@fontsource-variable/inter` ja `@fontsource-variable/manrope` muuttuvista fonteista (vanhojen iPhonejen Safari näyttää muuttuvat fontit huonosti). Päivitys: vaihda versio `package.json`:iin, aja `npm install` ja `python tools/fontit.py`. Uusi paino lisätään skriptin `PAINOT`-listaan ja `css/fonts.css`:ään.
+### Mitä suojattavaa on
+
+Sivusto on staattinen: ei tietokantaa, kirjautumista eikä palvelinpuolen ohjelmia. Yhteydenottolomake avaa viestin kävijän omassa sähköpostiohjelmassa eikä lähetä mitään palvelimelle. Analytiikka (Google Analytics ja Microsoft Clarity) latautuu vasta evästehyväksynnän jälkeen.
+
+| Riski | Miten hoidettu |
+| --- | --- |
+| GitHub-tili ja repo | Repo on yksityinen; tilin kaksivaiheinen tunnistautuminen on ylläpitäjän vastuulla. |
+| Palvelimen FTP-tunnukset | Tallennettu vain WinSCP:hen ylläpitäjien koneille, ei repoon. |
+| Vieras koodi sivulla | Sisältöturvakäytäntö (`CSP` tiedostossa `tools/rakenna.py` ja `404.html`): selain lataa vain sivuston omat tiedostot sekä Googlen ja Clarityn skriptit. Uusi ulkoinen palvelu pitää lisätä käytäntöön. Sivulla ei ole inline-skriptejä eikä `style`-attribuutteja. |
+| Ylläpitotiedostot palvelimella | `julkaise.ps1` ei siirrä niitä, ja `.htaccess` estää `tools/`-kansion, `.md`-, `.py`-, `.ps1`- ja `package*.json`-tiedostot. |
+| Upotus toisen sivun sisään, MIME-arvailu | `.htaccess`: `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`. |
+| Kolmannen osapuolen tiedostot | Versiot `package.json`:ssa ja `tools/requirements.txt`:ssä, Dependabot seuraa (alla). |
+
+### Mitä palvelin hoitaa
+
+Domainhotelli ylläpitää palvelimen ja sen päivitykset sekä HTTPS-varmenteen (uusiutuu automaattisesti, siksi `.well-known` jätetään rauhaan). `.htaccess` ohjaa kaiken liikenteen HTTPS:ään.
+
+### Riippuvuuksien seuranta
+
+Sivu ei käytä JavaScript-kirjastoja eikä tarvitse npm:ää. Kolmannen osapuolen tiedostot ovat valmiina repossa, ja niiden versiot on kirjattu, jotta **Dependabot** näkee ne (`.github/dependabot.yml`, viikoittain maanantaisin; toimii ilman GitHub Actionsia). `package.json`, `package-lock.json` ja `tools/requirements.txt` eivät mene palvelimelle.
+
+- **Fontit** `fonts/inter-400.woff2` … `manrope-800.woff2` ovat kiinteäpainoisia versioita pakettien `@fontsource-variable/inter` ja `@fontsource-variable/manrope` muuttuvista fonteista (vanhojen iPhonejen Safari näyttää muuttuvat fontit huonosti). Päivitys: vaihda versio `package.json`:iin, aja `npm install`, `pip install -r tools/requirements.txt` ja `python tools/fontit.py`. Uusi paino lisätään skriptin `PAINOT`-listaan ja `css/fonts.css`:ään.
 - **Ikonit** `tools/ikonit/*.svg` ovat paketista `lucide-static` (LinkedIn-ikoni versiosta 0.460.0, alias `lucide-static-linkedin`).
-- **Google Analytics ja Microsoft Clarity** ladataan palveluntarjoajan palvelimelta aina uusimpana versiona, joten ne eivät ole `package.json`:ssa.
-- **Haavoittuvuuksien tarkistus:** `npm audit` ja CISA:n KEV-luettelo (tunnetusti hyödynnetyt haavoittuvuudet, https://www.cisa.gov/known-exploited-vulnerabilities-catalog, JSON/CSV) – hae luettelosta kirjastojen ja käytettyjen ohjelmien nimiä (Git, Python, WinSCP, palvelimen cPanel/LiteSpeed).
+- **Python-paketit** `fonttools` ja `brotli` (`tools/requirements.txt`) tarvitaan vain fonttien tekoon. `tools/rakenna.py` käyttää vain Pythonin omia kirjastoja.
+- **Google Analytics ja Microsoft Clarity** ladataan palveluntarjoajan palvelimelta aina uusimpana versiona, joten niitä ei voi kirjata versioina.
+
+Käsin ajettavat tarkistukset:
+
+```
+npm audit
+pip install pip-audit
+pip-audit -r tools/requirements.txt
+```
+
+Jokainen löydetty haavoittuvuus (CVE) verrataan CISA:n KEV-luetteloon (tunnetusti hyödynnetyt haavoittuvuudet, https://www.cisa.gov/known-exploited-vulnerabilities-catalog). KEV-luettelossa oleva korjataan heti, muut seuraavan päivityksen yhteydessä. Luettelosta kannattaa hakea myös ylläpidon ohjelmia: Git, Python, WinSCP ja palvelimen cPanel/LiteSpeed.
 
 ## Analytiikka ja evästeet
 

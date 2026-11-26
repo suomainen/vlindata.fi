@@ -1,7 +1,7 @@
 /* Valikko, yläpalkin reunaviiva ja versionumero */
 (() => {
   // Sivuston versio: nosta jokaisessa muutoksessa ja kirjaa CHANGELOG.md-tiedostoon
-  const SITE_VERSION = '2.9.12';
+  const SITE_VERSION = '2.9.13';
   // Tätä leveämmällä näytöllä valikko on aina auki (vastaa CSS:n 1180 px rajaa)
   const DESKTOP_MIN_WIDTH = 1180;
 
