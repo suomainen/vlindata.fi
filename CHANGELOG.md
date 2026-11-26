@@ -4,6 +4,13 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.11.0
+
+- Luottamus ja tietoturva -sivu (trust center) ja tietosuojaseloste suomeksi ja englanniksi: kuntien aineistojen käsittely, tietoturvakäytännöt, palvelut ja alihankkijat, paikkatiedon varautuminen, verkkosivusto, poikkeamien ilmoittaminen ja asiakirjat pyynnöstä. Piilossa, kunnes tiedot on vahvistettu (noindex, ei valikossa eikä sitemapissa).
+- Generaattori: `"piilossa"`-sivut ja sivut, joilla ei ole kaikkia kieliversioita.
+- Tekstitaulukot muuttuvat korteiksi jo tabletilla, ja taulukon viimeisen sarakkeen sanat eivät katkea.
+- Uudet ikonit (lucide-static 1.66.0): key-round, trash-2, user-check, file-lock, bot-off.
+
 ## 2.10.0
 
 - Ruotsinkielinen versio osoitteessa /sv/ (kaikki sivut, lomake, evästeilmoitus ja Analyskakor-kytkin). Piilossa, kunnes käännös on tarkistettu: noindex, ei sitemapissa eikä suomen- ja englanninkielisten sivujen kielivalinnassa. Julkaisuohje README:ssä.

@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.10.0"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.11.0"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # Sisältöturvakäytäntö: sivu saa ladata vain omia tiedostojaan sekä Google Analyticsin
 # ja Microsoft Clarityn (vasta evästehyväksynnän jälkeen, js/consent.js). Uusi ulkoinen
@@ -41,9 +41,10 @@ JULKAISTUT = ("fi", "en")
 KIELINIMET = {"fi": "FI – suomeksi", "en": "EN – in English", "sv": "SV – på svenska"}
 
 
-def nakyvat(kieli):
-    """Kielivalinnan ja hreflangin kielet: julkaistut ja piilossa olevalla sivulla myös sen oma kieli."""
-    return [k for k in KIELET if k in JULKAISTUT or k == kieli]
+def nakyvat(kieli, avain="etusivu"):
+    """Kielivalinnan ja hreflangin kielet: julkaistut ja piilossa olevalla sivulla myös sen oma kieli.
+    Sivu, jolla ei ole jotain kieliversiota (esim. luottamus ruotsiksi), jättää sen pois."""
+    return [k for k in KIELET if (k in JULKAISTUT or k == kieli) and k in POLUT[avain]]
 
 
 # ---------------------------------------------------------------------------
@@ -58,6 +59,9 @@ POLUT = {
     "referenssit":    {"fi": "referenssit/",               "en": "en/references/",            "sv": "sv/referenser/"},
     "yhteystiedot":   {"fi": "yhteystiedot/",              "en": "en/contact/",               "sv": "sv/kontakt/"},
     "evasteet":       {"fi": "evasteet/",                  "en": "en/cookies/",               "sv": "sv/kakor/"},
+    # Piilossa (SIVUT: "piilossa": True): ei valikossa eikä sitemapissa, noindex. Ei ruotsiksi vielä.
+    "luottamus":      {"fi": "luottamus/",                 "en": "en/trust-center/"},
+    "tietosuoja":     {"fi": "tietosuojaseloste/",         "en": "en/privacy-notice/"},
 }
 NAVIGAATIO = ["etusivu", "kiinteistovero", "paikkatieto", "jatkuvuus", "yritys", "referenssit", "yhteystiedot"]
 
@@ -109,6 +113,18 @@ SIVUT = {
             "description": "Mitä evästeitä vlindata.fi käyttää ja miten voit muuttaa valintaasi.",
             "robots": "noindex, follow",
         },
+        "luottamus": {
+            "nav": "Luottamus ja tietoturva",
+            "title": "Luottamus ja tietoturva – VLiNdATA Oy",
+            "description": "Miten VLiNdATA Oy käsittelee kuntien aineistoja ja henkilötietoja: tietoturvakäytännöt, palvelut, varautuminen ja asiakirjat pyynnöstä.",
+            "piilossa": True,
+        },
+        "tietosuoja": {
+            "nav": "Tietosuojaseloste",
+            "title": "Tietosuojaseloste – VLiNdATA Oy",
+            "description": "VLiNdATA Oy:n tietosuojaseloste: mitä henkilötietoja käsittelen, miksi, kuinka kauan ja mitkä ovat oikeutesi.",
+            "piilossa": True,
+        },
     },
     "en": {
         "etusivu": {
@@ -156,6 +172,18 @@ SIVUT = {
             "title": "Cookies – VLiNdATA Oy",
             "description": "Which cookies vlindata.fi uses and how to change your choice.",
             "robots": "noindex, follow",
+        },
+        "luottamus": {
+            "nav": "Trust and security",
+            "title": "Trust and security – VLiNdATA Oy",
+            "description": "How VLiNdATA Oy handles municipal data and personal data: security practices, services used, preparedness and documents on request.",
+            "piilossa": True,
+        },
+        "tietosuoja": {
+            "nav": "Privacy notice",
+            "title": "Privacy notice – VLiNdATA Oy",
+            "description": "VLiNdATA Oy privacy notice: what personal data I process, why, for how long and what your rights are.",
+            "piilossa": True,
         },
     },
     "sv": {
@@ -469,11 +497,13 @@ def head(kieli, avain, root):
     t = TEKSTIT[kieli]
     url = DOMAIN + POLUT[avain][kieli]
     url_fi = DOMAIN + POLUT[avain]["fi"]
-    vaihtoehdot = "\n".join(f'  <link rel="alternate" hreflang="{k}" href="{DOMAIN + POLUT[avain][k]}">' for k in nakyvat(kieli))
-    og_alt = "\n".join(f'  <meta property="og:locale:alternate" content="{OG_LOCALE[k]}">' for k in nakyvat(kieli) if k != kieli)
+    vaihtoehdot = "\n".join(f'  <link rel="alternate" hreflang="{k}" href="{DOMAIN + POLUT[avain][k]}">' for k in nakyvat(kieli, avain))
+    og_alt = "\n".join(f'  <meta property="og:locale:alternate" content="{OG_LOCALE[k]}">' for k in nakyvat(kieli, avain) if k != kieli)
     # Ruotsinkielistä jakokuvaa ei vielä ole: ruotsinkieliset sivut käyttävät englanninkielistä.
     og = DOMAIN + ("img/og-kuva.jpg" if kieli == "fi" else "img/og-kuva-en.jpg")
-    robots = meta.get("robots", "index, follow") if kieli in JULKAISTUT else "noindex, nofollow"
+    robots = meta.get("robots", "index, follow")
+    if kieli not in JULKAISTUT or meta.get("piilossa"):
+        robots = "noindex, nofollow"
     return f"""<head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Security-Policy" content="{CSP}">
@@ -530,7 +560,7 @@ def header(kieli, avain, root):
     kielilinkit = "\n".join(
         f'        <a href="{href(root, POLUT[avain][k])}" hreflang="{k}" lang="{k}"'
         f'{nykyinen_kieli if k == kieli else ""} aria-label="{KIELINIMET[k]}">{k.upper()}</a>'
-        for k in nakyvat(kieli))
+        for k in nakyvat(kieli, avain))
     return f"""  <a class="skip" href="#sisalto">{t['skip']}</a>
   <header class="topbar">
     <div class="topbar__inner">
@@ -651,7 +681,7 @@ def sitemap():
     rivit = ['<?xml version="1.0" encoding="UTF-8"?>',
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
     for avain in POLUT:
-        if SIVUT["fi"][avain].get("robots", "").startswith("noindex"):
+        if SIVUT["fi"][avain].get("robots", "").startswith("noindex") or SIVUT["fi"][avain].get("piilossa"):
             continue
         for kieli in JULKAISTUT:
             rivit.append("  <url>")
@@ -667,6 +697,8 @@ def sitemap():
 if __name__ == "__main__":
     for kieli in KIELET:
         for avain in POLUT:
+            if kieli not in POLUT[avain]:
+                continue
             print("kirjoitettu", rakenna_sivu(kieli, avain).relative_to(JUURI))
     uudelleenohjaus("evasteet.html", POLUT["evasteet"]["fi"])
     uudelleenohjaus("en/cookies.html", POLUT["evasteet"]["en"])

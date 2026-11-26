@@ -883,6 +883,19 @@ p { text-wrap: pretty; }
 .cookie-table th,
 .cookie-table td { padding: 10px 12px; border-bottom: 1px solid var(--viiva); text-align: left; vertical-align: top; overflow-wrap: anywhere; }
 .cookie-table td { color: var(--teksti-2); }
+/* Viimeinen sarake (säilyy, sijainti, oikeusperuste) on lyhyttä tekstiä: sanat eivät saa katketa kesken */
+.cookie-table td:last-child { overflow-wrap: break-word; min-width: 7.5em; }
+/* Tekstitaulukko (tietosuojaseloste, palvelut): ensimmäinenkin sarake on sanoja, ei tunnisteita */
+.cookie-table--teksti td { overflow-wrap: break-word; }
+.cookie-table--teksti td:first-child { min-width: 9em; }
+/* Tekstitaulukko on kapeassa palstassa jo tabletilla, joten se muuttuu korteiksi aiemmin */
+@media (max-width: 1099.98px) {
+  .cookie-table--teksti thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .cookie-table--teksti tr { display: block; padding: 12px 0; border-bottom: 1px solid var(--viiva); }
+  .cookie-table--teksti td { display: block; padding: 2px 0; border: 0; }
+  .cookie-table--teksti td:first-child { color: var(--teksti); font-weight: 700; }
+  .cookie-table--teksti td[data-otsikko]::before { content: attr(data-otsikko) ": "; font-weight: 600; }
+}
 /* Puhelimella jokainen eväste omana korttinaan, jotta nimet eivät pilkkoudu (roolit HTML:ssä säilyttävät taulukon ruudunlukijalle) */
 @media (max-width: 600px) {
   .cookie-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }

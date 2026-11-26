@@ -12,6 +12,7 @@ paikkatiedon-jatkuvuus/          palvelusivu: paikallinen varajärjestelmä (val
 yritys/  referenssit/  yhteystiedot/  evasteet/
 en/                              englanninkieliset sivut samassa järjestyksessä
 sv/                              ruotsinkieliset sivut (piilossa, ks. Ruotsinkielinen versio)
+luottamus/, tietosuojaseloste/   Luottamus ja tietoturva sekä tietosuojaseloste (piilossa; en/trust-center/, en/privacy-notice/)
 404.html                         "sivua ei löytynyt" molemmilla kielillä
 evasteet.html, en/cookies.html   vanhojen osoitteiden ohjaukset
 css/style.css                    kaikki tyylit, värit muuttujina alussa
@@ -139,6 +140,23 @@ Julkaisu, kun käännös on tarkistettu:
 2. `404.html`: lisää ruotsinkielinen teksti ja linkki `/sv/`.
 3. `llms.txt`: lisää ruotsinkielinen osio.
 4. Jakokuva: ruotsinkieliset sivut käyttävät nyt englanninkielistä `img/og-kuva-en.jpg`; tee tarvittaessa `img/og-kuva-sv.jpg` ja vaihda se funktioon `head`.
+
+## Luottamus ja tietoturva (trust center)
+
+Sivut `luottamus/` (Luottamus ja tietoturva) ja `tietosuojaseloste/` sekä englanniksi `en/trust-center/` ja `en/privacy-notice/` ovat piilossa: `"piilossa": True` kohdassa `SIVUT` tekee niistä noindex-sivuja, jotka eivät ole valikossa eivätkä sitemapissa. Ruotsinkielistä versiota ei vielä ole (sivut puuttuvat `POLUT`-kohdan sv-sarakkeesta, joten kielivalinta näyttää vain FI ja EN).
+
+Ennen julkaisua Virpin pitää vahvistaa, että nämä pitävät paikkansa (tai muuttaa tekstiä):
+
+- työkoneen levy on salattu, koneessa on haittaohjelmasuojaus ja päivitykset ajetaan säännöllisesti
+- salasanojen hallintaohjelma ja kaksivaiheinen tunnistautuminen Microsoft 365:ssä
+- Microsoft 365:n tiedot säilytetään EU:ssa (näkyy Microsoft 365 -hallintakeskuksessa: Asetukset → Organisaation profiili → Tietojen sijainti)
+- aineistot siirretään kunnan tiedostonsiirrolla tai jaetussa M365-kansiossa, ei sähköpostin liitteinä; ei muistitikuille
+- kunnan aineistoja ei viedä tekoälypalveluihin
+- aineistot palautetaan tai poistetaan työn päätyttyä ja poisto vahvistetaan pyydettäessä
+- henkilötietojen käsittelysopimuksen pohja ja tietoturvakuvaus ovat olemassa (pitää tehdä ennen kuin sivu luvataan)
+- tietosuojaseloste: tilitoimisto vastaanottajana, säilytysajat (asiakkuus ja yhteydenotot 3 vuotta), markkinointi kuntien julkisista yhteystiedoista
+
+Julkaisu: poista `"piilossa": True` molemmista kielistä, lisää linkit esimerkiksi valikon alaosaan (`nav__evasteet`) ja Evästeet-sivulle, aja `python tools/rakenna.py`.
 
 ## Etusivun vaakavieritys
 
