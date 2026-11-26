@@ -151,7 +151,7 @@ Ennen julkaisua Virpin pitää vahvistaa, että nämä pitävät paikkansa (tai 
 - salasanojen hallintaohjelma ja kaksivaiheinen tunnistautuminen Microsoft 365:ssä
 - Microsoft 365:n tiedot säilytetään EU:ssa (näkyy Microsoft 365 -hallintakeskuksessa: Asetukset → Organisaation profiili → Tietojen sijainti)
 - aineistot siirretään kunnan tiedostonsiirrolla tai jaetussa M365-kansiossa, ei sähköpostin liitteinä; ei muistitikuille
-- kunnan aineistoja ei viedä tekoälypalveluihin
+- työkalut tehdään testiaineistolla, kunnan aineistoa ei viedä ulkoisiin tekoälypalveluihin ja käytössä on suljettu paikallinen tekoälyympäristö (Oskari vahvisti 26.11.2026)
 - aineistot palautetaan tai poistetaan työn päätyttyä ja poisto vahvistetaan pyydettäessä
 - käsittelytoimien kuvaus tulee ERPin tarjoustyökalusta (JYSE/JIT Henkilötiedot 2025); tietoturvakuvaus pitää vielä tehdä ennen kuin sivu lupaa sen
 - sivulla lukee ERPin kuvauksen mukaisesti, että kunnan aineistoja käsittelevät vain VLiNdATAn omat työntekijät: jos Oskari (summanen.org) käsittelee niitä, hänet pitää lisätä alihankkijaksi sekä sivulle että tarjouksen liitteeseen

@@ -4,6 +4,11 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.11.1
+
+- Luottamus ja tietoturva -sivu yhtenäistetty ERPin tarjoustyökalun henkilötietoliitteen kanssa: JYSE/JIT Henkilötiedot 2025 -ehdot ja käsittelytoimien kuvaus tarjouksen liitteenä, aineistot kunnan Teamsissa tai sovitussa projektialustassa (ei sähköpostilla), henkilötunnukset vain rekisteripoiminnoissa eikä tulosaineistoissa, käsittelijänä vain omat työntekijät ja alihankkijana tarvittaessa sähköisen kyselyn palveluntarjoaja.
+- Tekoäly: työkalut tehdään testiaineistolla, kunnan aineisto ei päädy ulkoisiin tekoälypalveluihin, ja käytössä on suljettu paikallinen tekoälyympäristö.
+
 ## 2.11.0
 
 - Luottamus ja tietoturva -sivu (trust center) ja tietosuojaseloste suomeksi ja englanniksi: kuntien aineistojen käsittely, tietoturvakäytännöt, palvelut ja alihankkijat, paikkatiedon varautuminen, verkkosivusto, poikkeamien ilmoittaminen ja asiakirjat pyynnöstä. Piilossa, kunnes tiedot on vahvistettu (noindex, ei valikossa eikä sitemapissa).
