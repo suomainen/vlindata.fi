@@ -28,6 +28,7 @@ tools/julkaise.ps1               julkaisu Domainhotelliin WinSCP:llä
 tools/commitviesti.ps1           automaattinen commit-viesti julkaise.bat:lle
 Sivutyokalu.bat, tools/sivutyokalu.ps1   päivitystyökalu (ikkuna): hae, esikatsele, julkaise, zip
 tools/asennus/                   työkalun asennus toiselle koneelle ja käyttöohje (OHJE.md, OHJE.pdf)
+package.json, package-lock.json  fonttien ja ikonien versiot (Dependabot), ei julkaista
 .htaccess                        palvelimen asetukset (https, 404, välimuisti)
 tools/sivut/fi/, tools/sivut/en/ sivujen tekstit (yksi tiedosto per sivu)
 tools/ikonit/                    Lucide-ikonit, jotka skripti upottaa sivuille
@@ -123,6 +124,15 @@ Jos push GitHubiin hylätään ("fetch first"): `git pull --rebase` ja uudelleen
 ## Etusivun vaakavieritys
 
 `js/vaakavieritys.js` asettaa etusivun paneelit (`<section class="panel" data-hz="Nimi">`) vierekkäin, kun näyttö on vähintään 1180 × 620 px eikä kävijä ole pyytänyt vähemmän liikettä. Muuten sivu on tavallinen pystysivu. Asetukset (kaistojen leveys 50 px, avautumisen pituus) ovat tiedoston alussa; kaistan leveys on myös `css/style.css`:ssä (`.hz__kaista`) ja tyylit `css/style.css`:n kohdassa 17. Uusi paneeli lisätään etusivun tekstitiedostoon `data-hz`-nimen kanssa, ja se tulee vaakavieritykseen automaattisesti.
+
+## Kirjastot ja tietoturva
+
+Sivu ei käytä JavaScript-kirjastoja eikä tarvitse npm:ää. Kolmannen osapuolen tiedostot (fontit ja ikonit) ovat valmiina repossa. `package.json` ja `package-lock.json` kertovat niiden versiot, jotta GitHubin **Dependabot-hälytykset** ilmoittavat, jos niistä löytyy haavoittuvuus (Settings → Advanced Security → Dependabot alerts → Enable; toimii ilman GitHub Actionsia). Tiedostoja ei julkaista palvelimelle (`tools/julkaise.ps1` ohittaa ne, `.htaccess` estää ne).
+
+- **Fontit** `fonts/*.woff2` ovat sellaisenaan pakettien `@fontsource-variable/inter` ja `@fontsource-variable/manrope` tiedostoja `files/*-latin-wght-normal.woff2`. Päivitys: vaihda versio `package.json`:iin, aja `npm install` ja kopioi tiedostot.
+- **Ikonit** `tools/ikonit/*.svg` ovat paketista `lucide-static` (LinkedIn-ikoni versiosta 0.460.0, alias `lucide-static-linkedin`).
+- **Google Analytics ja Microsoft Clarity** ladataan palveluntarjoajan palvelimelta aina uusimpana versiona, joten ne eivät ole `package.json`:ssa.
+- **Haavoittuvuuksien tarkistus:** `npm audit` ja CISA:n KEV-luettelo (tunnetusti hyödynnetyt haavoittuvuudet, https://www.cisa.gov/known-exploited-vulnerabilities-catalog, JSON/CSV) – hae luettelosta kirjastojen ja käytettyjen ohjelmien nimiä (Git, Python, WinSCP, palvelimen cPanel/LiteSpeed).
 
 ## Analytiikka ja evästeet
 

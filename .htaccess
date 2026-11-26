@@ -19,7 +19,7 @@ AddDefaultCharset utf-8
 
 # Ylläpitotiedostot eivät kuulu julkiseksi, vaikka ne siirtyisivät palvelimelle
 RedirectMatch 404 ^/(tools|\.git)(/|$)
-<FilesMatch "\.(md|py|ps1|bundle)$|^\.git">
+<FilesMatch "\.(md|py|ps1|bundle)$|^\.git|^package(-lock)?\.json$">
   Require all denied
 </FilesMatch>
 
