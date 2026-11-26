@@ -1,0 +1,49 @@
+    <section class="panel panel--vihrea-vaalea panel--kartta panel--kartta-vasen page-hero" aria-labelledby="sivu-otsikko">
+      <div class="wrap">
+      {{murupolku}}
+        <h1 class="h1" id="sivu-otsikko">Hur följer min webbplats dig?</h1>
+        <p class="lead">Kakor (cookies) är små textfiler som webbplatser kan använda för att göra användarupplevelsen effektivare.</p>
+      </div>
+    </section>
+
+    <section class="panel panel--valkoinen page-content" aria-labelledby="evasteet-otsikko">
+      <div class="wrap">
+        <div class="block">
+          <div class="block__otsikko">
+            <h2 class="h2" id="evasteet-otsikko">Webbplatsens kakor</h2>
+            <button class="kytkin" type="button" role="switch" aria-checked="false" data-consent-kytkin><span class="kytkin__rata" aria-hidden="true"><span class="kytkin__nuppi"></span></span><span class="kytkin__teksti">Analyskakor</span><span class="kytkin__tila" aria-hidden="true">Av</span></button>
+          </div>
+          <div class="prose">
+            <p>Enligt <a class="text-link" href="https://www.finlex.fi/sv/lagstiftning/2014/917#part_7__chp_24__sec_205" target="_blank" rel="noopener">205 § i lagen om tjänster inom elektronisk kommunikation (917/2014)<span class="sr-only"> (öppnas i en ny flik, Finlex)</span></a> får jag lagra kakor på din enhet om det är absolut nödvändigt för att webbplatsen ska fungera. För alla andra kakor behöver jag ditt samtycke.</p>
+            <p>Kakorna från Google Analytics och Microsoft Clarity lagras bara om du godkänner dem. Google Analytics räknar antalet besökare. Clarity visar hur webbplatsen används: värmekartor över klick och inspelningar av sessioner där text som skrivits i formulär är dold. Om du avvisar laddar webbplatsen inte någondera tjänsten alls.</p>
+            <p>Kontaktformuläret sparar inga uppgifter: det öppnar meddelandet i ditt eget e-postprogram.</p>
+            <div class="table-wrap">
+              <table class="cookie-table" role="table">
+                <caption class="sr-only">Kakor och uppgifter som webbplatsen lagrar</caption>
+                <thead>
+                  <tr role="row"><th scope="col" role="columnheader">Namn</th><th scope="col" role="columnheader">Syfte</th><th scope="col" role="columnheader">Lagringstid</th></tr>
+                </thead>
+                <tbody>
+                  <tr role="row"><td role="cell">vlindata-consent</td><td role="cell">Kommer ihåg ditt val om kakor. Lagras i webbläsarens eget minne och skickas ingenstans.</td><td role="cell" data-otsikko="Lagringstid">Tills du rensar webbläsarens data</td></tr>
+                  <tr role="row"><td role="cell">_ga</td><td role="cell">Google Analytics: skiljer besökarna från varandra för att räkna antalet besökare.</td><td role="cell" data-otsikko="Lagringstid">2 år</td></tr>
+                  <tr role="row"><td role="cell">_ga_73CPF19H48</td><td role="cell">Google Analytics: kommer ihåg besökets status.</td><td role="cell" data-otsikko="Lagringstid">2 år</td></tr>
+                  <tr role="row"><td role="cell">_clck</td><td role="cell">Microsoft Clarity: skiljer besökarna från varandra och kommer ihåg inställningar.</td><td role="cell" data-otsikko="Lagringstid">1 år</td></tr>
+                  <tr role="row"><td role="cell">_clsk</td><td role="cell">Microsoft Clarity: sammanför sidladdningar under samma besök till en session.</td><td role="cell" data-otsikko="Lagringstid">1 dygn</td></tr>
+                  <tr role="row"><td role="cell">vlindata-teema</td><td role="cell">Kommer ihåg om du valde mörkt tema. Lagras i webbläsarens eget minne och skickas ingenstans.</td><td role="cell" data-otsikko="Lagringstid">Tills du rensar webbläsarens data</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <h2 class="h3 tietosuoja__otsikko" id="tietosuoja">Dataskydd: Google Analytics och Microsoft Clarity</h2>
+            <p>Om du godkänner kakorna använder jag Microsoft Clarity och Google Analytics för att se hur webbplatsen används. Clarity registrerar klick, rullning och musrörelser, som blir värmekartor och inspelningar av sessioner. Google Analytics räknar antalet besökare och visar till exempel med vilka enheter och varifrån besökarna kommer.</p>
+            <p>Jag använder uppgifterna bara för att förbättra webbplatsens innehåll och användbarhet, inte för reklam eller för att identifiera enskilda besökare. Text som skrivits i formulär är dold i inspelningarna och sparas inte.</p>
+            <p>Uppgifterna samlas in med kakor och liknande tekniker (tabellen ovan). Microsoft och Google behandlar uppgifterna som leverantörer av sina tjänster, och uppgifterna kan också behandlas utanför EU. Mer information: <a class="text-link" href="https://www.microsoft.com/sv-se/privacy/privacystatement" target="_blank" rel="noopener">Microsofts sekretesspolicy<span class="sr-only"> (öppnas i en ny flik)</span></a> och <a class="text-link" href="https://policies.google.com/privacy?hl=sv" target="_blank" rel="noopener">Googles integritetspolicy<span class="sr-only"> (öppnas i en ny flik)</span></a>.</p>
+            <p>Du kan när som helst återkalla ditt samtycke med reglaget Analyskakor i början av den här sidan eller i menyn på telefonen. Då upphör spårningen och webbplatsens kakor tas bort.</p>
+            <p>Personuppgiftsansvarig: VLiNdATA Oy (FO-nummer 3410053-6). Frågor om dataskydd: <a class="text-link" href="mailto:virpi@vlindata.fi">virpi@vlindata.fi</a>.</p>
+            <div class="sivustotiedot">
+              <span>© 2026 VLiNdATA Oy · version {{versio}}</span>
+              <span class="sivustotiedot__toteutus"><img src="{{root}}img/oskari-summanen.webp" alt="" width="32" height="32" loading="lazy" decoding="async"><span>Teknisk implementering: Oskari Summanen, <a href="https://summanen.org/" target="_blank" rel="noopener">summanen.org<span class="sr-only"> (öppnas i en ny flik)</span></a></span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

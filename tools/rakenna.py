@@ -1,6 +1,6 @@
 """Rakentaa vlindata.fi-sivuston HTML-sivut.
 
-Tekstit ovat kansiossa tools/sivut/fi ja tools/sivut/en (yksi tiedosto per sivu).
+Tekstit ovat kansioissa tools/sivut/fi, tools/sivut/en ja tools/sivut/sv (yksi tiedosto per sivu).
 Tämä skripti lisää jokaiseen sivuun yhteisen <head>-osan, yläpalkin, alatunnisteen
 ja evästeilmoituksen sekä kirjoittaa sivut oikeisiin kansioihin.
 
@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.9.13"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.10.0"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # Sisältöturvakäytäntö: sivu saa ladata vain omia tiedostojaan sekä Google Analyticsin
 # ja Microsoft Clarityn (vasta evästehyväksynnän jälkeen, js/consent.js). Uusi ulkoinen
@@ -31,17 +31,33 @@ VERSIO = "2.9.13"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 CSP = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.clarity.ms https://*.clarity.ms; style-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; font-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'"
 
 # ---------------------------------------------------------------------------
-# Sivut: avain -> polku kummallakin kielellä. Navigaation järjestys on tämä.
+# Kielet. KIELET kootaan kaikki; JULKAISTUT näkyvät kielivalinnassa, hreflangissa ja
+# sitemapissa. Muut (nyt sv) ovat piilossa: sivut ovat olemassa ja niillä on oma
+# kielivalinta, mutta ne ovat noindex eikä niihin linkitetä suomen- tai englanninkieliseltä
+# sivulta. Kun ruotsinkielinen käännös on tarkistettu, lisää "sv" JULKAISTUT-listaan.
+# ---------------------------------------------------------------------------
+KIELET = ("fi", "en", "sv")
+JULKAISTUT = ("fi", "en")
+KIELINIMET = {"fi": "FI – suomeksi", "en": "EN – in English", "sv": "SV – på svenska"}
+
+
+def nakyvat(kieli):
+    """Kielivalinnan ja hreflangin kielet: julkaistut ja piilossa olevalla sivulla myös sen oma kieli."""
+    return [k for k in KIELET if k in JULKAISTUT or k == kieli]
+
+
+# ---------------------------------------------------------------------------
+# Sivut: avain -> polku jokaisella kielellä. Navigaation järjestys on tämä.
 # ---------------------------------------------------------------------------
 POLUT = {
-    "etusivu":        {"fi": "",                           "en": "en/"},
-    "kiinteistovero": {"fi": "kiinteistoveroselvitykset/", "en": "en/property-tax-audits/"},
-    "paikkatieto":    {"fi": "paikkatietopalvelut/",       "en": "en/gis-services/"},
-    "jatkuvuus":      {"fi": "paikkatiedon-jatkuvuus/",    "en": "en/gis-continuity/"},
-    "yritys":         {"fi": "yritys/",                    "en": "en/company/"},
-    "referenssit":    {"fi": "referenssit/",               "en": "en/references/"},
-    "yhteystiedot":   {"fi": "yhteystiedot/",              "en": "en/contact/"},
-    "evasteet":       {"fi": "evasteet/",                  "en": "en/cookies/"},
+    "etusivu":        {"fi": "",                           "en": "en/",                       "sv": "sv/"},
+    "kiinteistovero": {"fi": "kiinteistoveroselvitykset/", "en": "en/property-tax-audits/",   "sv": "sv/fastighetsskatteutredningar/"},
+    "paikkatieto":    {"fi": "paikkatietopalvelut/",       "en": "en/gis-services/",          "sv": "sv/geodatatjanster/"},
+    "jatkuvuus":      {"fi": "paikkatiedon-jatkuvuus/",    "en": "en/gis-continuity/",        "sv": "sv/beredskap/"},
+    "yritys":         {"fi": "yritys/",                    "en": "en/company/",               "sv": "sv/foretaget/"},
+    "referenssit":    {"fi": "referenssit/",               "en": "en/references/",            "sv": "sv/referenser/"},
+    "yhteystiedot":   {"fi": "yhteystiedot/",              "en": "en/contact/",               "sv": "sv/kontakt/"},
+    "evasteet":       {"fi": "evasteet/",                  "en": "en/cookies/",               "sv": "sv/kakor/"},
 }
 NAVIGAATIO = ["etusivu", "kiinteistovero", "paikkatieto", "jatkuvuus", "yritys", "referenssit", "yhteystiedot"]
 
@@ -142,6 +158,54 @@ SIVUT = {
             "robots": "noindex, follow",
         },
     },
+    "sv": {
+        "etusivu": {
+            "nav": "Startsida",
+            "title": "VLiNdATA Oy – geodata och fastighetsskatteutredningar för kommuner",
+            "description": "VLiNdATA Oy hjälper kommuner med fastighetsskatteutredningar, kvaliteten i byggnadsregistren och geodatamaterial. Över 20 års erfarenhet.",
+        },
+        "kiinteistovero": {
+            "nav": "Fastighetsskatteutredningar",
+            "valikko": "Fastighetsskatt",
+            "title": "Fastighetsskatteutredningar och byggnadsregister – VLiNdATA Oy",
+            "description": "En fastighetsskatteutredning identifierar byggnader som saknas eller är felaktiga i registren. Arbetet framskrider stegvis enligt kommunens resurser.",
+            "service": "Fastighetsskatteutredningar och kvaliteten i byggnadsregistren",
+        },
+        "paikkatieto": {
+            "nav": "Geodatatjänster",
+            "valikko": "Geodata",
+            "title": "Geodatatjänster för kommuner – VLiNdATA Oy",
+            "description": "Produktion, uppdatering och analys av geodatamaterial samt experthjälp med system, register och informationshantering.",
+            "service": "Geodatatjänster",
+        },
+        "jatkuvuus": {
+            "nav": "Beredskap",
+            "title": "Geodatans kontinuitet och beredskap – VLiNdATA Oy",
+            "description": "Ett lokalt reservsystem för kommunens geodata: kartan fungerar i webbläsaren och i QGIS även när ett externt gränssnitt eller nätverket ligger nere.",
+            "service": "Geodatans kontinuitet och reservsystem",
+        },
+        "yritys": {
+            "nav": "Företaget",
+            "title": "Företaget och Virpi Lindvall – VLiNdATA Oy",
+            "description": "Virpi Lindvall, företagare i VLiNdATA Oy, är expert inom geodata med över 20 års erfarenhet av kommunal geodata och byggnadsregister.",
+        },
+        "referenssit": {
+            "nav": "Referenser",
+            "title": "Referenser – VLiNdATA Oy",
+            "description": "VLiNdATA Oy har samarbetat med kommuner för att utreda uppgifterna i byggnadsregistren och förbättra deras kvalitet.",
+        },
+        "yhteystiedot": {
+            "nav": "Kontakt",
+            "title": "Kontakt – VLiNdATA Oy",
+            "description": "Kontakta Virpi Lindvall: telefon +358 44 301 2471, e-post virpi@vlindata.fi.",
+        },
+        "evasteet": {
+            "nav": "Kakor",
+            "title": "Kakor – VLiNdATA Oy",
+            "description": "Vilka kakor vlindata.fi använder och hur du kan ändra ditt val.",
+            "robots": "noindex, follow",
+        },
+    },
 }
 
 # Kieliriippuvat yhteiset tekstit
@@ -155,7 +219,7 @@ TEKSTIT = {
         "lang_label": "Kieli – Language",
         "crumbs_label": "Murupolku",
         "og_alt": "VLiNdATA Oy: paikkatietoa ja rakennustietoja, joista kunta hyötyy. Kuvassa Virpi Lindvall.",
-        "og_locale": "fi_FI", "og_locale_alt": "en_GB",
+        "og_locale": "fi_FI",
         "toteutus": "Tekninen toteutus", "kytkin": "Analytiikkaevästeet", "kytkin_pois": "Pois", "teema": "Tumma ulkoasu", "f_cookies": "Evästeet", "f_cookie_settings": "Evästeasetukset", "f_version": "versio",
         "consent_label": "Evästeilmoitus",
         "consent_text": "Käytän Google Analyticsia nähdäkseni, kuinka moni sivulla käy, ja Microsoft Claritya nähdäkseni, miten sivua käytetään (klikkausten lämpökartat ja istuntojen tallenteet). Seuranta alkaa vain, jos hyväksyt sen.",
@@ -173,7 +237,7 @@ TEKSTIT = {
         "lang_label": "Kieli – Language",
         "crumbs_label": "Breadcrumb",
         "og_alt": "VLiNdATA Oy: GIS and building data that benefit municipalities. Photo of Virpi Lindvall.",
-        "og_locale": "en_GB", "og_locale_alt": "fi_FI",
+        "og_locale": "en_GB",
         "toteutus": "Technical implementation", "kytkin": "Analytics cookies", "kytkin_pois": "Off", "teema": "Dark theme", "f_cookies": "Cookies", "f_cookie_settings": "Cookie settings", "f_version": "version",
         "consent_label": "Cookie notice",
         "consent_text": "I use Google Analytics to see how many people visit the site and Microsoft Clarity to see how it is used (click heatmaps and session recordings). Tracking starts only if you accept it.",
@@ -182,9 +246,29 @@ TEKSTIT = {
         "new_tab": " (opens in a new tab, in Finnish)",
         "ytunnus": "Business ID",
     },
+    "sv": {
+        "skip": "Gå till innehållet",
+        "brand_small": "Geodata · Fastighetsskatt",
+        "brand_label": "VLiNdATA Oy, till startsidan",
+        "menu": "Meny",
+        "nav_label": "Huvudmeny",
+        "lang_label": "Kieli – Language – Språk",
+        "crumbs_label": "Brödsmulor",
+        "og_alt": "VLiNdATA Oy: geodata och byggnadsuppgifter som kommunen har nytta av. På bilden Virpi Lindvall.",
+        "og_locale": "sv_FI",
+        "toteutus": "Teknisk implementering", "kytkin": "Analyskakor", "kytkin_pois": "Av", "teema": "Mörkt tema", "f_cookies": "Kakor", "f_cookie_settings": "Kakinställningar", "f_version": "version",
+        "consent_label": "Meddelande om kakor",
+        "consent_text": "Jag använder Google Analytics för att se hur många som besöker webbplatsen och Microsoft Clarity för att se hur den används (värmekartor över klick och inspelningar av sessioner). Spårningen börjar bara om du godkänner den.",
+        "consent_more": "Kakor och dataskydd",
+        "consent_deny": "Avvisa", "consent_accept": "Godkänn",
+        "new_tab": " (öppnas i en ny flik, på finska)",
+        "ytunnus": "FO-nummer",
+    },
 }
+OG_LOCALE = {"fi": "fi_FI", "en": "en_GB", "sv": "sv_FI"}
 
-# Referenssikunnat: (tiedosto, leveys, korkeus, nimi fi, nimi en, osoite, korkea logo)
+# Referenssikunnat: (tiedosto, leveys, korkeus, nimi fi, nimi en, osoite, korkea logo).
+# Ruotsinkieliset nimet ovat erikseen LOGOT_SV:ssä samassa järjestyksessä.
 LOGOT = [
     ("aura.webp", 240, 87, "Auran kunta", "Municipality of Aura",
      "https://www.aura.fi/kunta-ja-paatoksenteko/ajankohtaista/tiedotteet/-rakennusrekisterin-paivitys-ja-kiinteistokysely-kesalla-2025/#news_anchor", False),
@@ -199,6 +283,8 @@ LOGOT = [
     ("masku.webp", 308, 121, "Maskun kunta", "Municipality of Masku", "https://www.masku.fi/", False),
     ("sakyla.svg", 398, 244, "Säkylän kunta", "Municipality of Säkylä", "https://www.sakyla.fi/", True),
 ]
+LOGOT_SV = ["Aura kommun", "Rusko kommun", "Sagu kommun", "Oripää kommun", "Lundo stad",
+            "Nådendals stad", "Masko kommun", "Säkylä kommun"]
 
 LOMAKE = {
     "fi": {
@@ -218,6 +304,15 @@ LOMAKE = {
         "button": "Send message",
         "noscript": "The form needs JavaScript. You can also email <a href=\"mailto:virpi@vlindata.fi\">virpi@vlindata.fi</a> directly.",
         "note": "The form does not store anything on this site. The message is sent from your own email when you press Send there.",
+    },
+    "sv": {
+        "title": "Skicka ett meddelande",
+        "intro": "Fyll i fälten så öppnas meddelandet färdigt i ditt e-postprogram.",
+        "required": "obligatoriskt",
+        "name": "Namn", "org": "Kommun eller organisation", "email": "E-postadress", "message": "Meddelande",
+        "button": "Skicka meddelande",
+        "noscript": "Formuläret behöver JavaScript. Du kan också skicka e-post direkt till <a href=\"mailto:virpi@vlindata.fi\">virpi@vlindata.fi</a>.",
+        "note": "Formuläret sparar ingenting på webbplatsen. Meddelandet skickas från din egen e-post när du trycker på Skicka där.",
     },
 }
 
@@ -284,8 +379,8 @@ def lomake(kieli):
 
 def logot(kieli, root):
     rivit = ['<ul class="logos">']
-    for tiedosto, w, h, nimi_fi, nimi_en, url, korkea in LOGOT:
-        nimi = nimi_fi if kieli == "fi" else nimi_en
+    for i, (tiedosto, w, h, nimi_fi, nimi_en, url, korkea) in enumerate(LOGOT):
+        nimi = {"fi": nimi_fi, "en": nimi_en, "sv": LOGOT_SV[i]}[kieli]
         luokka = ' class="korkea"' if korkea else ""
         rivit.append(
             f'        <li><a href="{url}" target="_blank" rel="noopener">'
@@ -298,13 +393,15 @@ def logot(kieli, root):
 def jsonld(kieli, avain):
     meta = SIVUT[kieli][avain]
     url = DOMAIN + POLUT[avain][kieli]
-    kuvaus_org = ("Kiinteistöveroselvitykset, rakennusrekisterien laadun parantaminen ja paikkatietopalvelut kunnille."
-                  if kieli == "fi" else
-                  "Property tax audits, building register quality and GIS services for municipalities.")
+    kuvaus_org = {
+        "fi": "Kiinteistöveroselvitykset, rakennusrekisterien laadun parantaminen ja paikkatietopalvelut kunnille.",
+        "en": "Property tax audits, building register quality and GIS services for municipalities.",
+        "sv": "Fastighetsskatteutredningar, bättre kvalitet i byggnadsregistren och geodatatjänster för kommuner.",
+    }[kieli]
     graph = [
         {
             "@type": "WebSite", "@id": DOMAIN + "#website", "url": DOMAIN,
-            "name": "VLiNdATA Oy", "inLanguage": ["fi", "en"],
+            "name": "VLiNdATA Oy", "inLanguage": nakyvat(kieli),
             "publisher": {"@id": DOMAIN + "#organization"},
             "creator": {"@id": "https://summanen.org/#oskari-summanen"},
         },
@@ -312,12 +409,16 @@ def jsonld(kieli, avain):
             "@type": "Person", "@id": "https://summanen.org/#oskari-summanen", "name": "Oskari Summanen",
             "url": "https://summanen.org/",
             "image": DOMAIN + "img/oskari-summanen.webp",
-            "description": ("VLiNdATA Oy:n kumppani: yli 20 vuotta IT-alalta ja yli 10 vuotta paikkatiedosta. "
-                            "Myös sivuston tekninen toteuttaja." if kieli == "fi"
-                            else "Partner of VLiNdATA Oy: over 20 years in IT and over 10 years in GIS. "
-                                 "Also the technical builder of this website."),
+            "description": {
+                "fi": "VLiNdATA Oy:n kumppani: yli 20 vuotta IT-alalta ja yli 10 vuotta paikkatiedosta. "
+                      "Myös sivuston tekninen toteuttaja.",
+                "en": "Partner of VLiNdATA Oy: over 20 years in IT and over 10 years in GIS. "
+                      "Also the technical builder of this website.",
+                "sv": "Partner till VLiNdATA Oy: över 20 år inom IT och över 10 år inom geodata. "
+                      "Har också byggt webbplatsen.",
+            }[kieli],
             "affiliation": {"@id": DOMAIN + "#organization"},
-            "knowsAbout": ["IT", "Paikkatieto" if kieli == "fi" else "GIS"],
+            "knowsAbout": ["IT", {"fi": "Paikkatieto", "en": "GIS", "sv": "Geodata"}[kieli]],
         },
         {
             "@type": "Organization", "@id": DOMAIN + "#organization", "name": "VLiNdATA Oy",
@@ -331,7 +432,8 @@ def jsonld(kieli, avain):
         },
         {
             "@type": "Person", "@id": DOMAIN + "#virpi-lindvall", "name": "Virpi Lindvall",
-            "jobTitle": "Yrittäjä, paikkatietoalan asiantuntija" if kieli == "fi" else "Founder, GIS specialist",
+            "jobTitle": {"fi": "Yrittäjä, paikkatietoalan asiantuntija", "en": "Founder, GIS specialist",
+                         "sv": "Företagare, expert inom geodata"}[kieli],
             "image": DOMAIN + "img/virpi-metsa-pysty-1000.jpg",
             "worksFor": {"@id": DOMAIN + "#organization"},
             "sameAs": ["https://www.linkedin.com/in/lindvall-virpi/"],
@@ -367,9 +469,11 @@ def head(kieli, avain, root):
     t = TEKSTIT[kieli]
     url = DOMAIN + POLUT[avain][kieli]
     url_fi = DOMAIN + POLUT[avain]["fi"]
-    url_en = DOMAIN + POLUT[avain]["en"]
+    vaihtoehdot = "\n".join(f'  <link rel="alternate" hreflang="{k}" href="{DOMAIN + POLUT[avain][k]}">' for k in nakyvat(kieli))
+    og_alt = "\n".join(f'  <meta property="og:locale:alternate" content="{OG_LOCALE[k]}">' for k in nakyvat(kieli) if k != kieli)
+    # Ruotsinkielistä jakokuvaa ei vielä ole: ruotsinkieliset sivut käyttävät englanninkielistä.
     og = DOMAIN + ("img/og-kuva.jpg" if kieli == "fi" else "img/og-kuva-en.jpg")
-    robots = meta.get("robots", "index, follow")
+    robots = meta.get("robots", "index, follow") if kieli in JULKAISTUT else "noindex, nofollow"
     return f"""<head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Security-Policy" content="{CSP}">
@@ -380,8 +484,7 @@ def head(kieli, avain, root):
   <meta name="description" content="{meta['description']}">
   <title>{meta['title']}</title>
   <link rel="canonical" href="{url}">
-  <link rel="alternate" hreflang="fi" href="{url_fi}">
-  <link rel="alternate" hreflang="en" href="{url_en}">
+{vaihtoehdot}
   <link rel="alternate" hreflang="x-default" href="{url_fi}">
   <meta name="robots" content="{robots}">
   <meta name="author" content="Virpi Lindvall, VLiNdATA Oy">
@@ -393,7 +496,7 @@ def head(kieli, avain, root):
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="VLiNdATA Oy">
   <meta property="og:locale" content="{t['og_locale']}">
-  <meta property="og:locale:alternate" content="{t['og_locale_alt']}">
+{og_alt}
   <meta property="og:url" content="{url}">
   <meta property="og:title" content="{meta['title']}">
   <meta property="og:description" content="{meta['description']}">
@@ -423,10 +526,11 @@ def header(kieli, avain, root):
     for k in NAVIGAATIO:
         nykyinen = ' aria-current="page"' if k == avain else ""
         linkit.append(f'        <li><a class="nav__link" href="{href(root, POLUT[k][kieli])}"{nykyinen}>{SIVUT[kieli][k].get("valikko", SIVUT[kieli][k]["nav"])}</a></li>')
-    fi_href = href(root, POLUT[avain]["fi"])
-    en_href = href(root, POLUT[avain]["en"])
-    fi_cur = ' aria-current="page"' if kieli == "fi" else ""
-    en_cur = ' aria-current="page"' if kieli == "en" else ""
+    nykyinen_kieli = ' aria-current="page"'
+    kielilinkit = "\n".join(
+        f'        <a href="{href(root, POLUT[avain][k])}" hreflang="{k}" lang="{k}"'
+        f'{nykyinen_kieli if k == kieli else ""} aria-label="{KIELINIMET[k]}">{k.upper()}</a>'
+        for k in nakyvat(kieli))
     return f"""  <a class="skip" href="#sisalto">{t['skip']}</a>
   <header class="topbar">
     <div class="topbar__inner">
@@ -451,8 +555,7 @@ def header(kieli, avain, root):
       </nav>
       <button class="teemanappi" type="button" aria-pressed="false" aria-label="{t['teema']}" title="{t['teema']}" data-teema-nappi>{ikoni('moon')}{ikoni('sun')}</button>
       <div class="lang" role="group" aria-label="{t['lang_label']}">
-        <a href="{fi_href}" hreflang="fi" lang="fi"{fi_cur} aria-label="FI – suomeksi">FI</a>
-        <a href="{en_href}" hreflang="en" lang="en"{en_cur} aria-label="EN – in English">EN</a>
+{kielilinkit}
       </div>
     </div>
   </header>"""
@@ -550,10 +653,10 @@ def sitemap():
     for avain in POLUT:
         if SIVUT["fi"][avain].get("robots", "").startswith("noindex"):
             continue
-        for kieli in ("fi", "en"):
+        for kieli in JULKAISTUT:
             rivit.append("  <url>")
             rivit.append(f"    <loc>{DOMAIN}{POLUT[avain][kieli]}</loc>")
-            for k in ("fi", "en"):
+            for k in JULKAISTUT:
                 rivit.append(f'    <xhtml:link rel="alternate" hreflang="{k}" href="{DOMAIN}{POLUT[avain][k]}"/>')
             rivit.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{DOMAIN}{POLUT[avain]["fi"]}"/>')
             rivit.append("  </url>")
@@ -562,7 +665,7 @@ def sitemap():
 
 
 if __name__ == "__main__":
-    for kieli in ("fi", "en"):
+    for kieli in KIELET:
         for avain in POLUT:
             print("kirjoitettu", rakenna_sivu(kieli, avain).relative_to(JUURI))
     uudelleenohjaus("evasteet.html", POLUT["evasteet"]["fi"])

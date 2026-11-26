@@ -1023,6 +1023,10 @@ p { text-wrap: pretty; }
 @media (max-width: 379.98px) {
   .brand > span { display: none; }
 }
+/* Kolmella kielellä (FI, EN, SV) kielivalinta vie enemmän tilaa: nimi piiloon jo aiemmin */
+@media (max-width: 419.98px) {
+  .topbar:has(.lang a:nth-child(3)) .brand > span { display: none; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

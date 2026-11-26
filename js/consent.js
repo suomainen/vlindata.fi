@@ -81,9 +81,11 @@
 
 
     // Kytkin näyttää nykyisen tilan: päällä = hyväksytty, pois = hylätty tai ei valintaa
-    const TILAT = document.documentElement.lang === 'en'
-      ? { granted: 'On', denied: 'Off', none: 'Off (not chosen)' }
-      : { granted: 'Päällä', denied: 'Pois', none: 'Pois (ei valittu)' };
+    const TILAT = {
+      fi: { granted: 'Päällä', denied: 'Pois', none: 'Pois (ei valittu)' },
+      en: { granted: 'On', denied: 'Off', none: 'Off (not chosen)' },
+      sv: { granted: 'På', denied: 'Av', none: 'Av (inget val)' }
+    }[document.documentElement.lang] || { granted: 'Päällä', denied: 'Pois', none: 'Pois (ei valittu)' };
     const switches = document.querySelectorAll('[data-consent-kytkin]');
     const updateSwitches = () => {
       const choice = readChoice();

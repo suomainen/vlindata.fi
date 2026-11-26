@@ -6,7 +6,7 @@
   const form = document.querySelector('[data-contact-form]');
   if (!form) return;
 
-  const lang = document.documentElement.lang === 'en' ? 'en' : 'fi';
+  const lang = ['en', 'sv'].includes(document.documentElement.lang) ? document.documentElement.lang : 'fi';
   const T = {
     fi: {
       required: 'Täytä tämä kenttä.',
@@ -23,6 +23,14 @@
       name: 'Name', org: 'Municipality or organisation', mail: 'Email',
       opened: 'The message opened in your email app. Please send it from there. If nothing opened, write to virpi@vlindata.fi.',
       errors: 'Some fields need attention. Please correct the marked fields.'
+    },
+    sv: {
+      required: 'Fyll i det här fältet.',
+      email: 'Kontrollera e-postadressen, till exempel namn@kommun.fi.',
+      subject: 'Kontakt via vlindata.fi',
+      name: 'Namn', org: 'Kommun eller organisation', mail: 'E-post',
+      opened: 'Meddelandet öppnades i ditt e-postprogram. Skicka det därifrån. Om inget öppnades, skriv till virpi@vlindata.fi.',
+      errors: 'Formuläret har brister. Rätta de markerade fälten.'
     }
   }[lang];
 

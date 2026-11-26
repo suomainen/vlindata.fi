@@ -4,6 +4,11 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.10.0
+
+- Ruotsinkielinen versio osoitteessa /sv/ (kaikki sivut, lomake, evästeilmoitus ja Analyskakor-kytkin). Piilossa, kunnes käännös on tarkistettu: noindex, ei sitemapissa eikä suomen- ja englanninkielisten sivujen kielivalinnassa. Julkaisuohje README:ssä.
+- Kun kielivalinnassa on kolme kieltä, yrityksen nimi piilotetaan yläpalkista alle 420 px leveällä näytöllä, jotta palkki pysyy yhdellä rivillä.
+
 ## 2.9.13
 
 - Sisältöturvakäytäntö (Content-Security-Policy) kaikille sivuille: selain lataa vain sivuston omat tiedostot sekä Google Analyticsin ja Microsoft Clarityn. Testattu oikealla sivustolla evästeet hyväksyttynä: ei estettyjä latauksia, ja vieraat osoitteet estyvät.

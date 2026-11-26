@@ -1,0 +1,51 @@
+    <section class="panel panel--vihrea-vaalea panel--kartta page-hero" aria-labelledby="sivu-otsikko">
+      <div class="wrap">
+      {{murupolku}}
+        <p class="hero__nosto">Geodatans kontinuitet och beredskap</p>
+        <h1 class="h1" id="sivu-otsikko">Kartan fungerar även när gränssnittet inte svarar.</h1>
+        <p class="lead">Kommunens geodatatjänster är ofta beroende av externa gränssnitt. När en tjänst eller nätförbindelsen bryts behövs kartan ändå – till exempel inom byggnadstillsynen, markanvändningen och vid störningar.</p>
+        <p>Ett lokalt reservsystem håller en lokal kopia av det material kommunen valt. Kopian kan användas i webbläsaren och i QGIS även under avbrottet.</p>
+        <div class="actions">
+          <a class="btn btn--ensisijainen" href="{{sivu:yhteystiedot}}">Begär offert {{ikoni:arrow-right}}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel--valkoinen page-content">
+      <div class="wrap">
+        <div>
+          <h2 class="h2">Hur fungerar det?</h2>
+          <ol class="kulku">
+            <li><span class="card__icon">{{ikoni:list-checks}}</span><h3 class="h3">Materialet väljs</h3><p>Vi kommer tillsammans överens om vilket material och vilket område kommunen behöver ha tillgång till även vid störningar.</p></li>
+            <li><span class="card__icon">{{ikoni:download}}</span><h3 class="h3">Hämtning och konvertering</h3><p>Materialet hämtas från gränssnitten enligt schema och sparas i lokala GeoPackage- och MBTiles-filer.</p></li>
+            <li><span class="card__icon">{{ikoni:map}}</span><h3 class="h3">Lokal karta</h3><p>Webbkartan använder det lokala materialet redan i normalläget. Samma material öppnas också i QGIS.</p></li>
+            <li><span class="card__icon">{{ikoni:activity}}</span><h3 class="h3">Övervakning</h3><p>Källornas och den lokala tjänstens status kontrolleras regelbundet, och händelserna sammanställs i en rapport.</p></li>
+          </ol>
+        </div>
+
+        <div>
+          <h2 class="h2">Vad får kommunen?</h2>
+          <ul class="cards">
+            <li class="card"><span class="card__icon">{{ikoni:wrench}}</span><h3 class="h3">Driftsättning</h3><p>Definition av materialkällor, installation i kommunens miljö och anvisningar för användarna.</p></li>
+            <li class="card"><span class="card__icon">{{ikoni:life-buoy}}</span><h3 class="h3">Underhåll</h3><p>Uppdateringar, uppföljning av övervakningen och ändringar när materialkällorna ändras.</p></li>
+            <li class="card"><span class="card__icon">{{ikoni:shield-check}}</span><h3 class="h3">Stöd för beredskapen</h3><p>En beskrivning av lösningen som stöd för kommunens kontinuitetsplanering och för bedömningar enligt NIS2 och ISO 22301.</p></li>
+          </ul>
+        </div>
+
+        <aside class="callout" aria-labelledby="tausta-otsikko">
+          <h2 class="h2" id="tausta-otsikko">Bakgrund</h2>
+          <p>Lösningen bygger på programvara med öppen källkod, till exempel GDAL, MapLibre och QGIS.</p>
+          <p>Lämpligheten bedöms alltid med kommunens eget material och egna användningsbehov. För att hämta nytt material krävs en förbindelse till källtjänsten, men material som redan sparats kan användas under avbrottet.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="panel panel--metsa panel--kartta cta" aria-labelledby="cta-otsikko">
+      <div class="wrap">
+        <h2 class="h2" id="cta-otsikko">Kan er kommun använda sin geodata även vid en störning?</h2>
+        <div class="actions">
+          <a class="btn btn--ensisijainen" href="{{sivu:yhteystiedot}}">Begär offert {{ikoni:arrow-right}}</a>
+          <a class="btn btn--reuna" href="tel:+358443012471">{{ikoni:phone}} +358 44 301 2471</a>
+        </div>
+      </div>
+    </section>

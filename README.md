@@ -11,6 +11,7 @@ paikkatietopalvelut/             palvelusivu
 paikkatiedon-jatkuvuus/          palvelusivu: paikallinen varajärjestelmä (valikossa "Varautuminen")
 yritys/  referenssit/  yhteystiedot/  evasteet/
 en/                              englanninkieliset sivut samassa järjestyksessä
+sv/                              ruotsinkieliset sivut (piilossa, ks. Ruotsinkielinen versio)
 404.html                         "sivua ei löytynyt" molemmilla kielillä
 evasteet.html, en/cookies.html   vanhojen osoitteiden ohjaukset
 css/style.css                    kaikki tyylit, värit muuttujina alussa
@@ -32,7 +33,7 @@ package.json, package-lock.json  fonttien ja ikonien versiot (Dependabot), ei ju
 SECURITY.md                      haavoittuvuuksien ilmoittaminen
 .github/dependabot.yml           Dependabotin viikkotarkistus (npm ja pip)
 .htaccess                        palvelimen asetukset (https, 404, välimuisti)
-tools/sivut/fi/, tools/sivut/en/ sivujen tekstit (yksi tiedosto per sivu)
+tools/sivut/fi/, en/, sv/        sivujen tekstit (yksi tiedosto per sivu ja kieli)
 tools/fontit.py, tools/requirements.txt   kiinteät fontit npm-paketeista (vain ylläpitoon)
 tools/ikonit/                    Lucide-ikonit, jotka skripti upottaa sivuille
 ```
@@ -48,7 +49,7 @@ Avaa selaimessa http://localhost:8000/.
 
 ## Muokkaaminen
 
-- **Tekstit:** muokkaa tiedostoa `tools/sivut/fi/<sivu>.html` ja vastaavaa `tools/sivut/en/<sivu>.html`, aja sitten `python tools/rakenna.py`. Älä muokkaa koottuja `index.html`-tiedostoja käsin, koska skripti kirjoittaa ne yli.
+- **Tekstit:** muokkaa tiedostoa `tools/sivut/fi/<sivu>.html` ja vastaavia `tools/sivut/en/<sivu>.html` ja `tools/sivut/sv/<sivu>.html`, aja sitten `python tools/rakenna.py`. Älä muokkaa koottuja `index.html`-tiedostoja käsin, koska skripti kirjoittaa ne yli.
 - **Sivujen otsikot, kuvaukset ja valikko:** `tools/rakenna.py`, kohta `SIVUT`.
 - **Yläpalkki ja valikko (myös Evästeet, Analytiikkaevästeet-kytkin ja versio), evästeilmoitus:** `tools/rakenna.py`, funktiot `header` ja `evasteilmoitus` sekä `TEKSTIT`. Sivustolla ei ole erillistä alatunnistetta.
 - **Referenssikuntien logot:** `tools/rakenna.py`, kohta `LOGOT`, ja kuvat kansioon `img/logot/`.
@@ -123,6 +124,21 @@ Jos push GitHubiin hylätään ("fetch first"): `git pull --rebase` ja uudelleen
 - Kirjaa muutos `CHANGELOG.md`:hen (uusin ensin, ei päivämääriä).
 - Merkitse versio: `git tag -a v2.0.1 -m "Kuvaus"` ja julkaise `git push --follow-tags`.
 - Pelkkä README- tai muutoslokimuutos ei nosta versiota.
+
+## Ruotsinkielinen versio
+
+Ruotsinkieliset sivut ovat osoitteessa https://vlindata.fi/sv/, mutta ne ovat piilossa, kunnes ruotsia äidinkielenään puhuva on tarkistanut käännöksen:
+
+- sivut ovat `noindex, nofollow`, eivät ole sitemapissa eikä suomen- ja englanninkielisten sivujen kielivalinnassa tai hreflang-linkeissä
+- ruotsinkielisellä sivulla on kielivalinta FI · EN · SV, joten tarkistaja voi vertailla kieliä
+- tarkistettavaksi: kuntien virkakieli (fastighetsskatteutredning, byggnadsregister, geodata, byggnadstillsyn), valikon nimet (Fastighetsskatt, Geodata, Beredskap) ja Kari Tuohin lainauksen käännös
+
+Julkaisu, kun käännös on tarkistettu:
+
+1. `tools/rakenna.py`: lisää `"sv"` listaan `JULKAISTUT` ja aja `python tools/rakenna.py`. Kielivalinta, hreflang ja sitemap päivittyvät kaikille sivuille.
+2. `404.html`: lisää ruotsinkielinen teksti ja linkki `/sv/`.
+3. `llms.txt`: lisää ruotsinkielinen osio.
+4. Jakokuva: ruotsinkieliset sivut käyttävät nyt englanninkielistä `img/og-kuva-en.jpg`; tee tarvittaessa `img/og-kuva-sv.jpg` ja vaihda se funktioon `head`.
 
 ## Etusivun vaakavieritys
 
