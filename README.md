@@ -145,16 +145,7 @@ Julkaisu, kun käännös on tarkistettu:
 
 Sivut `luottamus/` (Luottamus ja tietoturva) ja `tietosuojaseloste/` sekä englanniksi `en/trust-center/` ja `en/privacy-notice/` ovat piilossa: `"piilossa": True` kohdassa `SIVUT` tekee niistä noindex-sivuja, jotka eivät ole valikossa eivätkä sitemapissa. Ruotsinkielistä versiota ei vielä ole (sivut puuttuvat `POLUT`-kohdan sv-sarakkeesta, joten kielivalinta näyttää vain FI ja EN).
 
-Ennen julkaisua Virpin pitää vahvistaa, että nämä pitävät paikkansa (tai muuttaa tekstiä):
-
-- työkoneen levy on salattu, koneessa on haittaohjelmasuojaus ja päivitykset ajetaan säännöllisesti
-- salasanojen hallintaohjelma ja kaksivaiheinen tunnistautuminen Microsoft 365:ssä
-- Microsoft 365:n tiedot säilytetään EU:ssa (näkyy Microsoft 365 -hallintakeskuksessa: Asetukset → Organisaation profiili → Tietojen sijainti)
-- aineistot siirretään kunnan tiedostonsiirrolla tai jaetussa M365-kansiossa, ei sähköpostin liitteinä; ei muistitikuille
-- työkalut tehdään testiaineistolla, kunnan aineistoa ei viedä ulkoisiin tekoälypalveluihin ja käytössä on suljettu paikallinen tekoälyympäristö (Oskari vahvisti 26.11.2026)
-- aineistot palautetaan tai poistetaan työn päätyttyä ja poisto vahvistetaan pyydettäessä
-- käsittelytoimien kuvaus tulee ERPin tarjoustyökalusta (JYSE/JIT Henkilötiedot 2025); tietoturvakuvaus pitää vielä tehdä ennen kuin sivu lupaa sen
-- tietosuojaseloste: tilitoimisto vastaanottajana, säilytysajat (asiakkuus ja yhteydenotot 3 vuotta), markkinointi kuntien julkisista yhteystiedoista
+Henkilötietojen käsittelytoimien kuvaus tulee ERPin tarjoustyökalusta (JYSE/JIT Henkilötiedot 2025), ja sivun tekstit vastaavat sitä.
 
 Julkaisu: poista `"piilossa": True` molemmista kielistä, lisää linkit esimerkiksi valikon alaosaan (`nav__evasteet`) ja Evästeet-sivulle, aja `python tools/rakenna.py`.
 
