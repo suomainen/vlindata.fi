@@ -129,7 +129,7 @@ Jos push GitHubiin hylätään ("fetch first"): `git pull --rebase` ja uudelleen
 
 Sivu ei käytä JavaScript-kirjastoja eikä tarvitse npm:ää. Kolmannen osapuolen tiedostot (fontit ja ikonit) ovat valmiina repossa. `package.json` ja `package-lock.json` kertovat niiden versiot, jotta GitHubin **Dependabot-hälytykset** ilmoittavat, jos niistä löytyy haavoittuvuus (Settings → Advanced Security → Dependabot alerts → Enable; toimii ilman GitHub Actionsia). Tiedostoja ei julkaista palvelimelle (`tools/julkaise.ps1` ohittaa ne, `.htaccess` estää ne).
 
-- **Fontit** `fonts/*.woff2` ovat sellaisenaan pakettien `@fontsource-variable/inter` ja `@fontsource-variable/manrope` tiedostoja `files/*-latin-wght-normal.woff2`. Päivitys: vaihda versio `package.json`:iin, aja `npm install` ja kopioi tiedostot.
+- **Fontit** `fonts/inter-400.woff2` … `manrope-800.woff2` ovat kiinteäpainoisia versioita pakettien `@fontsource-variable/inter` ja `@fontsource-variable/manrope` muuttuvista fonteista (vanhojen iPhonejen Safari näyttää muuttuvat fontit huonosti). Päivitys: vaihda versio `package.json`:iin, aja `npm install` ja `python tools/fontit.py`. Uusi paino lisätään skriptin `PAINOT`-listaan ja `css/fonts.css`:ään.
 - **Ikonit** `tools/ikonit/*.svg` ovat paketista `lucide-static` (LinkedIn-ikoni versiosta 0.460.0, alias `lucide-static-linkedin`).
 - **Google Analytics ja Microsoft Clarity** ladataan palveluntarjoajan palvelimelta aina uusimpana versiona, joten ne eivät ole `package.json`:ssa.
 - **Haavoittuvuuksien tarkistus:** `npm audit` ja CISA:n KEV-luettelo (tunnetusti hyödynnetyt haavoittuvuudet, https://www.cisa.gov/known-exploited-vulnerabilities-catalog, JSON/CSV) – hae luettelosta kirjastojen ja käytettyjen ohjelmien nimiä (Git, Python, WinSCP, palvelimen cPanel/LiteSpeed).
@@ -148,8 +148,8 @@ Jokaisella sivulla on otsikko, kuvaus, canonical, kieliversiolinkit (hreflang), 
 
 | Tiedosto | Versio | Lisenssi tai oikeus |
 |---|---|---|
-| Manrope (`fonts/manrope-latin-wght.woff2`) | @fontsource-variable/manrope 5.3.0 | SIL Open Font License 1.1, `fonts/OFL-Manrope.txt` |
-| Inter (`fonts/inter-latin-wght.woff2`) | @fontsource-variable/inter 5.3.0 | SIL Open Font License 1.1, `fonts/OFL-Inter.txt` |
+| Manrope (`fonts/manrope-600/700/800.woff2`) | @fontsource-variable/manrope 5.3.0 | SIL Open Font License 1.1, `fonts/OFL-Manrope.txt` |
+| Inter (`fonts/inter-400/500/600/700.woff2`) | @fontsource-variable/inter 5.3.0 | SIL Open Font License 1.1, `fonts/OFL-Inter.txt` |
 | Ikonit (`tools/ikonit/`) | lucide-static 1.66.0 | ISC, `LICENSE-lucide.txt` |
 | LinkedIn-ikoni (`tools/ikonit/linkedin.svg`) | lucide-static 0.460.0 (brändi-ikonit poistuivat myöhemmistä versioista) | ISC; LinkedIn on LinkedIn Corporationin tavaramerkki |
 | Kuntien logot (`img/logot/`) | – | kuntien tavaramerkkejä, käytössä referensseinä |

@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.9.12
+
+- Fontit kiinteinä painoina (Inter 400–700, Manrope 600–800) muuttuvien fonttien sijaan: vanhojen iPhonejen Safari näyttää muuttuvat fontit puutteellisesti. Tiedostot tehdään skriptillä `tools/fontit.py`.
+
 ## 2.9.11
 
 - Evästeet-sivun "Lain mukaan" -kohdan tilalle lain nimi linkkinä Finlexiin: sähköisen viestinnän palveluista annettu laki (917/2014) 205 § (englanniksi lain käännös).

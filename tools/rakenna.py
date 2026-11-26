@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.9.11"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.9.12"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # ---------------------------------------------------------------------------
 # Sivut: avain -> polku kummallakin kielellä. Navigaation järjestys on tämä.
@@ -403,8 +403,8 @@ def head(kieli, avain, root):
   <script type="application/ld+json">
 {jsonld(kieli, avain)}
   </script>
-  <link rel="preload" href="{root}fonts/manrope-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="{root}fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{root}fonts/manrope-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{root}fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{root}css/fonts.css">
   <link rel="stylesheet" href="{root}css/style.css">
   <script src="{root}js/menu.js" defer></script>
