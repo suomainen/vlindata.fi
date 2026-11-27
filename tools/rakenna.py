@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.11.1"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.11.2"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # Sisältöturvakäytäntö: sivu saa ladata vain omia tiedostojaan sekä Google Analyticsin
 # ja Microsoft Clarityn (vasta evästehyväksynnän jälkeen, js/consent.js). Uusi ulkoinen
@@ -53,7 +53,7 @@ def nakyvat(kieli, avain="etusivu"):
 POLUT = {
     "etusivu":        {"fi": "",                           "en": "en/",                       "sv": "sv/"},
     "kiinteistovero": {"fi": "kiinteistoveroselvitykset/", "en": "en/property-tax-audits/",   "sv": "sv/fastighetsskatteutredningar/"},
-    "paikkatieto":    {"fi": "paikkatietopalvelut/",       "en": "en/gis-services/",          "sv": "sv/geodatatjanster/"},
+    "paikkatieto":    {"fi": "paikkatietopalvelut/",       "en": "en/gis-services/",          "sv": "sv/gis-tjanster/"},
     "jatkuvuus":      {"fi": "paikkatiedon-jatkuvuus/",    "en": "en/gis-continuity/",        "sv": "sv/beredskap/"},
     "yritys":         {"fi": "yritys/",                    "en": "en/company/",               "sv": "sv/foretaget/"},
     "referenssit":    {"fi": "referenssit/",               "en": "en/references/",            "sv": "sv/referenser/"},
@@ -189,8 +189,8 @@ SIVUT = {
     "sv": {
         "etusivu": {
             "nav": "Startsida",
-            "title": "VLiNdATA Oy – geodata och fastighetsskatteutredningar för kommuner",
-            "description": "VLiNdATA Oy hjälper kommuner med fastighetsskatteutredningar, kvaliteten i byggnadsregistren och geodatamaterial. Över 20 års erfarenhet.",
+            "title": "VLiNdATA Oy – geografisk information och fastighetsskatteutredningar för kommuner",
+            "description": "VLiNdATA Oy hjälper kommuner med fastighetsskatteutredningar, kvaliteten i byggnadsregistren och kart- och GIS-material. Över 20 års erfarenhet.",
         },
         "kiinteistovero": {
             "nav": "Fastighetsskatteutredningar",
@@ -200,22 +200,22 @@ SIVUT = {
             "service": "Fastighetsskatteutredningar och kvaliteten i byggnadsregistren",
         },
         "paikkatieto": {
-            "nav": "Geodatatjänster",
-            "valikko": "Geodata",
-            "title": "Geodatatjänster för kommuner – VLiNdATA Oy",
-            "description": "Produktion, uppdatering och analys av geodatamaterial samt experthjälp med system, register och informationshantering.",
-            "service": "Geodatatjänster",
+            "nav": "GIS-tjänster",
+            "valikko": "Kartor och GIS",
+            "title": "GIS-tjänster för kommuner – VLiNdATA Oy",
+            "description": "Produktion, uppdatering och analys av kart- och GIS-material samt experthjälp med system, register och informationshantering.",
+            "service": "GIS-tjänster",
         },
         "jatkuvuus": {
             "nav": "Beredskap",
-            "title": "Geodatans kontinuitet och beredskap – VLiNdATA Oy",
-            "description": "Ett lokalt reservsystem för kommunens geodata: kartan fungerar i webbläsaren och i QGIS även när ett externt gränssnitt eller nätverket ligger nere.",
-            "service": "Geodatans kontinuitet och reservsystem",
+            "title": "Kontinuitet och beredskap för geografisk information – VLiNdATA Oy",
+            "description": "Ett lokalt reservsystem för kommunens kartor och GIS-material: kartan fungerar i webbläsaren och i QGIS även när ett externt gränssnitt eller nätverket ligger nere.",
+            "service": "Kontinuitet och reservsystem för geografisk information",
         },
         "yritys": {
             "nav": "Företaget",
             "title": "Företaget och Virpi Lindvall – VLiNdATA Oy",
-            "description": "Virpi Lindvall, företagare i VLiNdATA Oy, är expert inom geodata med över 20 års erfarenhet av kommunal geodata och byggnadsregister.",
+            "description": "Virpi Lindvall, företagare i VLiNdATA Oy, är expert inom geografisk information med över 20 års erfarenhet av kommunal geografisk information och byggnadsregister.",
         },
         "referenssit": {
             "nav": "Referenser",
@@ -276,13 +276,13 @@ TEKSTIT = {
     },
     "sv": {
         "skip": "Gå till innehållet",
-        "brand_small": "Geodata · Fastighetsskatt",
+        "brand_small": "GIS · Fastighetsskatt",
         "brand_label": "VLiNdATA Oy, till startsidan",
         "menu": "Meny",
         "nav_label": "Huvudmeny",
         "lang_label": "Kieli – Language – Språk",
         "crumbs_label": "Brödsmulor",
-        "og_alt": "VLiNdATA Oy: geodata och byggnadsuppgifter som kommunen har nytta av. På bilden Virpi Lindvall.",
+        "og_alt": "VLiNdATA Oy: geografisk information och byggnadsuppgifter som kommunen har nytta av. På bilden Virpi Lindvall.",
         "og_locale": "sv_FI",
         "toteutus": "Teknisk implementering", "kytkin": "Analyskakor", "kytkin_pois": "Av", "teema": "Mörkt tema", "f_cookies": "Kakor", "f_cookie_settings": "Kakinställningar", "f_version": "version",
         "consent_label": "Meddelande om kakor",
@@ -424,7 +424,7 @@ def jsonld(kieli, avain):
     kuvaus_org = {
         "fi": "Kiinteistöveroselvitykset, rakennusrekisterien laadun parantaminen ja paikkatietopalvelut kunnille.",
         "en": "Property tax audits, building register quality and GIS services for municipalities.",
-        "sv": "Fastighetsskatteutredningar, bättre kvalitet i byggnadsregistren och geodatatjänster för kommuner.",
+        "sv": "Fastighetsskatteutredningar, bättre kvalitet i byggnadsregistren och GIS-tjänster för kommuner.",
     }[kieli]
     graph = [
         {
@@ -442,11 +442,11 @@ def jsonld(kieli, avain):
                       "Myös sivuston tekninen toteuttaja.",
                 "en": "Partner of VLiNdATA Oy: over 20 years in IT and over 10 years in GIS. "
                       "Also the technical builder of this website.",
-                "sv": "Partner till VLiNdATA Oy: över 20 år inom IT och över 10 år inom geodata. "
+                "sv": "Partner till VLiNdATA Oy: över 20 år inom IT och över 10 år inom geografisk information. "
                       "Har också byggt webbplatsen.",
             }[kieli],
             "affiliation": {"@id": DOMAIN + "#organization"},
-            "knowsAbout": ["IT", {"fi": "Paikkatieto", "en": "GIS", "sv": "Geodata"}[kieli]],
+            "knowsAbout": ["IT", {"fi": "Paikkatieto", "en": "GIS", "sv": "Geografisk information"}[kieli]],
         },
         {
             "@type": "Organization", "@id": DOMAIN + "#organization", "name": "VLiNdATA Oy",
@@ -461,7 +461,7 @@ def jsonld(kieli, avain):
         {
             "@type": "Person", "@id": DOMAIN + "#virpi-lindvall", "name": "Virpi Lindvall",
             "jobTitle": {"fi": "Yrittäjä, paikkatietoalan asiantuntija", "en": "Founder, GIS specialist",
-                         "sv": "Företagare, expert inom geodata"}[kieli],
+                         "sv": "Företagare, expert inom geografisk information"}[kieli],
             "image": DOMAIN + "img/virpi-metsa-pysty-1000.jpg",
             "worksFor": {"@id": DOMAIN + "#organization"},
             "sameAs": ["https://www.linkedin.com/in/lindvall-virpi/"],

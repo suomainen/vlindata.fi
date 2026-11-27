@@ -132,7 +132,7 @@ Ruotsinkieliset sivut ovat osoitteessa https://vlindata.fi/sv/, mutta ne ovat pi
 
 - sivut ovat `noindex, nofollow`, eivät ole sitemapissa eikä suomen- ja englanninkielisten sivujen kielivalinnassa tai hreflang-linkeissä
 - ruotsinkielisellä sivulla on kielivalinta FI · EN · SV, joten tarkistaja voi vertailla kieliä
-- tarkistettavaksi: kuntien virkakieli (fastighetsskatteutredning, byggnadsregister, geodata, byggnadstillsyn), valikon nimet (Fastighetsskatt, Geodata, Beredskap) ja Kari Tuohin lainauksen käännös
+- sanasto on tarkistettu kaksikielisten kuntien sivuilta ([Kimitoön](https://www.kimitoon.fi/boende-och-miljo/), [Pargas](https://www.pargas.fi/sv/kartor-och-geografisk-information)): paikkatieto = geografisk information / GIS (ei geodata), byggnadstillsyn, planläggning och markanvändning, säkerhet och beredskap; valikossa Fastighetsskatt, Kartor och GIS, Beredskap
 
 Julkaisu, kun käännös on tarkistettu:
 

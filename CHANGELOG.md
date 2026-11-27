@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.11.2
+
+- Ruotsinkielinen sanasto kaksikielisten kuntien (Kemiönsaari, Parainen) mukaiseksi: paikkatieto on geografisk information tai GIS (ei geodata), palvelusivu GIS-tjänster (osoite /sv/gis-tjanster/), valikossa Kartor och GIS, materiaali kart- och GIS-material.
+
 ## 2.11.1
 
 - Luottamus ja tietoturva -sivu yhtenäistetty ERPin tarjoustyökalun henkilötietoliitteen kanssa: JYSE/JIT Henkilötiedot 2025 -ehdot ja käsittelytoimien kuvaus tarjouksen liitteenä, aineistot kunnan Teamsissa tai sovitussa projektialustassa (ei sähköpostilla), henkilötunnukset vain rekisteripoiminnoissa eikä tulosaineistoissa, käsittelijänä vain omat työntekijät ja alihankkijana tarvittaessa sähköisen kyselyn palveluntarjoaja.
