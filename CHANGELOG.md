@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.11.5
+
+- Ruotsiksi Virpin titteli GIS-specialist (alan käytäntö, esim. Gispo).
+
 ## 2.11.4
 
 - Ruotsin sanasto kuntien omista teksteistä (Pedersöre, Kronoby, Pargas, Lovisa): frågeformulär till fastighetsägarna (ei enkäter), fältinventering (ei terrängkontroller); kiinteistöveroselvityksen kuvaukseen myös kuntien käyttämät nimet fastighetskartläggning ja fastighetsskatteprojekt.

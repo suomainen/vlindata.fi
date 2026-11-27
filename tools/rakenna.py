@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.11.4"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.11.5"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # Sisältöturvakäytäntö: sivu saa ladata vain omia tiedostojaan sekä Google Analyticsin
 # ja Microsoft Clarityn (vasta evästehyväksynnän jälkeen, js/consent.js). Uusi ulkoinen
@@ -215,7 +215,7 @@ SIVUT = {
         "yritys": {
             "nav": "Företaget",
             "title": "Företaget och Virpi Lindvall – VLiNdATA Oy",
-            "description": "Virpi Lindvall, företagare i VLiNdATA Oy, är expert inom geografisk information med över 20 års erfarenhet av kommunal geografisk information och byggnadsregister.",
+            "description": "Virpi Lindvall, företagare i VLiNdATA Oy, är GIS-specialist med över 20 års erfarenhet av kommunal geografisk information och byggnadsregister.",
         },
         "referenssit": {
             "nav": "Referenser",
@@ -461,7 +461,7 @@ def jsonld(kieli, avain):
         {
             "@type": "Person", "@id": DOMAIN + "#virpi-lindvall", "name": "Virpi Lindvall",
             "jobTitle": {"fi": "Yrittäjä, paikkatietoalan asiantuntija", "en": "Founder, GIS specialist",
-                         "sv": "Företagare, expert inom geografisk information"}[kieli],
+                         "sv": "Företagare, GIS-specialist"}[kieli],
             "image": DOMAIN + "img/virpi-metsa-pysty-1000.jpg",
             "worksFor": {"@id": DOMAIN + "#organization"},
             "sameAs": ["https://www.linkedin.com/in/lindvall-virpi/"],
