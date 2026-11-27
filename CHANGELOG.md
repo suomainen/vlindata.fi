@@ -4,6 +4,10 @@ Sivuston versio näkyy puhelimen valikossa ja Evästeet-sivulla. Versio on mää
 
 Numerointi: **pää.osa.korjaus**. Kokonaan uusi ulkoasu tai rakenne nostaa pääversiota, uusi sivu tai osio osaversiota ja pieni korjaus korjausversiota.
 
+## 2.11.3
+
+- Ruotsinkieliset evästetekstit kuntien (Cookiebot) tapaan: cookies eikä kakor, kytkin Statistikcookies, Cookie-inställningar, osoite /sv/cookies/.
+
 ## 2.11.2
 
 - Ruotsinkielinen sanasto kaksikielisten kuntien (Kemiönsaari, Parainen) mukaiseksi: paikkatieto on geografisk information tai GIS (ei geodata), palvelusivu GIS-tjänster (osoite /sv/gis-tjanster/), valikossa Kartor och GIS, materiaali kart- och GIS-material.

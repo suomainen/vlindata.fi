@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.11.2"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.11.3"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # Sisältöturvakäytäntö: sivu saa ladata vain omia tiedostojaan sekä Google Analyticsin
 # ja Microsoft Clarityn (vasta evästehyväksynnän jälkeen, js/consent.js). Uusi ulkoinen
@@ -58,7 +58,7 @@ POLUT = {
     "yritys":         {"fi": "yritys/",                    "en": "en/company/",               "sv": "sv/foretaget/"},
     "referenssit":    {"fi": "referenssit/",               "en": "en/references/",            "sv": "sv/referenser/"},
     "yhteystiedot":   {"fi": "yhteystiedot/",              "en": "en/contact/",               "sv": "sv/kontakt/"},
-    "evasteet":       {"fi": "evasteet/",                  "en": "en/cookies/",               "sv": "sv/kakor/"},
+    "evasteet":       {"fi": "evasteet/",                  "en": "en/cookies/",               "sv": "sv/cookies/"},
     # Piilossa (SIVUT: "piilossa": True): ei valikossa eikä sitemapissa, noindex. Ei ruotsiksi vielä.
     "luottamus":      {"fi": "luottamus/",                 "en": "en/trust-center/"},
     "tietosuoja":     {"fi": "tietosuojaseloste/",         "en": "en/privacy-notice/"},
@@ -228,9 +228,9 @@ SIVUT = {
             "description": "Kontakta Virpi Lindvall: telefon +358 44 301 2471, e-post virpi@vlindata.fi.",
         },
         "evasteet": {
-            "nav": "Kakor",
-            "title": "Kakor – VLiNdATA Oy",
-            "description": "Vilka kakor vlindata.fi använder och hur du kan ändra ditt val.",
+            "nav": "Cookies",
+            "title": "Cookies – VLiNdATA Oy",
+            "description": "Vilka cookies vlindata.fi använder och hur du kan ändra ditt val.",
             "robots": "noindex, follow",
         },
     },
@@ -284,10 +284,10 @@ TEKSTIT = {
         "crumbs_label": "Brödsmulor",
         "og_alt": "VLiNdATA Oy: geografisk information och byggnadsuppgifter som kommunen har nytta av. På bilden Virpi Lindvall.",
         "og_locale": "sv_FI",
-        "toteutus": "Teknisk implementering", "kytkin": "Analyskakor", "kytkin_pois": "Av", "teema": "Mörkt tema", "f_cookies": "Kakor", "f_cookie_settings": "Kakinställningar", "f_version": "version",
-        "consent_label": "Meddelande om kakor",
+        "toteutus": "Teknisk implementering", "kytkin": "Statistikcookies", "kytkin_pois": "Av", "teema": "Mörkt tema", "f_cookies": "Cookies", "f_cookie_settings": "Cookie-inställningar", "f_version": "version",
+        "consent_label": "Meddelande om cookies",
         "consent_text": "Jag använder Google Analytics för att se hur många som besöker webbplatsen och Microsoft Clarity för att se hur den används (värmekartor över klick och inspelningar av sessioner). Spårningen börjar bara om du godkänner den.",
-        "consent_more": "Kakor och dataskydd",
+        "consent_more": "Cookies och dataskydd",
         "consent_deny": "Avvisa", "consent_accept": "Godkänn",
         "new_tab": " (öppnas i en ny flik, på finska)",
         "ytunnus": "FO-nummer",
