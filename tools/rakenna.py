@@ -23,7 +23,7 @@ JUURI = Path(__file__).resolve().parent.parent
 TYOKALUT = JUURI / "tools"
 DOMAIN = "https://vlindata.fi/"
 VUOSI = "2026"
-VERSIO = "2.11.3"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
+VERSIO = "2.11.4"   # sama kuin js/menu.js:n SITE_VERSION; nosta molemmat
 
 # Sisältöturvakäytäntö: sivu saa ladata vain omia tiedostojaan sekä Google Analyticsin
 # ja Microsoft Clarityn (vasta evästehyväksynnän jälkeen, js/consent.js). Uusi ulkoinen

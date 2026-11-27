@@ -132,7 +132,7 @@ Ruotsinkieliset sivut ovat osoitteessa https://vlindata.fi/sv/, mutta ne ovat pi
 
 - sivut ovat `noindex, nofollow`, eivät ole sitemapissa eikä suomen- ja englanninkielisten sivujen kielivalinnassa tai hreflang-linkeissä
 - ruotsinkielisellä sivulla on kielivalinta FI · EN · SV, joten tarkistaja voi vertailla kieliä
-- sanasto on tarkistettu kaksikielisten kuntien sivuilta ([Kimitoön](https://www.kimitoon.fi/boende-och-miljo/), [Pargas](https://www.pargas.fi/sv/kartor-och-geografisk-information)): paikkatieto = geografisk information / GIS (ei geodata), byggnadstillsyn, planläggning och markanvändning, säkerhet och beredskap; valikossa Fastighetsskatt, Kartor och GIS, Beredskap
+- sanasto on tarkistettu kaksikielisten kuntien sivuilta ([Kimitoön](https://www.kimitoon.fi/boende-och-miljo/), [Pargas](https://www.pargas.fi/sv/kartor-och-geografisk-information)): paikkatieto = geografisk information / GIS (ei geodata), byggnadstillsyn, planläggning och markanvändning, säkerhet och beredskap; valikossa Fastighetsskatt, Kartor och GIS, Beredskap. Vastinpareja kuntien sivuilta: kiinteistökartoitus = fastighetskartläggning ([Pedersöre](https://www.pedersore.fi/sv/boende-och-miljo/bygglov/fastighetskartlaeggning-2/)), kiinteistöveroprojekti = fastighetsskatteprojekt ([Kronoby](https://www.kronoby.fi/sv/bygga-bo-and-miljoe/projekt/fastighetsskatteprojektet/)), rakennus- ja huoneistorekisteri = byggnads- och lägenhetsregister ([Pargas](https://www.pargas.fi/byggnadstillsynens-aktuella-arenden)), kysely = frågeformulär, tietosuojaseloste = dataskyddsbeskrivning, rekisterinpitäjä = personuppgiftsansvarig, evästeet = cookies (Cookiebot)
 
 Julkaisu, kun käännös on tarkistettu:
 
